@@ -1,0 +1,53 @@
+.header {
+  z-index: 999;
+  position: relative;
+}
+.header .left-block .menu-btn {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 5px;
+  display: none;
+}
+@media (max-width: 768px) {
+  .header .left-block .menu-btn {
+    display: block;
+  }
+}
+.header .left-block .site-logo {
+  width: 80px;
+}
+@media (max-width: 768px) {
+  .header .right-block nav {
+    display: none;
+  }
+}
+.header .right-block ul li {
+  color: #ffffff;
+  cursor: pointer;
+  padding: 3px;
+}
+.header p {
+  margin-bottom: 0px;
+  color: #ffffff;
+}
+
+.slide-bar {
+  z-index: 999;
+}
+.slide-bar p {
+  margin-bottom: 0px;
+}
+
+header {
+  background: #040406;
+}
+
+header.sticky {
+  position: fixed;
+  background: rgba(4, 4, 6, 0.737254902);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  width: 100%;
+  z-index: 9999;
+  animation: nav-load 300ms ease-in;
+}/*# sourceMappingURL=header.css.map */

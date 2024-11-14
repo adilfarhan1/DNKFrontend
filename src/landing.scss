@@ -1,0 +1,427 @@
+body{
+    font-family: "Poppins", sans-serif;
+}
+//Site Button
+.site-btn{
+    border: solid 1px $text-color-light;
+    border-radius: 5px;
+    padding: 10px 25px;
+    color: $text-color-light;
+    font-weight: $font-semibold;
+    font-size: 0.9rem;
+    transition-duration: 200ms;
+     transition: all linear .2s;
+    -webkit-transition: all linear 0.2s ;
+    overflow: hidden;
+    position: relative;
+    @media (max-width: 992px) {
+        font-size: 0.7rem;
+    }
+    @media (max-width: 480px) {
+        padding: 5px 20px;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent,rgba(255, 255, 255, 0.3),transparent);
+        transition: 0.5s;
+        -webkit-animation: shade-anim 3s linear infinite;
+        animation: shade-anim 3s linear infinite;
+    }
+    &:hover{
+        background: $text-color-light;
+        color: $primary-color;
+    }
+
+}
+@keyframes shade-anim {
+    0%{
+        left: -60%;
+    }
+    50%{
+        left: 100%;
+    }
+     100%{
+        left: -60%;
+    }
+}
+
+.site-sub-btn{
+    border: solid 1px $text-color-light;
+    border-radius: 5px;
+    padding: 10px 25px;
+    color: $text-color-light;
+    font-weight: $font-semibold;
+    font-size: 0.9rem;
+    transition: all linear .2s;
+    -webkit-transition: all linear 0.2s ;
+    overflow: hidden;
+    position: relative;
+    @media (max-width: 992px) {
+        font-size: 0.7rem;
+    }
+    @media (max-width: 480px) {
+        padding: 5px 20px 5px 20px;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent,rgba(255, 255, 255, 0.559),transparent);
+        transition: 0.5s;
+    }
+    &:hover{
+        text-decoration: none;
+        color: $text-color-light;
+        &::after{
+            left: 100%;
+        }
+    }
+    &:focus{
+        text-decoration: none;
+        box-shadow: none;
+        color: $text-color-light;
+    }
+
+}
+@keyframes shade-anim1 {
+    0%{
+        left: -60%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+//loader
+
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #000000; /* Blue */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+h1{
+        font-size: 2rem;
+        font-weight: $font-semibold;
+        color: $text-color-light;
+        text-transform: capitalize;
+        line-height: 1.1;
+        margin-bottom: 10px;
+        @media (max-width: 992px) {
+            font-size: 1.6rem;
+        }
+        @media (max-width: 576px) {
+            font-size: 1.2rem;
+        }
+}
+h5{
+    font-size: 1.2rem;
+    font-weight: $font-semibold;
+    line-height: 2rem;
+    margin-bottom: 10px;
+    @media (max-width: 992px) {
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    @media (max-width: 576px) {
+        font-size: 0.9rem;
+    }
+}
+p{
+    color: $text-color;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    @media (max-width:768px) {
+        font-size: 0.8rem;
+        
+    }
+}
+
+//loading text
+.load-text{
+        color: #FAC25A;
+        text-transform: uppercase;
+        font-weight: $font-semibold;
+        font-size: 1.2rem;
+        line-height: 1;
+}
+.loadDot{
+    width: 5px;
+    height: 5px;
+    background: #FAC25A;
+    border-radius: 50px;
+    position: relative;
+    margin-bottom: 1.5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    
+}
+.dot1{
+    -webkit-animation: bling-anim1 3s linear infinite;
+    animation: bling-anim1 3s linear infinite;
+}
+.dot2{
+    -webkit-animation: bling-anim2 3s linear infinite;
+    animation: bling-anim2 3s linear infinite;
+}
+.dot3{
+ -webkit-animation: bling-anim3 3s linear infinite;
+    animation: bling-anim3 3s linear infinite;
+}
+@keyframes bling-anim1 {
+    0%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes bling-anim2 {
+    0%{
+        opacity: 0;
+    }
+     40%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes bling-anim3 {
+    0%{
+        opacity: 1;
+    }
+     70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+//bouce right
+.arrow-r-bounce{
+    -webkit-animation: bounce-right 1s linear infinite;
+    animation: bounce-right 1s linear infinite;
+}
+@keyframes bounce-right {
+  0%, 100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+//Banner section
+.banner{
+    background-size: cover;
+    background-position: 80%;
+    background-repeat: no-repeat;
+    
+    .banner-h1{
+        max-width: 70%;
+        @media (max-width: 768px) {
+            max-width: 80%;
+        }
+        @media (max-width: 450px) {
+            max-width: 100%;
+        }
+    }
+    p{
+        font-size: 1rem;
+        color: $text-color-light;
+        @media (max-width: 768px) {
+            font-size: 0.8rem;
+        }
+    }
+    .banner-content{
+        padding: 10rem 0rem;
+        @media (max-width: 768px) {
+            padding: 5rem 0rem;
+        }
+        @media (max-width: 640px) {
+            padding: 3.2rem 0rem;
+        }
+    }
+}
+//Who we are
+
+//Featured Off-Plan Projects
+
+//Our Services
+//Reasons 
+//Our Exclusive Team
+.team-card{
+    h5{
+        margin-bottom: 0px;
+    }
+}
+//Our Process
+//What Our Clients Say
+//Our Partners
+//Let's Talk Together
+.talkSection{
+    color: $text-color-light;
+}
+.phoneInput{
+    .form-control{
+        background: transparent !important;
+        border: none !important;
+    }
+    .country-name{
+        color: #000000;
+    }
+}
+//footer
+.footer-head{
+    border-bottom: solid 1px #575769;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    li{
+        color: #ffff;
+        font-size: 1.5rem;
+        margin: 5px;
+        &:hover{
+            color: #CE8745;
+        }
+    }
+}
+.footer-body{
+    h5{
+        color: #ffffff;
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    li{
+        margin-bottom: 10px;  
+    }
+    a{
+        color: #ffffff;
+        font-size: 0.9rem;
+        
+        &:hover{
+            color: #CE8745;
+        }
+    }
+    .footer-connects{
+        a{
+            display: flex;
+            align-items: start;
+            
+        }
+    }
+}
+
+.scrollTop{
+    transition: all 0.5s ease 0s;
+    display: none;
+    background: #ffffff;
+    color: $text-color-dark;
+    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    &:hover{
+        background: #CE8745 ;
+        font-size: 1.5rem;
+        color: $primary-color;
+    }
+}
+
+.scrollTop-widget{
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+
+
+//project detail page
+.white-cover{
+    background: rgba(255, 255, 255, 0.62);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+// //dashboard Home
+.dashboardHome{
+margin-bottom: 1rem;
+    // .active{
+    //     background: #CE8745 ;
+    //     border: none;
+    // }
+    
+}
+
+
+//table
+
+table{
+    border: 1px solid #575769;
+    td{
+        border: 1px solid #575769;
+        padding: 0.5rem;
+    }
+    th{
+        border: 1px solid #575769;
+    }
+}
+
+//dashboard sidebar
+.sideBarDashboard{
+    .active{
+        background: #18A4A0 ;
+        border: none;
+    }
+}
+
+//map location
+// width="100%" height="" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0
+.map{ 
+    width: 100%; 
+    height: 324px; 
+    filter: grayscale(100%) invert(92%) contrast(83%);
+    border: n;
+}
+
+.b24-widget-button-position-bottom-right {
+  bottom: 124px !important;
+  right: 40px !important;
+}
+
