@@ -101,7 +101,7 @@ export const ProjectList = (props) => {
     <div>
       <Slider {...settings}>
         {searchedList.length > 0 ? (
-          searchedList.map((data, index) => {
+          searchedList.slice(0, 10).map((data, index) => {
             const thumbnailUrl = imageUrls[index] || DemoImage;
             return (
               <div
@@ -166,8 +166,8 @@ export const ProjectList = (props) => {
             );
           })
         ) : (
-          <div className="flex justify-center">
-            <p className="text-center m-auto">No projects created yet</p>
+          <div className="bg-[#040406] text-center">
+            <p className="m-auto loader !w-[24px] !h-[24px]"></p>
           </div>
         )}
       </Slider>

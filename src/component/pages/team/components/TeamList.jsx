@@ -81,15 +81,8 @@ export const TeamList = (props) => {
               </div>
             ))
           ) : (
-            <div className="flex justify-center">
-              <div>
-                <h1 className="text-center m-auto text-[1.4rem]">
-                  Team Data Upload Soon
-                </h1>
-                {/* <p className="text-center m-auto text-[#CE8745]">
-                We have many amazing property for you.
-              </p> */}
-              </div>
+            <div className="bg-[#040406] text-center">
+              <p className="m-auto loader !w-[24px] !h-[24px]"></p>
             </div>
           )}
         </div>

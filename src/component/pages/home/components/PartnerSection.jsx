@@ -81,7 +81,7 @@ export const PartnerSection = (props) => {
         </p>
         <div className="relative">
           <span className="bg-gradient-to-r from-[#040406] from-10% to-transparent absolute left-0 top-0  h-[130px] w-[150px] z-20"></span>
-          <Slider {...settings} className="p-4 pt-6 relative">
+          <Slider {...settings} className="p-4 pb-0 pt-6 relative">
             {Array.isArray(searchedList) && searchedList.length > 0 ? (
               searchedList.map((data) => (
                 <div
@@ -96,8 +96,8 @@ export const PartnerSection = (props) => {
                 </div>
               ))
             ) : (
-              <div className="flex justify-center">
-                <p className="text-center m-auto">No team created yet</p>
+              <div className="bg-[#040406] text-center">
+                <p className="m-auto loader !w-[24px] !h-[24px]"></p>
               </div>
             )}
           </Slider>

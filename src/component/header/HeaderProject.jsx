@@ -180,6 +180,17 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
+                    location.pathname == "/off-plan-project" && "activeHead"
+                  }`}
+                  onClick={goToOffPlanHead}
+                >
+                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                    Off-Plan
+                  </p>
+                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                </li>
+                <li
+                  className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/buy-project" && "activeHead"
                   }`}
                   onClick={goToBuyHead}
@@ -192,17 +203,6 @@ export const HeaderProject = () => {
                       "absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
                     }
                   ></span>
-                </li>
-                <li
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/off-plan-project" && "activeHead"
-                  }`}
-                  onClick={goToOffPlanHead}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    Off-Plan
-                  </p>
-                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${

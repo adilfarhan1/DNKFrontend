@@ -30,7 +30,6 @@ import AddHomeBanner from './component/pages/dashboard/component/AddHomeBanner';
 import AddSpclDay from './component/pages/dashboard/component/AddSpclDay';
 import AddLogo from './component/pages/dashboard/component/AddLogo';
 import Form from './component/pages/form/Form';
-// import LavioletaLayout from './component/subProject/lavioleta/LavioletaLayout';
 import RodeshowLayout from './component/roadshow/RodeshowLayout';
 import RegisterRoadshow from './component/roadshow/components/RegisterRoadshow';
 import CreateRoadshow from './component/roadshow/components/CreateRoadshow';
@@ -39,6 +38,8 @@ import Clintside from './component/roadshow/Clintside';
 import EventLogin from './component/pages/login/EventLogin';
 import ClientRegisterList from './component/roadshow/components/ClientRegisterList';
 import Attendance from './component/roadshow/Attendance';
+import JebelAli from './component/other/jebelAli/JebelAli';
+import LavioletaLayout from './component/subProject/lavioleta/LavioletaLayout';
 
 
 function App() {
@@ -152,6 +153,7 @@ function App() {
 
       <ScrollViewTop />
       <Routes>
+        <Route path='/palm-jebel-ali' element={<JebelAli />} />
         <Route path='/admin' element={<Admin />} />
         <Route path='/login' element={<EventLogin />} />
         <Route path='/' element={<Layout />}>
@@ -171,10 +173,11 @@ function App() {
           <Route path='/attendance' element={<Attendance />} />
         </Route>
         <Route path='/contact-form' element={<Form />} />
-        {/* <Route path='/lavioleta/dubaiproperties' element={<LavioletaLayout />} />
-        <Route path='/lavioleta/paymentplan' element={<LavioletaLayout />} />
-        <Route path='/lavioleta/floorplan' element={<LavioletaLayout />} />
-        <Route path='/lavioleta/amenities' element={<LavioletaLayout />} /> */}
+        <Route path='/latilia' element={<LavioletaLayout />} />
+        <Route path='/latilia/dubaiproperties' element={<LavioletaLayout />} />
+        <Route path='/latilia/paymentplan' element={<LavioletaLayout />} />
+        <Route path='/latilia/floorplan' element={<LavioletaLayout />} />
+        <Route path='/latilia/amenities' element={<LavioletaLayout />} />
         <Route element={<Auth />}>
           <Route path='/dashboard' element={<DashboardLayout />}>
             <Route index element={<DashboardHome />} />

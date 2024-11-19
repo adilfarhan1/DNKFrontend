@@ -21,7 +21,7 @@ export const TalkSection = () => {
               <img
                 src={Assist}
                 alt="info icon"
-                className="pb-4 m-auto md:m-0"
+                className="pb-4 m-auto md:m-0 w-[48px]"
               />
               <h5 className="text-center md:text-left">
                 Call Enquiry Assistance
@@ -35,7 +35,7 @@ export const TalkSection = () => {
               <img
                 src={Consultation}
                 alt="info icon"
-                className="pb-4 m-auto md:m-0"
+                className="pb-4 m-auto md:m-0 w-[48px]"
               />
               <h5 className="text-center md:text-left">Project Consultation</h5>
               <p className="text-center md:text-left">
@@ -46,7 +46,7 @@ export const TalkSection = () => {
               <img
                 src={Estimation}
                 alt="info icon"
-                className="pb-4  m-auto md:m-0"
+                className="pb-4  m-auto md:m-0 w-[48px]"
               />
               <h5 className="text-center md:text-left">Project Estimation</h5>
               <p className="mb-0 text-center md:text-left">
@@ -58,7 +58,7 @@ export const TalkSection = () => {
               <img
                 src={Shedule}
                 alt="info icon"
-                className="pb-4  m-auto md:m-0"
+                className="pb-4  m-auto md:m-0 w-[48px]"
               />
               <h5 className="text-center md:text-left">
                 Scheduling Appointments

@@ -23,7 +23,7 @@ export const JebelAli = () => {
           type="video/mp4"
         />
         <source
-          src="https://www.tecma-demo.com/clients/palm-jebel-ali/video/PJA_hero_Loop_1.webm"
+          src="https://www.tecma-demo.com/clients/palm-jebel-ali/video/PJA_hero_Loop_1.webm" 
           type="video/webm"
         />
         <source

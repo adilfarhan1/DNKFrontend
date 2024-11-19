@@ -51,6 +51,7 @@ export const ReviewSection = (props) => {
   }
 
   var settings = {
+    spaceBetween: 10,
     dots: true,
     infinite: true,
     slidesToShow: 1,
@@ -111,8 +112,8 @@ export const ReviewSection = (props) => {
               </div>
             ))
           ) : (
-            <div className="flex justify-center">
-              <p className="text-center m-auto">No team created yet</p>
+            <div className="bg-[#040406] text-center">
+              <p className="m-auto loader !w-[24px] !h-[24px]"></p>
             </div>
           )}
         </Slider>

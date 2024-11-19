@@ -14,7 +14,7 @@ export const OffPlanProjectGridList = (props) => {
   const [searchedList, setSearchedList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerPage] = useState(12); // Adjust the number of items per page
+  const [itemsPerPage] = useState(30); // Adjust the number of items per page
   const { getProjectPublicList } = useProjectServices();
   const navigate = useNavigate();
 

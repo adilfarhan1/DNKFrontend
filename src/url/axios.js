@@ -1,10 +1,10 @@
 import axios from "axios";
 
-
-
+// export const URL = 'https://damcproperties.com/'
 
 export const URL = 'http://localhost:8800/';
-// export const URL = 'https://damcproperties.com/'
+
+
 
 const axiosPrivate = axios.create({
     baseURL: URL,
