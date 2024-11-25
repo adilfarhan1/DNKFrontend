@@ -94,6 +94,8 @@ export const ViewList = (props) => {
       youtubeid: data.youtubeid,
       developerlogo: data.developerlogo,
       projectlogo: data.projectlogo,
+      downpayment: data.downpayment,
+      paymentplan: data.paymentplan,
     });
   };
 

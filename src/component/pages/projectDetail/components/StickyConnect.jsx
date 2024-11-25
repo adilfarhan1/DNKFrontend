@@ -102,6 +102,11 @@ export const StickyConnect = () => {
           </a>
         </div>
       </div>
+      <div className="rounded-full bg-[#fff] mt-3">
+        <h4 className="text-[#000] m-auto w-fit font-semibold">
+          Direct Sales & 0% Commission
+        </h4>
+      </div>
       <div className="border border-[#ffffff] border-spacing-1 rounded-md p-3 mt-3">
         <h6 className="text-[#ffffff] text-left text-[0.9rem] sm:text-[1.1rem] font-medium border-b-[#ffffff] border-b pb-2 mb-3">
           Quick Facts

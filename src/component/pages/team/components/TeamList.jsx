@@ -74,8 +74,12 @@ export const TeamList = (props) => {
                     <h5 class="mb-2 text-[1rem] md:text-2xl font-bold tracking-tight text-white">
                       {data.name}
                     </h5>
-                    <p class="m-0 font-normal text-gray-400">{data.position}</p>
-                    <p class="m-0 font-normal text-gray-400">{data.language}</p>
+                    <p class="m-0 text-[0.6rem] sm:text-[0.8rem] md:text-[1rem] font-normal text-gray-400">
+                      {data.position}
+                    </p>
+                    <p class="m-0 text-[0.6rem] sm:text-[0.8rem] md:text-[1rem] font-normal text-gray-400">
+                      {data.language}
+                    </p>
                   </div>
                 </div>
               </div>

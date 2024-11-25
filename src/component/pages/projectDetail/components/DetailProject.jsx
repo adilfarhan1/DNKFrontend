@@ -3,6 +3,12 @@ import LoadImg from "../../../../assets/icons/loadimg.webp";
 import { IoClose } from "react-icons/io5";
 import { IoMdHelpCircle } from "react-icons/io";
 import { IoChevronForwardCircle } from "react-icons/io5";
+import { MdLocationPin } from "react-icons/md";
+import { IoBedSharp } from "react-icons/io5";
+import { MdAreaChart } from "react-icons/md";
+import { AiOutlinePercentage } from "react-icons/ai";
+import { BsCash } from "react-icons/bs";
+import { PiCalendarCheckFill } from "react-icons/pi";
 import { FaFeatherPointed } from "react-icons/fa6";
 import ProjectConnect from "./ProjectConnect";
 import pool from "../../../../assets/icons/swimming_pool.webp";
@@ -127,8 +133,166 @@ export const DetailProject = () => {
         <div className=" py-5  px-4  md:py-9 relative">
           <div className="grid  lg:grid-cols-3">
             <div className="col-span-2">
+              <div className="mb-2">
+                <div className="flex justify-between">
+                  {projectData?.runingstatus && (
+                    <div className="flex">
+                      <div className="bg-[#fff] px-3 py-[0.1rem] hidden md:block">
+                        <p className="text-[#000] mb-0">Status</p>
+                      </div>
+                      <div className="px-3 py-[0.1rem] border border-[#fff]">
+                        <p className="text-[#fff] mb-0 capitalize">
+                          {projectData?.runingstatus === "newlaunch" && (
+                            <span>New Launch</span>
+                          )}
+                          {projectData?.runingstatus === "soldout" && (
+                            <span>Sold Out</span>
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {projectData?.startingprice && (
+                    <div className="flex">
+                      <div className="bg-[#fff] px-3 py-[0.1rem]">
+                        <p className="text-[#000] mb-0">Starting Price</p>
+                      </div>
+                      <div className="px-3 py-[0.1rem] border border-[#fff]">
+                        <p className="text-[#fff] mb-0 capitalize">
+                          {projectData?.startingprice}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="sm:flex justify-between mb-1">
+                  <h1 className="m-0 font-normal text-[#fff] line-clamp-1 text-[1rem] my-1">
+                    {projectData.projectname} By{" "}
+                    {projectData.developer.replace(/-/g, " ")}
+                  </h1>
+
+                  {projectData?.locationname && (
+                    <div className="flex items-center">
+                      <MdLocationPin className="text-[#fff] text-[1rem]" />
+                      <h1 className="m-0 font-normal text-[#fff] line-clamp-1 text-[1rem]">
+                        {projectData.locationname}
+                      </h1>
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <div className="grid md:grid-cols-2 ">
+                    {projectData.type && (
+                      <div className="grid grid-cols-3 p-2 border border-[#ffffff31]">
+                        <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]">
+                          Property Type:
+                        </h1>
+                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right col-span-2">
+                          {Object.keys(projectData)
+                            .filter(
+                              (key) =>
+                                key.startsWith("type") && projectData[key]
+                            ) // Filter keys that start with 'type'
+                            .map((key, index, array) => (
+                              <React.Fragment key={index}>
+                                {projectData[key]}
+                                {array.length > 1 &&
+                                  (index < array.length - 2
+                                    ? ", "
+                                    : index === array.length - 2
+                                    ? " & "
+                                    : "")}
+                              </React.Fragment>
+                            ))}
+                        </h1>
+                      </div>
+                    )}
+
+                    {projectData.type && (
+                      <div className="grid grid-cols-3 p-2 border border-[#ffffff31]">
+                        <div className="flex">
+                          <IoBedSharp className="text-[#fff] text-[0.9rem] " />
+                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem] pl-1">
+                            Bedroom:
+                          </h1>
+                        </div>
+
+                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right col-span-2">
+                          {projectData.bedroom}
+                        </h1>
+                      </div>
+                    )}
+
+                    {projectData.totalarea && (
+                      <div className="grid grid-cols-2 p-2 border border-[#ffffff31] ">
+                        <div className="flex">
+                          <MdAreaChart className="text-[#fff] text-[0.9rem]" />
+                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
+                            Total Area:
+                          </h1>
+                        </div>
+
+                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
+                          {projectData.totalarea}
+                        </h1>
+                      </div>
+                    )}
+                    {projectData.downpayment && (
+                      <div className="grid grid-cols-2 p-2 border border-[#ffffff31] ">
+                        <div className="flex">
+                          <AiOutlinePercentage className="text-[#fff] text-[0.9rem]" />
+                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
+                            Down Payment:
+                          </h1>
+                        </div>
+
+                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
+                          {projectData.downpayment}
+                        </h1>
+                      </div>
+                    )}
+                    {projectData.paymentplan && (
+                      <div className="grid grid-cols-2 p-2 border border-[#ffffff31] ">
+                        <div className="flex">
+                          <BsCash className="text-[#fff] text-[0.9rem]" />
+                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
+                            Payment Plan:
+                          </h1>
+                        </div>
+
+                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
+                          {projectData.paymentplan}
+                        </h1>
+                      </div>
+                    )}
+
+                    {projectData.totalarea && (
+                      <div className="grid grid-cols-2 p-2 border border-[#ffffff31] ">
+                        <div className="flex">
+                          <PiCalendarCheckFill className="text-[#fff] text-[0.9rem]" />
+                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
+                            Handover:
+                          </h1>
+                        </div>
+
+                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
+                          {projectData.handover}
+                        </h1>
+                      </div>
+                    )}
+                  </div>
+                  <div className="border border-[#ffffff31] ">
+                    <h4 className="text-[#fff] m-auto w-fit font-semibold md:text-[1.3rem]">
+                      Direct Sales & 0% Commission
+                    </h4>
+                  </div>
+                </div>
+              </div>
               <h1>{projectData?.mainhead}</h1>
               {projectData.about && <p>Personally Visited & Approved</p>}
+
               <div
                 className="grid 
                     grid-cols-3 mb-3"
@@ -261,6 +425,7 @@ export const DetailProject = () => {
                   )}
                 </div>
               )}
+
               {projectData.about && (
                 <div>
                   <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
@@ -316,6 +481,7 @@ export const DetailProject = () => {
                       <p className="text-[#ffffff] m-0">Restaurants</p>
                     </div>
                   </div>
+
                   <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
                     Life style at {projectData?.projectname}
                   </h6>
@@ -325,7 +491,7 @@ export const DetailProject = () => {
                   <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1rem] font-semibold mb-2">
                     {projectData?.pointhead}
                   </h6>
-                  <ul className="list-disc list-inside  text-[#fff]">
+                  <ul className="list-disc list-outside pl-4 text-[#fff]">
                     {projectData?.point1 && (
                       <li className="text-[#979797]">{projectData.point1}</li>
                     )}

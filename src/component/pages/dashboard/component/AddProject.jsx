@@ -377,6 +377,7 @@ export const AddProject = (props) => {
             <option value={"Commercial-Space"}>Commercial Space</option>
             <option value={"Suite"}>Suite</option>
             <option value={"SkyVilla"}>Sky Villa</option>
+            <option value={"Plot"}>Plot</option>
           </select>
 
           <select
@@ -399,6 +400,7 @@ export const AddProject = (props) => {
             <option value={"Commercial-Space"}>Commercial Space</option>
             <option value={"Suite"}>Suite</option>
             <option value={"SkyVilla"}>Sky Villa</option>
+            <option value={"Plot"}>Plot</option>
           </select>
 
           <select
@@ -421,6 +423,7 @@ export const AddProject = (props) => {
             <option value={"Commercial-Space"}>Commercial Space</option>
             <option value={"Suite"}>Suite</option>
             <option value={"SkyVilla"}>Sky Villa</option>
+            <option value={"Plot"}>Plot</option>
           </select>
 
           <select
@@ -443,6 +446,7 @@ export const AddProject = (props) => {
             <option value={"Commercial-Space"}>Commercial Space</option>
             <option value={"Suite"}>Suite</option>
             <option value={"SkyVilla"}>Sky Villa</option>
+            <option value={"Plot"}>Plot</option>
           </select>
 
           <select
@@ -465,6 +469,7 @@ export const AddProject = (props) => {
             <option value={"Commercial-Space"}>Commercial Space</option>
             <option value={"Suite"}>Suite</option>
             <option value={"SkyVilla"}>Sky Villa</option>
+            <option value={"Plot"}>Plot</option>
           </select>
 
           <select
@@ -487,6 +492,7 @@ export const AddProject = (props) => {
             <option value={"Commercial-Space"}>Commercial Space</option>
             <option value={"Suite"}>Suite</option>
             <option value={"SkyVilla"}>Sky Villa</option>
+            <option value={"Plot"}>Plot</option>
           </select>
         </div>
         <label>Bedroom</label>
@@ -522,6 +528,26 @@ export const AddProject = (props) => {
           onChange={handleChange}
           name="startingprice"
           value={createProject.startingprice || ""}
+          type="text"
+          class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+        />
+
+        <label>Down Payment</label>
+        <input
+          placeholder="eg: 20%"
+          onChange={handleChange}
+          name="downpayment"
+          value={createProject.downpayment || ""}
+          type="text"
+          class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+        />
+
+        <label>Payment Plan</label>
+        <input
+          placeholder="eg: 80/20"
+          onChange={handleChange}
+          name="paymentplan"
+          value={createProject.paymentplan || ""}
           type="text"
           class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
         />
