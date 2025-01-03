@@ -9,7 +9,7 @@ export const OurProcess = () => {
   return (
     <div className="w-full bg-[#121218] flex items-center justify-center">
       <div className="serviceSection container max-w-[1240px] py-5  px-4  md:py-9">
-        <h1 className="m-auto w-fit">Our Process</h1>
+        <h2 className="m-auto w-fit">Our Process</h2>
         <p className="text-center m-auto w-[100%] md:w-[80%]">
           Team of real estate experts, Find your agent to find a home for you
         </p>
@@ -30,9 +30,9 @@ export const OurProcess = () => {
                 </div>
               </div>
               <div className="pt-4">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Find an Agent
-                </h5>
+                </h3>
                 <div className="relative">
                   <p class="m-0 font-normal text-gray-400 text-center">
                     Our strong team is here to provide support.
@@ -57,9 +57,9 @@ export const OurProcess = () => {
                 </div>
               </div>
               <div className="pt-4">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   List Your Property
-                </h5>
+                </h3>
                 <div className="relative">
                   <p class="m-0 font-normal text-gray-400 text-center">
                     Sell or Rent your property with the best prices.
@@ -84,9 +84,9 @@ export const OurProcess = () => {
                 </div>
               </div>
               <div className="pt-4">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Projects
-                </h5>
+                </h3>
                 <div className="relative">
                   <p class="m-0 font-normal text-gray-400 text-center">
                     Discover the off-plan & ready to move property in Dubai.

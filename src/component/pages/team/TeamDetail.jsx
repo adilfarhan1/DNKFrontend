@@ -131,7 +131,7 @@ export const TeamDetail = () => {
           content={teamData.image ? URL + teamData.image : asad}
         />
         <meta property="og:url" content={`https://www.dnkre.com/team/${id}`} />
-        <meta property="og:type" content={`https://www.dnkre.com/team/${id}`} />
+        <meta property="og:type" content="profile" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -151,13 +151,14 @@ export const TeamDetail = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
-            "@type": "WebSite",
+            "@type": "profile",
             mainEntity: {
-              "@type": "TeamPage",
+              "@type": "profile",
               name: `Best ${teamData?.position} ${teamData?.name} in DNK Real Estate`,
               description: `${teamData?.aboutpara1} ${teamData?.aboutpara2} ${teamData?.aboutpara3}`,
               keywords: keywords.join(", "),
               image: `${teamData.image ? URL + teamData.image : asad}`,
+              url: `https://www.dnkre.com/team/${id}`,
             },
           })}
         </script>
@@ -214,9 +215,18 @@ export const TeamDetail = () => {
                   </a>
                 </div>
               )}
-              <p className="text-justify">{teamData?.aboutpara1}</p>
-              <p className="text-justify">{teamData?.aboutpara2}</p>
-              <p className="text-justify">{teamData?.aboutpara3}</p>
+              <p
+                className="text-justify"
+                dangerouslySetInnerHTML={{ __html: teamData?.aboutpara1 }}
+              ></p>
+              <p
+                className="text-justify"
+                dangerouslySetInnerHTML={{ __html: teamData?.aboutpara2 }}
+              ></p>
+              <p
+                className="text-justify"
+                dangerouslySetInnerHTML={{ __html: teamData?.aboutpara3 }}
+              ></p>
             </div>
           </div>
         </div>

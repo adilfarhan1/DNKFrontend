@@ -14,7 +14,7 @@ export const TeamSection = () => {
   return (
     <div className="w-full bg-[#040406] flex items-center justify-center px-4 xl:px-0">
       <div className="serviceSection container max-w-[1240px] py-5  px-4  md:py-9">
-        <h1 className="m-auto w-fit">Our Exclusive Team</h1>
+        <h2 className="m-auto w-fit">Our Exclusive Team</h2>
         <p className="text-center m-auto w-[100%] md:w-[80%]">
           We at DNK Real Estate, as dedicated professionals, provide
           unparalleled real estate service, and pride ourselves on our

@@ -42,7 +42,7 @@ export const OffPlanProject = () => {
           content="Explore the Latest Off-Plan Projects and Developments in Dubai with DNK Real Estate. Our platform offers exclusive access to some of the most desirable new developments in the city, providing exceptional opportunities for both investors and homebuyers. Whether you’re seeking contemporary apartments, luxurious villas, or prime commercial spaces, our listings showcase innovative designs, premium amenities, and flexible payment plans. Step into the future of Dubai’s real estate market and claim your place in one of the world’s most dynamic cities with DNK Real Estate."
         />
         <meta name="keywords" content={keywords.join(", ")} />
-        <link rel="canonical" href="https://dnkre.com/off-plan-project" />
+        <link rel="canonical" href="https://www.dnkre.com/off-plan-project" />
         <meta
           property="og:title"
           content="Latest Off Plan Projects - Developments in Dubai"
@@ -52,7 +52,10 @@ export const OffPlanProject = () => {
           content="Explore the Latest Off-Plan Projects and Developments in Dubai with DNK Real Estate. Our platform offers exclusive access to some of the most desirable new developments in the city, providing exceptional opportunities for both investors and homebuyers. Whether you’re seeking contemporary apartments, luxurious villas, or prime commercial spaces, our listings showcase innovative designs, premium amenities, and flexible payment plans. Step into the future of Dubai’s real estate market and claim your place in one of the world’s most dynamic cities with DNK Real Estate."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/off-plan-project" />
+        <meta
+          property="og:url"
+          content="https://www.dnkre.com/off-plan-project"
+        />
 
         {/* -- Open Graph Meta Tags for WhatsApp and Social Media Sharing -- */}
         <meta
@@ -64,8 +67,11 @@ export const OffPlanProject = () => {
           content="Explore the Latest Off-Plan Projects and Developments in Dubai with DNK Real Estate. Our platform offers exclusive access to some of the most desirable new developments in the city, providing exceptional opportunities for both investors and homebuyers. Whether you’re seeking contemporary apartments, luxurious villas, or prime commercial spaces, our listings showcase innovative designs, premium amenities, and flexible payment plans. Step into the future of Dubai’s real estate market and claim your place in one of the world’s most dynamic cities with DNK Real Estate."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/off-plan-project" />
-        <meta property="og:type" content="https://dnkre.com/off-plan-project" />
+        <meta
+          property="og:url"
+          content="https://www.dnkre.com/off-plan-project"
+        />
+        <meta property="og:type" content="product" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -82,14 +88,15 @@ export const OffPlanProject = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
-            "@type": "WebSite",
+            "@type": "product",
             mainEntity: {
-              "@type": "OffPlanProjectPage",
+              "@type": "product",
               name: "Latest Off Plan Projects - Developments in Dubai",
               description:
                 "Explore the Latest Off-Plan Projects and Developments in Dubai with DNK Real Estate. Our platform offers exclusive access to some of the most desirable new developments in the city, providing exceptional opportunities for both investors and homebuyers. Whether you’re seeking contemporary apartments, luxurious villas, or prime commercial spaces, our listings showcase innovative designs, premium amenities, and flexible payment plans. Step into the future of Dubai’s real estate market and claim your place in one of the world’s most dynamic cities with DNK Real Estate.",
               keywords: keywords.join(", "),
               image: "https://www.dnkre.com/logo.webp",
+              url: "https://www.dnkre.com/off-plan-project",
             },
           })}
         </script>

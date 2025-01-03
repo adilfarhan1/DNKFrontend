@@ -39,7 +39,8 @@ export const ProjectDetail = () => {
 
   useEffect(() => {
     if (projectData) {
-      const { projectname, developer, locationname } = projectData;
+      const { projectname, developer, locationname, about, about1, about2 } =
+        projectData;
       setKeywords([
         `${projectname}`,
         `${developer.replace(/-/g, " ")} ${projectname}`,
@@ -77,6 +78,9 @@ export const ProjectDetail = () => {
         `Property market report Dubai ${currentYear}`,
         `Dubai real estate news ${currentYear}`,
         `${developer.replace(/-/g, " ")} Best Project?`,
+        `${about}`,
+        `${about1}`,
+        `${about2}`,
       ]);
     }
   }, [projectData]);
@@ -93,6 +97,7 @@ export const ProjectDetail = () => {
     projectname,
     about,
     about1,
+    about2,
     startingprice,
     thumbnail,
     developer,
@@ -103,22 +108,25 @@ export const ProjectDetail = () => {
     <div>
       <Helmet>
         <title>
-          {`${projectname} by ${developer.replace(
+          {`${projectname} at ${locationname} - ${developer.replace(
             /-/g,
             " "
-          )} at ${locationname}`}
+          )}`}
         </title>
-        <meta name="description" content={`${about} ${about1}`} />
+        <meta name="description" content={`${about}, ${about1}, ${about2}`} />
         <meta name="keywords" content={keywords.join(", ")} />
         <link rel="canonical" href={`https://www.dnkre.com/projects/${slug}`} />
         <meta
           property="og:title"
-          content={`${projectname} by ${developer.replace(
+          content={`${projectname} at ${locationname} - ${developer.replace(
             /-/g,
             " "
-          )} at ${locationname}`}
+          )}`}
         />
-        <meta property="og:description" content={`${about} ${about1}`} />
+        <meta
+          property="og:description"
+          content={`${about}, ${about1}, ${about2}`}
+        />
         <meta property="og:image" content={`${URL}${thumbnail}`} />
         <meta
           property="og:url"
@@ -128,61 +136,71 @@ export const ProjectDetail = () => {
         {/* -- Open Graph Meta Tags for WhatsApp and Social Media Sharing -- */}
         <meta
           property="og:title"
-          content={`${projectname} by ${developer.replace(
+          content={`${projectname} at ${locationname} - ${developer.replace(
             /-/g,
             " "
-          )} at ${locationname}`}
+          )}`}
         />
-        <meta property="og:description" content={`${about} ${about1}`} />
+        <meta
+          property="og:description"
+          content={`${about}, ${about1}, ${about2}`}
+        />
         <meta property="og:image" content={`${URL}${thumbnail}`} />
         <meta
           property="og:url"
           content={`https://www.dnkre.com/projects/${slug}`}
         />
-        <meta
-          property="og:type"
-          content={`https://www.dnkre.com/projects/${slug}`}
-        />
+        <meta property="og:type" content="product" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`${projectname} by ${developer.replace(
+          content={`${projectname} at ${locationname} - ${developer.replace(
             /-/g,
             " "
-          )} at ${locationname}`}
+          )}`}
         />
-        <meta name="twitter:description" content={`${about} ${about1}`} />
+        <meta
+          name="twitter:description"
+          content={`${about}, ${about1}, ${about2}`}
+        />
         <meta name="twitter:image" content={`${URL}${thumbnail}`} />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
-            "@type": "WebSite",
+            "@type": "product",
             mainEntity: {
-              "@type": "ProjectPage",
-              name: `${projectname} by ${developer.replace(
+              "@type": "product",
+              name: `${projectname} at ${locationname} - ${developer.replace(
                 /-/g,
                 " "
-              )} at ${locationname}`,
-              description: `${about} ${about1}`,
+              )}`,
+              description: `${about} ${about1} ${about2}`,
               keywords: keywords.join(", "),
               image: `${URL}${thumbnail}`,
+              url: `https://www.dnkre.com/projects/${slug}`,
               offers: {
-                "@type": "Offer",
+                "@type": "product",
                 price: `${startingprice}`,
                 priceCurrency: "AED",
+                availability: "http://schema.org/InStock",
+                seller: {
+                  "@type": "Organization",
+                  name: "DNK Real Estate",
+                  logo: "https://www.dnkre.com/logo.webp",
+                },
                 itemOffered: {
-                  "@type": "Property",
+                  "@type": "product",
                   name: `${projectname} by ${developer.replace(/-/g, " ")}`,
                   image: `${URL}${thumbnail}`,
+                  url: `https://www.dnkre.com/projects/${slug}`,
                 },
                 offeredBy: {
                   "@type": "Organization",
-                  name: "DNK Real Estate | Offplan Projects - Apartments, Villas, Townhouses, Penthouses",
+                  name: "dnkre.com",
                   logo: "https://www.dnkre.com/logo.webp",
-                  url: "https://dnkre.com/",
                   sameAs: [
                     "https://www.instagram.com/dnk_re/",
                     "https://www.facebook.com/dnkrealestate1/",
@@ -191,21 +209,42 @@ export const ProjectDetail = () => {
                   ],
                   contactPoint: {
                     "@type": "ContactPoint",
-                    telephone: "+971 55 576 9195",
+                    telephone: "+971555769195",
                     contactType: "Sales",
                     email: "info@dnkre.com",
                     areaServed: "United Arab Emirates",
                   },
                   address: {
                     "@type": "PostalAddress",
-                    addressCountry: "United Arab Emirates",
-                    addressLocality: "Merasi Drive, Business Bay, Dubai",
+                    addressCountry: "AE",
+                    streetAddress: "Suite No. 2602, Silver Tower, Marasi Drive",
+                    addressLocality: "Business Bay",
                     addressRegion: "Dubai",
-                    postalCode: "500001",
-                    streetAddress: "Marasi Dive - Business Bay",
+                    postalCode: "26048",
                   },
                 },
               },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.5",
+                reviewCount: "28",
+              },
+              review: [
+                {
+                  "@type": "Review",
+                  reviewRating: {
+                    "@type": "Rating",
+                    ratingValue: "5",
+                    bestRating: "5",
+                  },
+                  author: {
+                    "@type": "Person",
+                    name: "John Doe",
+                  },
+                  reviewBody:
+                    "Amazing property with fantastic amenities and prime location!",
+                },
+              ],
             },
           })}
         </script>

@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { URL } from "../../../../url/axios";
 import userProfile from "../../../../assets/icons/userprofile.webp";
 import { useNavigate } from "react-router-dom";
+import useSliderLazyLoad from "../../../../hooks/useSliderLazyLoad"; // Import the custom hook
 
 export const TeamListMain = (props) => {
   const { params } = props;
@@ -14,14 +15,24 @@ export const TeamListMain = (props) => {
   const { getTeamPublicList } = userTeamServices();
   const navigate = useNavigate();
 
+  const thumbnailUrls = teamList.map((data) =>
+    data?.image ? `${URL}/${data.image}` : userProfile
+  );
+
+  const [imageUrls, loadImages] = useSliderLazyLoad(thumbnailUrls, 4);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   useEffect(() => {
     let tempList = teamList;
     setSearchedList(tempList);
   }, [params, teamList]);
 
   useEffect(() => {
-    getData();
-  }, []);
+    loadImages(0); // Load initial images for visible slides
+  }, [searchedList]);
 
   const getData = async () => {
     try {
@@ -30,27 +41,17 @@ export const TeamListMain = (props) => {
         setTeamList(response.data);
       }
     } catch (err) {
-      console.error("Failed to fetch team list", err);
+      setError("Failed to load team data.");
     } finally {
       setLoading(false);
     }
   };
 
-  if (loading) {
-    return (
-      <div className="bg-[#040406] text-center">
-        <p className="m-auto loader !w-[24px] !h-[24px]"></p>
-      </div>
-    ); // Loading indicator
-  }
-
-  if (error) {
-    return <div>{error}</div>; // Display error message
-  }
   const handleCardClick = (id) => {
     navigate(`/team-detail/${id}`);
   };
-  var settings = {
+
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -59,61 +60,71 @@ export const TeamListMain = (props) => {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "linear",
-    beforeChange: (current, next) =>
-      console.log("before change", current, next),
-    afterChange: (current) => console.log("after change", current),
     responsive: [
       {
         breakpoint: 992,
-
-        settings: {
-          slidesToShow: 2,
-
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
-
       {
         breakpoint: 640,
-
-        settings: {
-          slidesToShow: 1,
-
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
       },
     ],
+    beforeChange: (oldIndex, newIndex) => {
+      loadImages(newIndex); // Load images for new visible slides
+    },
+    afterChange: (current) => {
+      loadImages(current); // Ensure images are loaded after slide change
+    },
   };
+
+  if (loading) {
+    return (
+      <div className="bg-[#040406] text-center">
+        <p className="m-auto loader !w-[24px] !h-[24px]"></p>
+      </div>
+    );
+  }
+
+  
+
   return (
     <div>
       <Slider {...settings}>
         {searchedList.length > 0 ? (
-          searchedList.map((data) => (
-            <div
-              className="p-4"
-              key={data._id}
-              onClick={() => handleCardClick(data._id)}
-            >
-              <div class="max-w-max bg-[#040406] cursor-pointer team-card">
-                <img
-                  class="rounded-t-lg w-[70%] xl:w-[100%] md:w-[90%] m-auto"
-                  src={data.image ? URL + data.image : userProfile}
-                  alt="team image"
-                  loading="lazy"
-                />
-                <div class="text-center pt-1">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
-                    {data.name}
-                  </h5>
-                  <p class="m-0 font-normal text-gray-400">{data.position}</p>
-                  <p class="m-0 font-normal text-gray-400">{data.language}</p>
+          searchedList.map((data, index) => {
+            const thumbnailUrl = imageUrls[index] || userProfile;
+            return (
+              <a
+                className="p-4"
+                key={data._id}
+                onClick={() => handleCardClick(data._id)}
+              >
+                <div className="max-w-max bg-[#040406] cursor-pointer team-card">
+                  <img
+                    className="rounded-t-lg w-[70%] xl:w-[100%] md:w-[90%] m-auto"
+                    src={thumbnailUrl}
+                    alt="team image"
+                    loading="lazy"
+                  />
+                  <div className="text-center pt-1">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                      {data.name}
+                    </h5>
+                    <p className="m-0 font-normal text-gray-400">
+                      {data.position}
+                    </p>
+                    <p className="m-0 font-normal text-gray-400">
+                      {data.language}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))
+              </a>
+            );
+          })
         ) : (
-          <div className="flex justify-center">
-            <p className="text-center m-auto">No team created yet</p>
+          <div className="bg-[#040406] text-center">
+            <p className="m-auto loader !w-[24px] !h-[24px]"></p>
           </div>
         )}
       </Slider>

@@ -4,6 +4,7 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { userUserServices } from "../../../services/userServices";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 export const DashboardLayout = () => {
   const location = useLocation();
@@ -18,6 +19,11 @@ export const DashboardLayout = () => {
   };
   return (
     <div>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+        <title>Admin Dashboard</title>
+        <meta name="description" content="Admin Dashboard" />
+      </Helmet>
       <div className="bg-[#040406] flex  items-center justify-between h-15  ">
         <div className="left-block flex container justify-start max-w-[1240px] mx-auto px-4">
           <img

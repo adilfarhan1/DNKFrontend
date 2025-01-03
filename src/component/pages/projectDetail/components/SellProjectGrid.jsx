@@ -44,15 +44,15 @@ export const ProjectGridList = (props) => {
   return (
     <div className="about-section w-full bg-[#040406] flex items-center justify-center">
       <div className="container max-w-[1240px] py-5  px-4  md:py-9 relative">
-        <h1 className="m-auto w-fit">Our Work Principles</h1>
+        <h2 className="m-auto w-fit">Our Work Principles</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 pt-[3rem]">
           {/* Preparation */}
           <div class=" xl:max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] group m-1 xl:m-4 p-4 ">
             <div class="relative">
               <div className="py-4">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Preparation
-                </h5>
+                </h3>
                 <div className="relative">
                   <p class="m-0 font-normal text-gray-400 text-center">
                     We meet either online or in our Dubai office, evaluate the
@@ -67,9 +67,9 @@ export const ProjectGridList = (props) => {
           <div class=" xl:max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] group m-1 xl:m-4 p-4 ">
             <div class="relative">
               <div className="py-4">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Promotion
-                </h5>
+                </h3>
                 <div className="relative">
                   <p class="m-0 font-normal text-gray-400 text-center">
                     We capture photos and videos, launch contextual advertising
@@ -85,9 +85,9 @@ export const ProjectGridList = (props) => {
           <div class=" xl:max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] group m-1 xl:m-4 p-4 ">
             <div class="relative">
               <div className="py-4">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Agreement
-                </h5>
+                </h3>
                 <div className="relative">
                   <p class="m-0 font-normal text-gray-400 text-center">
                     We find a buyer and prepare documents, including the
@@ -103,9 +103,9 @@ export const ProjectGridList = (props) => {
           <div class=" xl:max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] group m-1 xl:m-4 p-4 ">
             <div class="relative">
               <div className="py-4">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Payment
-                </h5>
+                </h3>
                 <div className="relative">
                   <p class="m-0 font-normal text-gray-400 text-center">
                     Upon the successful completion of the transaction, you will

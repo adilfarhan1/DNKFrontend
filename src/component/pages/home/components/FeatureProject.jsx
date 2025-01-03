@@ -16,9 +16,9 @@ export const FeatureProject = () => {
       <div className="featureProject container max-w-[1240px] py-5  px-4  md:py-9">
         <div className="flex flex-col  md:flex-row ">
           <div className="basis-4/5">
-            <h1>Discover Featured Off-Plan Projects</h1>
+            <h2>Discover Featured Off-Plan Projects</h2>
             <div className="flex items-end justify-start mb-2">
-              <h3 className="load-text">In Dubai</h3>
+              <h3 className="load-text m-0">In Dubai</h3>
               <span className="loadDot dot1"></span>
               <span className="loadDot dot2"></span>
               <span className="loadDot dot2"></span>

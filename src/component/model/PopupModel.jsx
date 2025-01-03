@@ -25,13 +25,11 @@ export const PopupModel = ({ onClose, onFormSubmit }) => {
   const fetchData = async () => {
     try {
       const response = await getAd();
-      console.log("API response:", response);
       if (response.success) {
         const adData = response.data;
 
         if (adData.length > 0) {
           const adImage = adData[0].image;
-          console.log("Fetched image:", adImage);
           setAdPoster({ image: adImage });
         } else {
           setError("No Ad found.");

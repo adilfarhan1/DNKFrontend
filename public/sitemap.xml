@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://www.dnkre.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://www.dnkre.com/about</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://www.dnkre.com/team</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://www.dnkre.com/contact</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://www.dnkre.com/about</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.dnkre.com/team</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.dnkre.com/contact</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
 <url><loc>https://www.dnkre.com/buy-project</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.dnkre.com/off-plan-project</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.dnkre.com/sell-project</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://www.dnkre.com/services</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://www.dnkre.com/careers</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://www.dnkre.com/mykonos</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://www.dnkre.com/services</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.dnkre.com/careers</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.dnkre.com/privacy-policy</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://dnkre.com/dubai-apartments</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.dnkre.com/projects/gems-estates</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.dnkre.com/projects/park-land-</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.dnkre.com/projects/golf-point</loc><changefreq>daily</changefreq><priority>1.0</priority></url>

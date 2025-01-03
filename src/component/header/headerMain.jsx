@@ -11,6 +11,7 @@ import { RiWhatsappFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { URL } from "../../url/axios";
+import { Link } from "react-router-dom";
 
 export const HeaderMain = () => {
   const [nav, setNav] = useState(true);
@@ -173,109 +174,125 @@ export const HeaderMain = () => {
           <div className="right-block left-block flex items-center justify-center">
             <nav className="">
               <ul className="items-center justify-center gap-4 ">
-                <li
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/" && "activeHead"
-                  }`}
-                  onClick={goToHomeHead}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    Home
-                  </p>
-                  <span
-                    className={
-                      "absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
-                    }
-                  ></span>
-                </li>
-                <li
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/off-plan-project" && "activeHead"
-                  }`}
-                  onClick={goToOffPlanHead}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    Off-Plan
-                  </p>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                </li>
-                <li
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/buy-project" && "activeHead"
-                  }`}
-                  onClick={goToBuyHead}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    Buy
-                  </p>
-                  <span
-                    className={
-                      "absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
-                    }
-                  ></span>
-                </li>
-                <li
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/sell-project" && "activeHead"
-                  }`}
-                  onClick={goToOffSellHead}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    Sell
-                  </p>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                </li>
-                {/* <li className="relative inline-flex items-center justify-center group m-2">
-                    <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                      Rent
-                    </p>
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                  </li> */}
-                <li
-                  onClick={goToAboutHead}
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/about" && "activeHead"
-                  }`}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    About
-                  </p>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                </li>
-                <li
-                  onClick={goToTeamHead}
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/team" && "activeHead"
-                  }`}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    Team
-                  </p>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                </li>
-                <li
-                  onClick={goToCareersHead}
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/careers" && "activeHead"
-                  }`}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    Careers
-                  </p>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                </li>
-                <li
-                  onClick={goToContactHead}
-                  className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/contact" && "activeHead"
-                  }`}
-                >
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                    Contact
-                  </p>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                </li>
-              </ul>
+                              <li
+                                className={`relative inline-flex items-center justify-center group m-2 ${
+                                  location.pathname == "/" && "activeHead"
+                                }`}
+                                // onClick={goToHomeHead}
+                              >
+                                <Link to="/">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    Home
+                                  </p>
+                                  <span
+                                    class={
+                                      "absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
+                                    }
+                                  ></span>
+                                </Link>
+                              </li>
+                              <li
+                                className={`relative inline-flex items-center justify-center group m-2 ${
+                                  location.pathname == "/off-plan-project" && "activeHead"
+                                }`}
+                                // onClick={goToOffPlanHead}
+                              >
+                                <Link to="/off-plan-project">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    Off-Plan
+                                  </p>
+                                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                                </Link>
+                              </li>
+                              <li
+                                className={`relative inline-flex items-center justify-center group m-2 ${
+                                  location.pathname == "/buy-project" && "activeHead"
+                                }`}
+                                // onClick={goToBuyHead}
+                              >
+                                <Link to="/buy-project">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    Buy
+                                  </p>
+                                  <span
+                                    class={
+                                      "absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
+                                    }
+                                  ></span>
+                                </Link>
+                              </li>
+                              <li
+                                className={`relative inline-flex items-center justify-center group m-2 ${
+                                  location.pathname == "/sell-project" && "activeHead"
+                                }`}
+                                // onClick={goToOffSellHead}
+                              >
+                                <Link to="/sell-project">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    Sell
+                                  </p>
+                                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                                </Link>
+                              </li>
+                              {/* <li className="relative inline-flex items-center justify-center group m-2">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    Rent
+                                  </p>
+                                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                                </li> */}
+                              <li
+                                // onClick={goToAboutHead}
+                                className={`relative inline-flex items-center justify-center group m-2 ${
+                                  location.pathname == "/about" && "activeHead"
+                                }`}
+                              >
+                                <Link to="/about">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    About
+                                  </p>
+                                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                                </Link>
+                              </li>
+                              <li
+                                // onClick={goToTeamHead}
+                                className={`relative inline-flex items-center justify-center group m-2 ${
+                                  location.pathname == "/team" && "activeHead"
+                                }`}
+                              >
+                                <Link to="/team">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    Team
+                                  </p>
+                                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                                </Link>
+                              </li>
+                              <li
+                                // onClick={goToCareersHead}
+                                className={`relative inline-flex items-center justify-center group m-2 ${
+                                  location.pathname == "/careers" && "activeHead"
+                                }`}
+                              >
+                                <Link to="/careers">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    Careers
+                                  </p>
+                                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                                </Link>
+                              </li>
+                              <li
+                                // onClick={goToContactHead}
+                                className={`relative inline-flex items-center justify-center group m-2 ${
+                                  location.pathname == "/contact" && "activeHead"
+                                }`}
+                              >
+                                <Link to="/contact">
+                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                                    Contact
+                                  </p>
+                                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                                </Link>
+                              </li>
+                            </ul>
             </nav>
             <div className="socials flex items-center justify-center">
               <ul className=" items-center justify-center gap-4 pr-2 border-r border-white hidden  md:flex">
@@ -327,72 +344,93 @@ export const HeaderMain = () => {
             : "fixed left-[-100%] slide-bar top-15 h-full"
         }
       >
-        <ul className="uppercase p-4">
-          <li
-            onClick={goToHome}
-            className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
-          >
-            <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              Home
-            </p>
-          </li>
-          <li
-            onClick={goToOffPlan}
-            className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
-          >
-            <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              Off-Plan
-            </p>
-          </li>
-          <li
-            onClick={goToBuy}
-            className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
-          >
-            <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              Buy
-            </p>
-          </li>
-          <li
-            onClick={goToOffSell}
-            className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
-          >
-            <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              Sell
-            </p>
-          </li>
-          <li
-            onClick={goToAbout}
-            className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
-          >
-            <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              About
-            </p>
-          </li>
-          <li
-            onClick={goToTeam}
-            className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
-          >
-            <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              Team
-            </p>
-          </li>
-          <li
-            onClick={goToCareers}
-            className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
-          >
-            <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              Careers
-            </p>
-          </li>
-          <li
-            onClick={goToContact}
-            className="text-white p-3 cursor-pointer group hover:bg-[#0F0F1A]"
-          >
-            <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              Contact
-            </p>
-          </li>
-        </ul>
+       <ul className="uppercase p-4">
+                 <li
+                   // onClick={goToHome}
+                   className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+                 >
+                   <Link to="/">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       Home
+                     </p>
+                   </Link>
+                 </li>
+                 <li
+                   onClick={goToOffPlan}
+                   className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+                 >
+                   <Link to="/off-plan-project">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       Off-Plan
+                     </p>
+                   </Link>
+                 </li>
+                 <li
+                   onClick={goToBuy}
+                   className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+                 >
+                   <Link to="/buy-project">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       Buy
+                     </p>
+                   </Link>
+                 </li>
+                 <li
+                   onClick={goToOffSell}
+                   className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+                 >
+                   <Link to="/sell-project">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       Sell
+                     </p>
+                   </Link>
+                 </li>
+                 {/* <li className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       Rent
+                     </p>
+                   </li> */}
+                 <li
+                   onClick={goToAbout}
+                   className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+                 >
+                   <Link to="/about">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       About
+                     </p>
+                   </Link>
+                 </li>
+                 <li
+                   onClick={goToTeam}
+                   className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+                 >
+                   <Link to="/team">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       Team
+                     </p>
+                   </Link>
+                 </li>
+                 <li
+                   onClick={goToCareers}
+                   className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+                 >
+                   <Link to="/careers">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       Careers
+                     </p>
+                   </Link>
+                 </li>
+                 <li
+                   onClick={goToContact}
+                   className="text-white p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+                 >
+                   <Link to="/contact">
+                     <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+                       Contact
+                     </p>
+                   </Link>
+                 </li>
+               </ul>
       </div>
     </div>
   );

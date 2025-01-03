@@ -4,6 +4,7 @@ import { FaUser } from "react-icons/fa";
 import Logo from "../../../assets/logo/dnklogo_1.webp";
 import { userUserServices } from "../../../services/userServices";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export const EventLogin = () => {
   const [username, setUsername] = useState("");
@@ -44,13 +45,18 @@ export const EventLogin = () => {
       className="w-full bg-[#040406] flex items-center justify-center h-full"
       style={{ height: "100vh" }}
     >
+      <Helmet>
+        <meta name="robots" content="noindex" />
+        <title>Event Login</title>
+        <meta name="description" content="Event Login" />
+      </Helmet>
       <div>
         <img src={Logo} alt="logo" className="m-auto w-[20%]" />
         <div className="bg-[#1C1D22] rounded-3xl pt-10 pb-10 pr-6 pl-6 m-4">
           <div>
-            <h3 className="text-[#ffffff] text-[1.5rem] font-semibold mb-4 m-auto text-center">
+            <h1 className="text-[#ffffff] text-[1.5rem] font-semibold mb-4 m-auto text-center">
               Event Login
-            </h3>
+            </h1>
             <div className="input-txt-bx mb-3">
               <div className="flex justify-between items-center w-full bg-[#1C1D22] border border-[#ffffff] p-[10px] rounded mb-[25px]">
                 <input

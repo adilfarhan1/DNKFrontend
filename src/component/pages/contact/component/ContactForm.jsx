@@ -184,7 +184,7 @@ export const ContactForm = ({ onFormSubmit }) => {
             disabled={loading}
           >
             {loading ? (
-              <div className="loader !w-[24px] !h-[24px]"></div>
+              <div className="loader !w-[24px] !h-[24px] FormSubmitButton"></div>
             ) : (
               "Submit"
             )}

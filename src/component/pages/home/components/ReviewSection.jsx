@@ -29,7 +29,6 @@ export const ReviewSection = (props) => {
 
       if (response.success) {
         setReviewList(response.data);
-        //  console.log('setrewiew',setReviewList());
       }
     } catch (err) {
       console.error("Failed to fetch team list", err);
@@ -65,7 +64,7 @@ export const ReviewSection = (props) => {
   return (
     <div className="w-full bg-[#040406] flex items-center justify-center px-4 xl:px-0">
       <div className="ReviewSection container max-w-[1240px] py-5  px-4  md:py-9">
-        <h1 className="m-auto w-fit">What Our Clients Say</h1>
+        <h2 className="m-auto w-fit">What Our Clients Say</h2>
         <p className="text-center m-auto w-[100%] md:w-[80%]">
           We would love to learn what our satisfied clients have to say about
           our services.
@@ -102,9 +101,9 @@ export const ReviewSection = (props) => {
                     <span className="h-[0.1rem] w-[270px] bg-white m-auto rounded absolute"></span>
                   </div>
 
-                  <h4 className="m-auto text-white text-[1rem] w-fit pt-4">
+                  <p className="m-auto text-white text-[1rem] w-fit pt-4">
                     {data.name}
-                  </h4>
+                  </p>
                   {/* <p className="text-[0.8rem] m-auto w-fit">
                     Director of Company name
                   </p> */}

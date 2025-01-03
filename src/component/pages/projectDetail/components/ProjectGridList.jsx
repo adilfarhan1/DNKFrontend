@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import DemoImage from "../../../../assets/icons/image_demo.webp";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import useLazyLoadImage from "../../../../hooks/useLazyLoadImage ";
+import { Link } from "react-router-dom";
 
 export const ProjectGridList = (props) => {
   const { params } = props;
@@ -101,65 +102,69 @@ export const ProjectGridList = (props) => {
                   key={data.projectname}
                   onClick={() => handleCardClick(data.projectname)}
                 >
-                  <div class="max-w-full overflow-hidden  border border-[#ffff] rounded-[10px] shadow bg-[#040406] cursor-pointer">
-                    <div
-                      ref={imgRefs}
-                      style={{
-                        backgroundImage: `url(${
-                          data?.thumbnail
-                            ? URL + encodeURIComponent(data.thumbnail)
-                            : DemoImage
-                        })`,
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                        // minWidth: "380px",
-                        height: "266px",
-                        position: "relative",
-                      }}
-                    >
-                      {data.runingstatus === "newlaunch" && (
-                        <div className="card-status-tag text-[0.8rem] bg-[#FF0000] text-[#ffffff] rotate-[-40deg] w-fit px-9 absolute top-8 left-[-35px]">
-                          <h6>New Launch</h6>
-                        </div>
-                      )}
+                  <Link to={() => handleCardClick(data.projectname)}>
+                    <div class="max-w-full overflow-hidden  border border-[#ffff] rounded-[10px] shadow bg-[#040406] cursor-pointer">
+                      <div
+                        ref={imgRefs}
+                        role="img"
+                        aria-label={data.projectname}
+                        style={{
+                          backgroundImage: `url(${
+                            data?.thumbnail
+                              ? URL + encodeURIComponent(data.thumbnail)
+                              : DemoImage
+                          })`,
+                          backgroundPosition: "center",
+                          backgroundSize: "cover",
+                          backgroundRepeat: "no-repeat",
+                          // minWidth: "380px",
+                          height: "266px",
+                          position: "relative",
+                        }}
+                      >
+                        {data.runingstatus === "newlaunch" && (
+                          <div className="card-status-tag text-[0.8rem] bg-[#FF0000] text-[#ffffff] rotate-[-40deg] w-fit px-9 absolute top-8 left-[-35px]">
+                            <h6>New Launch</h6>
+                          </div>
+                        )}
 
-                      <div className="bg-[#0000006b] backdrop-blur-sm border border-[#fff] rounded-full w-fit px-5 py-0 absolute top-2 right-2">
-                        <h6 className="line-clamp-1 text-[#fff] text-[0.8rem]">
-                          Ready to move
-                        </h6>
-                      </div>
-
-                      {data.runingstatus === "soldout" && (
-                        <div className="card-status-tag text-[0.8rem] bg-[#FF9900] text-[#000000] rotate-[-40deg] w-fit px-12 absolute top-8 left-[-35px]">
-                          <h6>SOLD OUT</h6>
-                        </div>
-                      )}
-                      {data.startingprice && (
-                        <div className="bg-[#FFC700] border border-[#fff] rounded-l-full rounded-r-none w-fit px-5 py-0 absolute bottom-[-10px] right-0">
-                          <h6 className="line-clamp-1">
-                            Starting From: {data.startingprice}
+                        <div className="bg-[#0000006b] backdrop-blur-sm border border-[#fff] rounded-full w-fit px-5 py-0 absolute top-2 right-2">
+                          <h6 className="line-clamp-1 text-[#fff] text-[0.8rem]">
+                            Ready to move
                           </h6>
                         </div>
-                      )}
+
+                        {data.runingstatus === "soldout" && (
+                          <div className="card-status-tag text-[0.8rem] bg-[#FF9900] text-[#000000] rotate-[-40deg] w-fit px-12 absolute top-8 left-[-35px]">
+                            <h6>SOLD OUT</h6>
+                          </div>
+                        )}
+                        {data.startingprice && (
+                          <div className="bg-[#FFC700] border border-[#fff] rounded-l-full rounded-r-none w-fit px-5 py-0 absolute bottom-[-10px] right-0">
+                            <h6 className="line-clamp-1">
+                              Starting From: {data.startingprice}
+                            </h6>
+                          </div>
+                        )}
+                      </div>
+                      <div class="p-5">
+                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-white line-clamp-1">
+                          {data.projectname}
+                        </h2>
+                        <h3 class="m-0 font-normal text-gray-400 line-clamp-1">
+                          {data.developer.replace(/-/g, " ")}
+                        </h3>
+                        {data?.locationname && (
+                          <div className="flex items-center">
+                            <MdLocationPin className="text-gray-400 text-[1rem]" />
+                            <h3 class="m-0 font-normal text-gray-400 line-clamp-1">
+                              {data.locationname}
+                            </h3>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <div class="p-5">
-                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white line-clamp-1">
-                        {data.projectname}
-                      </h5>
-                      <p class="m-0 font-normal text-gray-400 line-clamp-1">
-                        {data.developer.replace(/-/g, " ")}
-                      </p>
-                      {data?.locationname && (
-                        <div className="flex items-center">
-                          <MdLocationPin className="text-gray-400 text-[1rem]" />
-                          <p class="m-0 font-normal text-gray-400 line-clamp-1">
-                            {data.locationname}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               );
             })

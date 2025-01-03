@@ -9,7 +9,7 @@ export const TalkSection = () => {
   return (
     <div className="w-full bg-[#040406] flex items-center justify-center">
       <div className="container max-w-[1240px] py-5 px-4 md:py-9 talkSection">
-        <h1 className="m-auto w-fit">Let's Talk Together</h1>
+        <h2 className="m-auto w-fit">Let's Talk Together</h2>
         <p className="text-center m-auto w-[100%] md:w-[80%] pb-4">
           We love talk with new people. Please take a moment to tell us about
           your Dream. Your messages will be responded to within ONE BUSINESS
@@ -23,9 +23,9 @@ export const TalkSection = () => {
                 alt="info icon"
                 className="pb-4 m-auto md:m-0 w-[48px]"
               />
-              <h5 className="text-center md:text-left">
+              <h3 className="text-center md:text-left">
                 Call Enquiry Assistance
-              </h5>
+              </h3>
               <p className="text-center md:text-left">
                 We are always available on call to assist you with any questions
                 you may have.
@@ -37,7 +37,7 @@ export const TalkSection = () => {
                 alt="info icon"
                 className="pb-4 m-auto md:m-0 w-[48px]"
               />
-              <h5 className="text-center md:text-left">Project Consultation</h5>
+              <h3 className="text-center md:text-left">Project Consultation</h3>
               <p className="text-center md:text-left">
                 We provide you with all investment consultations for your goal.
               </p>
@@ -48,7 +48,7 @@ export const TalkSection = () => {
                 alt="info icon"
                 className="pb-4  m-auto md:m-0 w-[48px]"
               />
-              <h5 className="text-center md:text-left">Project Estimation</h5>
+              <h3 className="text-center md:text-left">Project Estimation</h3>
               <p className="mb-0 text-center md:text-left">
                 You come to us with your dream, and we do all of the planning
                 and costing for you.
@@ -60,9 +60,9 @@ export const TalkSection = () => {
                 alt="info icon"
                 className="pb-4  m-auto md:m-0 w-[48px]"
               />
-              <h5 className="text-center md:text-left">
+              <h3 className="text-center md:text-left">
                 Scheduling Appointments
-              </h5>
+              </h3>
               <p className="mb-0 text-center md:text-left">
                 We assist you in scheduling appointments whenever you wish to
                 meet us.

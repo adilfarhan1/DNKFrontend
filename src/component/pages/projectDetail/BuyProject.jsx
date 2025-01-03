@@ -44,7 +44,7 @@ export const BuyProject = () => {
           content="At DNK Real Estate, we simplify your property journey. As the UAE's leading real estate hub, we offer a vast selection of residential and commercial properties, ensuring that you find the perfect match for your needs. Whether you're seeking to invest, buy, or rent, our platform provides cutting-edge tools and expert guidance every step of the way. Explore the finest properties across the UAE with confidence, knowing that DNK Real Estate has you covered for all your real estate aspirations."
         />
         <meta name="keywords" content={keywords.join(", ")} />
-        <link rel="canonical" href="https://dnkre.com/buy-project" />
+        <link rel="canonical" href="https://www.dnkre.com/buy-project" />
         <meta
           property="og:title"
           content="Available for Sale - Apartment, Villa, Townhouse"
@@ -54,7 +54,7 @@ export const BuyProject = () => {
           content="At DNK Real Estate, we simplify your property journey. As the UAE's leading real estate hub, we offer a vast selection of residential and commercial properties, ensuring that you find the perfect match for your needs. Whether you're seeking to invest, buy, or rent, our platform provides cutting-edge tools and expert guidance every step of the way. Explore the finest properties across the UAE with confidence, knowing that DNK Real Estate has you covered for all your real estate aspirations."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/buy-project" />
+        <meta property="og:url" content="https://www.dnkre.com/buy-project" />
 
         {/* -- Open Graph Meta Tags for WhatsApp and Social Media Sharing -- */}
         <meta
@@ -66,8 +66,8 @@ export const BuyProject = () => {
           content="At DNK Real Estate, we simplify your property journey. As the UAE's leading real estate hub, we offer a vast selection of residential and commercial properties, ensuring that you find the perfect match for your needs. Whether you're seeking to invest, buy, or rent, our platform provides cutting-edge tools and expert guidance every step of the way. Explore the finest properties across the UAE with confidence, knowing that DNK Real Estate has you covered for all your real estate aspirations."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/buy-project" />
-        <meta property="og:type" content="https://dnkre.com/buy-project" />
+        <meta property="og:url" content="https://www.dnkre.com/buy-project" />
+        <meta property="og:type" content="website" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -86,12 +86,13 @@ export const BuyProject = () => {
             "@context": "http://schema.org",
             "@type": "WebSite",
             mainEntity: {
-              "@type": "BuyProjectPage",
+              "@type": "website",
               name: "Available for Sale - Apartment, Villa, Townhouse",
               description:
                 "At DNK Real Estate, we simplify your property journey. As the UAE's leading real estate hub, we offer a vast selection of residential and commercial properties, ensuring that you find the perfect match for your needs. Whether you're seeking to invest, buy, or rent, our platform provides cutting-edge tools and expert guidance every step of the way. Explore the finest properties across the UAE with confidence, knowing that DNK Real Estate has you covered for all your real estate aspirations.",
               keywords: keywords.join(", "),
               image: "https://www.dnkre.com/logo.webp",
+              url: "https://www.dnkre.com/buy-project",
             },
           })}
         </script>

@@ -16,6 +16,8 @@ export const BannerBuy = () => {
         return "Off Plan Property in Dubai";
       case "/sell-project":
         return "Let’s sell your property profitably";
+      case "/privacy-policy":
+        return "Privacy Policy for DNK Real Estate";
     }
   };
 
@@ -27,6 +29,8 @@ export const BannerBuy = () => {
         return "New top-launched projects";
       case "/sell-project":
         return "Entire process is on us, from evaluation to a deal";
+      case "/privacy-policy":
+        return "Effective Date: 01 June 2022";
     }
   };
 
@@ -37,6 +41,8 @@ export const BannerBuy = () => {
       case "/off-plan-project":
         return buyProject;
       case "/sell-project":
+        return buyProject;
+      case "/privacy-policy":
         return buyProject;
     }
   };

@@ -1,9 +1,65 @@
+# Enable Rewrite Engine
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
+
+  # Allow Googlebot, Bingbot, and Yahoo Slurp to access all URLs
+  SetEnvIf User-Agent "Googlebot" AllowGooglebot
+  SetEnvIf User-Agent "Bingbot" AllowBingbot
+  SetEnvIf User-Agent "Slurp" AllowYahooBot
+
+  # Redirect all requests to index.html (SPA Routing)
+  RewriteRule ^index\.html$ - [L]  # Allow index.html explicitly
+  RewriteCond %{REQUEST_FILENAME} !-f  # Ignore existing files
+  RewriteCond %{REQUEST_FILENAME} !-d  # Ignore existing directories
+  RewriteCond %{REQUEST_FILENAME} !-l  # Ignore symlinks
+  RewriteRule ^.*$ /index.html [L]  # Route everything else to index.html
+</IfModule>
+
+# Enable Browser Caching (Optimization)
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+   # CSS, JavaScript, and Fonts
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType application/font-otf "access plus 1 year"
+
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+
+
+
+# Enable Compression (Optimization)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Allow bots access to all URLs (additional safeguard)
+<IfModule mod_headers.c>
+ # CSS, JavaScript, and Fonts (cache for a year)
+  <FilesMatch "\.(css|js|woff|woff2|tff|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images (cache for a month)
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg)$">
+    Header set Cache-Control "public, max-age=2592000, immutable"
+  </FilesMatch>
+  
+  Header set X-Robots-Tag "noarchive" env=!AllowGooglebot
+  Header set X-Robots-Tag "noarchive" env=!AllowBingbot
+  Header set X-Robots-Tag "noarchive" env=!AllowYahooBot
 </IfModule>

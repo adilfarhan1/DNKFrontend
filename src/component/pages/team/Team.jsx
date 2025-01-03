@@ -56,8 +56,8 @@ export const Team = () => {
           content="Meet our expert real estate team dedicated to helping you buy, sell, or invest in properties. With years of Dubai market knowledge and personalized service, we ensure a smooth real estate experience. Contact us for professional guidance and start your property journey today."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com" />
-        <meta property="og:type" content="https://dnkre.com" />
+        <meta property="og:url" content="https://www.dnkre.com/team" />
+        <meta property="og:type" content="WebSite" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -76,11 +76,12 @@ export const Team = () => {
             "@context": "http://schema.org",
             "@type": "WebSite",
             mainEntity: {
-              "@type": "TeamPage",
+              "@type": "WebSite",
               name: `Meet The Top Real Estate Agents in Dubai | Buy and Sale Property Dubai`,
               description: `Meet our expert real estate team dedicated to helping you buy, sell, or invest in properties. With years of Dubai market knowledge and personalized service, we ensure a smooth real estate experience. Contact us for professional guidance and start your property journey today.`,
               keywords: keywords.join(", "),
               image: `https://www.dnkre.com/logo.webp`,
+              url: `https://www.dnkre.com/team`,
             },
           })}
         </script>

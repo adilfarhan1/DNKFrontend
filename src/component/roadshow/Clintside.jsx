@@ -1,9 +1,15 @@
 import React from "react";
 import FormRoadshow from "./components/FormRoadshow";
+import { Helmet } from "react-helmet";
 
 export const Clintside = () => {
   return (
     <div>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+        <title>Client Registration</title>
+        <meta name="description" content="Attendance" />
+      </Helmet>
       <div className="about-section w-full bg-[#040406] flex items-center justify-center">
         <div className="container max-w-[1240px] py-5  sm:px-4  md:py-9 relative">
           <div className="w-[100%] md:w-[70%] sm:w-[90%] m-auto">

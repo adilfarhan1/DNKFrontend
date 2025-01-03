@@ -68,6 +68,10 @@ export const FooterSection = () => {
     navigate("/sell-project");
   };
 
+  const goToPrivacyPolicy = () => {
+    navigate("/privacy-policy");
+  };
+
   const today = new Date();
   const year = today.getFullYear();
 
@@ -193,6 +197,11 @@ export const FooterSection = () => {
                 <li>
                   <a className="cursor-pointer" onClick={goToContactHead}>
                     Contact
+                  </a>
+                </li>
+                <li>
+                  <a className="cursor-pointer" onClick={goToPrivacyPolicy}>
+                    Privacy Policy
                   </a>
                 </li>
               </ul>

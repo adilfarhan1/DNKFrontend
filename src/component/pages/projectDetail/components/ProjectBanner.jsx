@@ -81,7 +81,7 @@ export const ProjectBanner = () => {
                   <img
                     className="h-full relative"
                     src={URL + projectData.projectlogo}
-                    alt="developer-image"
+                    alt={projectData.developer}
                   />
                 </div>
               )}

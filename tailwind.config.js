@@ -159,6 +159,10 @@ module.exports = {
             transform: 'skewX(-0.1953125deg) skewY(-0.1953125deg)',
           },
         },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
@@ -171,9 +175,12 @@ module.exports = {
         headShake: 'headShake 2s infinite',
         wobble: 'wobble 1s infinite',
         jello: 'jello 2s infinite',
+        blink: 'blink 1s infinite',
+      },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to right, #C3082D, #1E4A8E, #1BBF61, #E8D82B, #F86713)',
       },
     },
   },
   plugins: [],
 }
-

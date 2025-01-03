@@ -18,7 +18,7 @@ export const ServiceSection = () => {
   return (
     <div className="w-full bg-[#121218] flex items-center justify-center">
       <div className="serviceSection container max-w-[1240px] py-5  px-4  md:py-9">
-        <h1 className="m-auto w-fit">Our Service</h1>
+        <h2 className="m-auto w-fit">Our Service</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 pt-[3rem] ">
           {/* property Management-card */}
           <div class="max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] group m-4 mt-14">
@@ -36,9 +36,9 @@ export const ServiceSection = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Property Management
-                </h5>
+                </h3>
                 <div className="relative">
                   <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0 "></span>
                   <p class="m-0 font-normal  text-gray-400 text-justify line-clamp-3">
@@ -74,9 +74,9 @@ export const ServiceSection = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Capital Improvements
-                </h5>
+                </h3>
                 <div className="relative">
                   <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0"></span>
                   <p class="m-0 font-normal text-gray-400 text-justify line-clamp-3">
@@ -112,9 +112,9 @@ export const ServiceSection = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Finance Real Estate
-                </h5>
+                </h3>
                 <div className="relative">
                   <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0"></span>
                   <p class="m-0 font-normal text-gray-400 text-justify line-clamp-3">
@@ -151,9 +151,9 @@ export const ServiceSection = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Financial Reporting
-                </h5>
+                </h3>
                 <div className="relative">
                   <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0"></span>
                   <p class="m-0 font-normal text-gray-400 text-justify line-clamp-3">
@@ -189,9 +189,9 @@ export const ServiceSection = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Recover Asset Value
-                </h5>
+                </h3>
                 <div className="relative">
                   <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0"></span>
                   <p class="m-0 font-normal text-gray-400 text-justify line-clamp-3">

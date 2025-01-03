@@ -44,6 +44,7 @@ export const Contact = () => {
           Contact Our Expert Real Estate Team | Get in Touch for Property
           Assistance
         </title>
+        <link rel="canonical" href="https://www.dnkre.com/contact" />
         <meta name="keywords" content={keywords.join(", ")} />
         <meta
           name="description"
@@ -60,8 +61,8 @@ export const Contact = () => {
           content="Our professional team is available 24/7 to assist you. Whether you have questions, concerns, or suggestions, we’d love to hear from you. Feel free to reach out via email by completing the form on the right, or schedule an appointment to meet us in person at one of our listed contact points below. We're here to help just be sure to arrange a meeting in advance. All contact details are provided below."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/contact" />
-        <meta property="og:type" content="https://dnkre.com/contact" />
+        <meta property="og:url" content="https://www.dnkre.com/contact" />
+        <meta property="og:type" content="website" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -78,14 +79,15 @@ export const Contact = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
-            "@type": "WebSite",
+            "@type": "website",
             mainEntity: {
-              "@type": "ContactPage",
+              "@type": "website",
               name: "Contact Our Expert Real Estate Team | Get in Touch for Property Assistance",
               description:
                 "Our professional team is available 24/7 to assist you. Whether you have questions, concerns, or suggestions, we’d love to hear from you. Feel free to reach out via email by completing the form on the right, or schedule an appointment to meet us in person at one of our listed contact points below. We're here to help just be sure to arrange a meeting in advance. All contact details are provided below.",
               keywords: keywords.join(", "),
               image: "https://www.dnkre.com/logo.webp",
+              url: "https://www.dnkre.com/contact",
             },
           })}
         </script>
@@ -93,9 +95,9 @@ export const Contact = () => {
       <BannerContact />
       <div className=" w-full bg-[#040406] flex items-center justify-center">
         <div className="container max-w-[1240px] py-5  px-4  md:py-9">
-          <h1 className="m-auto w-[100%] sm:w-[90%] md:w-[70%] text-center">
+          <h2 className="m-auto w-[100%] sm:w-[90%] md:w-[70%] text-center">
             Contact DNK Real Estate for Luxury Property Consultation in Dubai.
-          </h1>
+          </h2>
           <p className="text-center m-auto w-[100%] md:w-[80%]">
             Looking for help or any support? We are available for you.
           </p>
@@ -109,11 +111,11 @@ export const Contact = () => {
                 <img
                   src={Assist}
                   alt="info icon"
-                  className="pb-4 m-auto md:m-0"
+                  className="pb-4 m-auto md:m-0 w-[48px]"
                 />
-                <h5 className="text-center md:text-left text-[#ffffff]">
+                <h3 className="text-center md:text-left text-[#ffffff]">
                   Call Enquiry Assistance
-                </h5>
+                </h3>
                 <p className="text-center md:text-left">
                   We are always available on call to assist you with any
                   questions you may have.
@@ -123,11 +125,11 @@ export const Contact = () => {
                 <img
                   src={Consultation}
                   alt="info icon"
-                  className="pb-4 m-auto md:m-0"
+                  className="pb-4 m-auto md:m-0 w-[48px]"
                 />
-                <h5 className="text-center md:text-left text-[#ffffff]">
+                <h3 className="text-center md:text-left text-[#ffffff]">
                   Project Consultation
-                </h5>
+                </h3>
                 <p className="text-center md:text-left">
                   We provide you with all investment consultations for your
                   goal.
@@ -137,11 +139,11 @@ export const Contact = () => {
                 <img
                   src={Estimation}
                   alt="info icon"
-                  className="pb-4  m-auto md:m-0"
+                  className="pb-4  m-auto md:m-0 w-[48px]"
                 />
-                <h5 className="text-center md:text-left text-[#ffffff]">
+                <h3 className="text-center md:text-left text-[#ffffff]">
                   Project Estimation
-                </h5>
+                </h3>
                 <p className="mb-0 text-center md:text-left">
                   You come to us with your dream, and we do all of the planning
                   and costing for you.
@@ -151,11 +153,11 @@ export const Contact = () => {
                 <img
                   src={Shedule}
                   alt="info icon"
-                  className="pb-4  m-auto md:m-0"
+                  className="pb-4  m-auto md:m-0 w-[48px]"
                 />
-                <h5 className="text-center md:text-left text-[#ffffff]">
+                <h3 className="text-center md:text-left text-[#ffffff]">
                   Scheduling Appointments
-                </h5>
+                </h3>
                 <p className="mb-0 text-center md:text-left">
                   We assist you in scheduling appointments whenever you wish to
                   meet us.

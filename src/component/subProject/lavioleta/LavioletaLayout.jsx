@@ -43,7 +43,7 @@ export const LavioletaLayout = () => {
     <script type="application/ld+json">
       {JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "WebSite",
+        "@type": "webSite",
         "@id": "#website",
         headline:
           "Lavioleta 2 | Dubai Properties - Apartments, Villas, Townhouses, Penthouses",

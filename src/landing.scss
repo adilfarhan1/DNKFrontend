@@ -1,6 +1,8 @@
 body{
     background: #000;
     font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 //Site Button
 .site-btn{
@@ -144,7 +146,35 @@ h1{
             font-size: 1.2rem;
         }
 }
+
+h2{
+        font-size: 2rem;
+        font-weight: $font-semibold;
+        color: $text-color-light;
+        text-transform: capitalize;
+        line-height: 1.1;
+        margin-bottom: 10px;
+        @media (max-width: 992px) {
+            font-size: 1.6rem;
+        }
+        @media (max-width: 576px) {
+            font-size: 1.2rem;
+        }
+}
 h5{
+    font-size: 1.2rem;
+    font-weight: $font-semibold;
+    line-height: 2rem;
+    margin-bottom: 10px;
+    @media (max-width: 992px) {
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    @media (max-width: 576px) {
+        font-size: 0.9rem;
+    }
+}
+h3{
     font-size: 1.2rem;
     font-weight: $font-semibold;
     line-height: 2rem;
@@ -249,6 +279,10 @@ p{
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
+}
+
+.bannerx{
+    background-position: 30% !important;
 }
 
 //Banner section

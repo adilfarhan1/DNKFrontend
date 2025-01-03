@@ -41,7 +41,7 @@ export const SellProject = () => {
           content="Unlock Your Property's Full Potential with DNK Real Estate. Whether you’re selling a villa, apartment, or commercial space, our expert team is dedicated to ensuring a seamless and profitable process. Leveraging in-depth market insights, strategic marketing techniques, and a vast network of qualified buyers, we empower you to secure the best possible deal in Dubai’s dynamic real estate market. Trust DNK Real Estate to guide you toward a successful sale and maximize the value of your property."
         />
         <meta name="keywords" content={keywords.join(", ")} />
-        <link rel="canonical" href="https://dnkre.com/sell-project" />
+        <link rel="canonical" href="https://www.dnkre.com/sell-project" />
         <meta
           property="og:title"
           content="Sell a Property profitable in Dubai"
@@ -51,7 +51,7 @@ export const SellProject = () => {
           content="Unlock Your Property's Full Potential with DNK Real Estate. Whether you’re selling a villa, apartment, or commercial space, our expert team is dedicated to ensuring a seamless and profitable process. Leveraging in-depth market insights, strategic marketing techniques, and a vast network of qualified buyers, we empower you to secure the best possible deal in Dubai’s dynamic real estate market. Trust DNK Real Estate to guide you toward a successful sale and maximize the value of your property."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/sell-project" />
+        <meta property="og:url" content="https://www.dnkre.com/sell-project" />
 
         {/* -- Open Graph Meta Tags for WhatsApp and Social Media Sharing -- */}
         <meta
@@ -63,8 +63,8 @@ export const SellProject = () => {
           content="Unlock Your Property's Full Potential with DNK Real Estate. Whether you’re selling a villa, apartment, or commercial space, our expert team is dedicated to ensuring a seamless and profitable process. Leveraging in-depth market insights, strategic marketing techniques, and a vast network of qualified buyers, we empower you to secure the best possible deal in Dubai’s dynamic real estate market. Trust DNK Real Estate to guide you toward a successful sale and maximize the value of your property."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/sell-project" />
-        <meta property="og:type" content="https://dnkre.com/sell-project" />
+        <meta property="og:url" content="https://www.dnkre.com/sell-project" />
+        <meta property="og:type" content="product" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -81,14 +81,15 @@ export const SellProject = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
-            "@type": "WebSite",
+            "@type": "product",
             mainEntity: {
-              "@type": "SellPropertyPage",
+              "@type": "product",
               name: "Sell a Property profitable in Dubai",
               description:
                 "Unlock Your Property's Full Potential with DNK Real Estate. Whether you’re selling a villa, apartment, or commercial space, our expert team is dedicated to ensuring a seamless and profitable process. Leveraging in-depth market insights, strategic marketing techniques, and a vast network of qualified buyers, we empower you to secure the best possible deal in Dubai’s dynamic real estate market. Trust DNK Real Estate to guide you toward a successful sale and maximize the value of your property.",
               keywords: keywords.join(", "),
               image: "https://www.dnkre.com/logo.webp",
+              url: `https://www.dnkre.com/sell-project`,
             },
           })}
         </script>

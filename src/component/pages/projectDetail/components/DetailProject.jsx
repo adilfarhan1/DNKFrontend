@@ -24,6 +24,7 @@ import StickyConnect from "./StickyConnect";
 import FeatureProject from "../../home/components/FeatureProject";
 import ProjectList from "../../home/components/ProjectList";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import useLazyLoadImage from "../../../../hooks/useLazyLoadImage ";
 
 export const DetailProject = () => {
@@ -39,11 +40,27 @@ export const DetailProject = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {
-    console.log("Fetched ID from useParams:", slug);
     fetchProject();
   }, [slug]);
+
+  useEffect(() => {
+    if (projectData?.youtubeid && !iframeLoaded) {
+      const timer = setTimeout(() => {
+        const iframe = document.getElementById("video-iframe");
+        if (iframe) {
+          iframe.src = youtubeLink;
+          setIframeLoaded(true);
+        }
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [projectData, iframeLoaded]);
+
+   
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,6 +126,7 @@ export const DetailProject = () => {
   };
 
   const thumbnailUrl = `https://img.youtube.com/vi/${projectData.youtubeid}/maxresdefault.jpg`;
+  const youtubeLink = `https://www.youtube.com/embed/${projectData?.youtubeid}?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&loop=1&playlist=${projectData?.youtubeid}`;
 
   //nav menu button
   const handleNavR = () => {
@@ -134,6 +152,28 @@ export const DetailProject = () => {
           <div className="grid  lg:grid-cols-3">
             <div className="col-span-2">
               <div className="mb-2">
+                <div className="flex text-[#fff] text-[0.8rem] mb-1 md:text-[0.9rem]">
+                  <Link
+                    to="/"
+                    className="text-[#fff] hover:text-[#CE8745] pr-1"
+                  >
+                    Home
+                  </Link>
+                  /
+                  <Link
+                    to="/off-plan-project"
+                    className="text-[#fff] hover:text-[#CE8745] pr-1"
+                  >
+                    Projects
+                  </Link>
+                  /
+                  <Link
+                    to={`/projects/${projectData.projectname}`}
+                    className="text-[#979797] hover:text-[#CE8745] pr-1"
+                  >
+                    {projectData.projectname}
+                  </Link>
+                </div>
                 <div className="flex justify-between">
                   {projectData?.runingstatus && (
                     <div className="flex">
@@ -168,17 +208,17 @@ export const DetailProject = () => {
                 </div>
 
                 <div className="sm:flex justify-between mb-1">
-                  <h1 className="m-0 font-normal text-[#fff] line-clamp-1 text-[1rem] my-1">
+                  <h2 className="m-0 font-normal text-[#fff] line-clamp-1 text-[1rem] my-1">
                     {projectData.projectname} By{" "}
                     {projectData.developer.replace(/-/g, " ")}
-                  </h1>
+                  </h2>
 
                   {projectData?.locationname && (
                     <div className="flex items-center">
                       <MdLocationPin className="text-[#fff] text-[1rem]" />
-                      <h1 className="m-0 font-normal text-[#fff] line-clamp-1 text-[1rem]">
+                      <h2 className="m-0 font-normal text-[#fff] line-clamp-1 text-[1rem]">
                         {projectData.locationname}
-                      </h1>
+                      </h2>
                     </div>
                   )}
                 </div>
@@ -186,10 +226,10 @@ export const DetailProject = () => {
                   <div className="grid md:grid-cols-2 ">
                     {projectData.type && (
                       <div className="grid grid-cols-3 p-2 border border-[#ffffff31]">
-                        <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]">
+                        <p className="m-0 font-normal text-[#fff] text-[0.8rem]">
                           Property Type:
-                        </h1>
-                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right col-span-2">
+                        </p>
+                        <p className="m-0 font-normal text-[#979797] text-[0.8rem] text-right col-span-2">
                           {Object.keys(projectData)
                             .filter(
                               (key) =>
@@ -206,7 +246,7 @@ export const DetailProject = () => {
                                     : "")}
                               </React.Fragment>
                             ))}
-                        </h1>
+                        </p>
                       </div>
                     )}
 
@@ -214,14 +254,14 @@ export const DetailProject = () => {
                       <div className="grid grid-cols-3 p-2 border border-[#ffffff31]">
                         <div className="flex">
                           <IoBedSharp className="text-[#fff] text-[0.9rem] " />
-                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem] pl-1">
+                          <p className="m-0 font-normal text-[#fff] text-[0.8rem] pl-1">
                             Bedroom:
-                          </h1>
+                          </p>
                         </div>
 
-                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right col-span-2">
+                        <p className="m-0 font-normal text-[#979797] text-[0.8rem] text-right col-span-2">
                           {projectData.bedroom}
-                        </h1>
+                        </p>
                       </div>
                     )}
 
@@ -229,42 +269,42 @@ export const DetailProject = () => {
                       <div className="grid grid-cols-2 p-2 border border-[#ffffff31] ">
                         <div className="flex">
                           <MdAreaChart className="text-[#fff] text-[0.9rem]" />
-                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
+                          <p className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
                             Total Area:
-                          </h1>
+                          </p>
                         </div>
 
-                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
+                        <p className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
                           {projectData.totalarea}
-                        </h1>
+                        </p>
                       </div>
                     )}
                     {projectData.downpayment && (
                       <div className="grid grid-cols-2 p-2 border border-[#ffffff31] ">
                         <div className="flex">
                           <AiOutlinePercentage className="text-[#fff] text-[0.9rem]" />
-                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
+                          <p className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
                             Down Payment:
-                          </h1>
+                          </p>
                         </div>
 
-                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
+                        <p className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
                           {projectData.downpayment}
-                        </h1>
+                        </p>
                       </div>
                     )}
                     {projectData.paymentplan && (
                       <div className="grid grid-cols-2 p-2 border border-[#ffffff31] ">
                         <div className="flex">
                           <BsCash className="text-[#fff] text-[0.9rem]" />
-                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
+                          <p className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
                             Payment Plan:
-                          </h1>
+                          </p>
                         </div>
 
-                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
+                        <p className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
                           {projectData.paymentplan}
-                        </h1>
+                        </p>
                       </div>
                     )}
 
@@ -272,25 +312,25 @@ export const DetailProject = () => {
                       <div className="grid grid-cols-2 p-2 border border-[#ffffff31] ">
                         <div className="flex">
                           <PiCalendarCheckFill className="text-[#fff] text-[0.9rem]" />
-                          <h1 className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
+                          <p className="m-0 font-normal text-[#fff] text-[0.8rem]  pl-1">
                             Handover:
-                          </h1>
+                          </p>
                         </div>
 
-                        <h1 className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
+                        <p className="m-0 font-normal text-[#979797] text-[0.8rem] text-right">
                           {projectData.handover}
-                        </h1>
+                        </p>
                       </div>
                     )}
                   </div>
                   <div className="border border-[#ffffff31] ">
-                    <h4 className="text-[#fff] m-auto w-fit font-semibold md:text-[1.3rem]">
+                    <h2 className="text-[#fff] m-auto w-fit font-semibold md:text-[1.3rem] py-1">
                       Direct Sales & 0% Commission
-                    </h4>
+                    </h2>
                   </div>
                 </div>
               </div>
-              <h1>{projectData?.mainhead}</h1>
+              <h2>{projectData?.mainhead}</h2>
               {projectData.about && <p>Personally Visited & Approved</p>}
 
               <div
@@ -386,9 +426,9 @@ export const DetailProject = () => {
                     <iframe
                       width="100%"
                       height="315"
-                      src={`https://www.youtube.com/embed/${projectData?.youtubeid}?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&loop=1&playlist=${projectData?.youtubeid}`}
+                      src={youtubeLink}
                       style={{ border: "none" }}
-                      allow="autoplay; encrypted-media"
+                      allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
                   ) : (
@@ -428,9 +468,9 @@ export const DetailProject = () => {
 
               {projectData.about && (
                 <div>
-                  <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
+                  <h2 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
                     Features & amenities
-                  </h6>
+                  </h2>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
                     <div className="text-[#ffffff] w-full flex items-center justify-center gap-2 rounded-md border border-[#ffffff] p-2">
                       <img
@@ -482,39 +522,64 @@ export const DetailProject = () => {
                     </div>
                   </div>
 
-                  <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
+                  <h2 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
                     Life style at {projectData?.projectname}
-                  </h6>
-                  <p className="text-justify">{projectData?.about}</p>
-                  <p className="text-justify">{projectData?.about1}</p>
-                  <p className="text-justify">{projectData?.about2}</p>
-                  <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1rem] font-semibold mb-2">
+                  </h2>
+                  <p
+                    className="text-justify"
+                    dangerouslySetInnerHTML={{ __html: projectData?.about }}
+                  ></p>
+                  <p
+                    className="text-justify"
+                    dangerouslySetInnerHTML={{ __html: projectData?.about1 }}
+                  ></p>
+                  <p
+                    className="text-justify"
+                    dangerouslySetInnerHTML={{ __html: projectData?.about2 }}
+                  ></p>
+                  <h2 className="text-[#ffffff] text-left text-[1rem] sm:text-[1rem] font-semibold mb-2">
                     {projectData?.pointhead}
-                  </h6>
+                  </h2>
                   <ul className="list-disc list-outside pl-4 text-[#fff]">
                     {projectData?.point1 && (
-                      <li className="text-[#979797]">{projectData.point1}</li>
+                      <li className="text-[#979797]  text-[0.9rem] sm:text-[1rem]">
+                        {projectData.point1}
+                      </li>
                     )}
                     {projectData?.point2 && (
-                      <li className="text-[#979797]">{projectData.point2}</li>
+                      <li className="text-[#979797]  text-[0.9rem] sm:text-[1rem]">
+                        {projectData.point2}
+                      </li>
                     )}
                     {projectData?.point3 && (
-                      <li className="text-[#979797]">{projectData.point3}</li>
+                      <li className="text-[#979797] text-[0.9rem] sm:text-[1rem]">
+                        {projectData.point3}
+                      </li>
                     )}
                     {projectData?.point4 && (
-                      <li className="text-[#979797]">{projectData.point4}</li>
+                      <li className="text-[#979797] text-[0.9rem] sm:text-[1rem]">
+                        {projectData.point4}
+                      </li>
                     )}
                     {projectData?.point5 && (
-                      <li className="text-[#979797]">{projectData.point5}</li>
+                      <li className="text-[#979797] text-[0.9rem] sm:text-[1rem]">
+                        {projectData.point5}
+                      </li>
                     )}
                     {projectData?.point6 && (
-                      <li className="text-[#979797]">{projectData.point6}</li>
+                      <li className="text-[#979797] text-[0.9rem] sm:text-[1rem]">
+                        {projectData.point6}
+                      </li>
                     )}
                     {projectData?.point7 && (
-                      <li className="text-[#979797]">{projectData.point7}</li>
+                      <li className="text-[#979797] text-[0.9rem] sm:text-[1rem]">
+                        {projectData.point7}
+                      </li>
                     )}
                     {projectData?.point8 && (
-                      <li className="text-[#979797]">{projectData.point8}</li>
+                      <li className="text-[#979797] text-[0.9rem] sm:text-[1rem]">
+                        {projectData.point8}
+                      </li>
                     )}
                   </ul>
                 </div>
@@ -528,27 +593,27 @@ export const DetailProject = () => {
               )}
               <div className="grid md:grid-cols-2">
                 <div>
-                  <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
+                  <h3 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
                     {projectData?.nearby1}
-                  </h6>
+                  </h3>
                   <p>{projectData?.dec1}</p>
                 </div>
                 <div>
-                  <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
+                  <h3 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
                     {projectData?.nearby2}
-                  </h6>
+                  </h3>
                   <p>{projectData?.dec2}</p>
                 </div>
                 <div>
-                  <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
+                  <h3 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
                     {projectData?.nearby3}
-                  </h6>
+                  </h3>
                   <p>{projectData?.dec3}</p>
                 </div>
                 <div>
-                  <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
+                  <h3 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
                     {projectData?.nearby4}
-                  </h6>
+                  </h3>
                   <p>{projectData?.dec4}</p>
                 </div>
               </div>
@@ -569,9 +634,9 @@ export const DetailProject = () => {
             </div>
           </div>
 
-          <h6 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
+          <h3 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
             Explore other projects across Dubai
-          </h6>
+          </h3>
           <div className="px-4 xl:px-0">
             <ProjectList />
           </div>

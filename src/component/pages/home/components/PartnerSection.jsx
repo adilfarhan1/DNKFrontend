@@ -75,7 +75,7 @@ export const PartnerSection = (props) => {
   return (
     <div className="w-full bg-[#040406] flex items-center justify-center">
       <div className=" container max-w-[1240px] py-5  px-4  md:py-9">
-        <h1 className="m-auto w-fit">Our Partners</h1>
+        <h2 className="m-auto w-fit">Our Partners</h2>
         <p className="text-center m-auto w-[100%] md:w-[80%]">
           We are honoured to have these amazing partners.
         </p>
@@ -90,7 +90,7 @@ export const PartnerSection = (props) => {
                 >
                   <img
                     src={data.image ? URL + data.image : partnerLogo}
-                    alt="partner logo"
+                    alt={data.partnername}
                     className="w-fit opacity-80 hover:opacity-100"
                   />
                 </div>

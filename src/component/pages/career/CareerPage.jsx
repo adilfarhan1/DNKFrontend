@@ -203,14 +203,15 @@ export const CareerPage = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
-            "@type": "WebSite",
+            "@type": "website",
             mainEntity: {
-              "@type": "JobPosting",
+              "@type": "website",
               name: "Join Our Team at DNK Real Estate",
               description:
                 "At DNK Real Estate, we are committed to fostering a dynamic and inclusive workplace where talent thrives. Explore exciting career opportunities in the real estate sector, from sales and marketing to property management and administration. Join us and be part of a passionate team dedicated to excellence and innovation in Dubai's vibrant real estate market.",
               keywords: keywords.join(", "),
               image: "https://www.dnkre.com/logo.webp",
+              
             },
           })}
         </script>
@@ -218,9 +219,9 @@ export const CareerPage = () => {
       <BannerCareer />
       <div className="about-section w-full bg-[#040406] flex items-center justify-center">
         <div className="container max-w-[1240px] py-5  px-4  md:py-9 relative">
-          <h1 className="m-auto w-fit text-center">
+          <h2 className="m-auto w-fit text-center">
             Build a career in an innovative real estate agency
-          </h1>
+          </h2>
           <p className="text-center m-auto w-[100%] md:w-[80%]">
             Welcome to DNK Real Estate, your trusted partner in Dubai’s vibrant
             real estate market. We are a licensed real estate brokerage company
@@ -234,7 +235,7 @@ export const CareerPage = () => {
 
           <div className="border border-[#ffff] rounded-[10px] shadow bg-[#121218] group mx-0 md:m-4 mt-14 py-8 px-4 md:px-9">
             <div>
-              <h1 className="m-auto w-fit text-center">Send resume</h1>
+              <h2 className="m-auto w-fit text-center">Send resume</h2>
               <p className="text-center m-auto w-[100%] mb-7">
                 Let Us Know About Your Experience With Us
               </p>

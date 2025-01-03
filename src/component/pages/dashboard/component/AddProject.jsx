@@ -153,7 +153,6 @@ export const AddProject = (props) => {
         developerlogo: response.data.imageUrl?.developerlogo || null,
         projectlogo: response.data.imageUrl?.projectlogo || null,
       });
-      console.log("images - ", imageUrls);
     } catch (err) {
       console.error("Faild to fetch project details:", err);
     }

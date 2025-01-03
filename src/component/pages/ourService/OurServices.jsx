@@ -48,14 +48,14 @@ export const OurServices = () => {
           content="At DNK Real Estate, we offer comprehensive real estate services tailored to meet your needs in Dubai. From expert property valuations to effective marketing strategies, our dedicated team ensures a seamless experience whether you are buying and selling. Trust us to navigate the dynamic Dubai market and achieve your real estate goals."
         />
         <meta name="keywords" content={keywords.join(", ")} />
-        <link rel="canonical" href="https://dnkre.com/services" />
+        <link rel="canonical" href="https://www.dnkre.com/services" />
         <meta property="og:title" content="Real Estate Services in Dubai" />
         <meta
           property="og:description"
           content="At DNK Real Estate, we offer comprehensive real estate services tailored to meet your needs in Dubai. From expert property valuations to effective marketing strategies, our dedicated team ensures a seamless experience whether you are buying and selling. Trust us to navigate the dynamic Dubai market and achieve your real estate goals."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/services" />
+        <meta property="og:url" content="https://www.dnkre.com/services" />
 
         {/* -- Open Graph Meta Tags for WhatsApp and Social Media Sharing -- */}
         <meta property="og:title" content="Real Estate Services in Dubai" />
@@ -64,8 +64,8 @@ export const OurServices = () => {
           content="At DNK Real Estate, we offer comprehensive real estate services tailored to meet your needs in Dubai. From expert property valuations to effective marketing strategies, our dedicated team ensures a seamless experience whether you are buying and selling. Trust us to navigate the dynamic Dubai market and achieve your real estate goals."
         />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
-        <meta property="og:url" content="https://dnkre.com/services" />
-        <meta property="og:type" content="https://dnkre.com/services" />
+        <meta property="og:url" content="https://www.dnkre.com/services" />
+        <meta property="og:type" content="website" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -79,9 +79,9 @@ export const OurServices = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
-            "@type": "WebSite",
+            "@type": "website",
             mainEntity: {
-              "@type": "ServicesPage",
+              "@type": "website",
               name: "Real Estate Services in Dubai",
               description:
                 "At DNK Real Estate, we offer comprehensive real estate services tailored to meet your needs in Dubai. From expert property valuations to effective marketing strategies, our dedicated team ensures a seamless experience whether you are buying and selling. Trust us to navigate the dynamic Dubai market and achieve your real estate goals.",
@@ -110,9 +110,9 @@ export const OurServices = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Property Management
-                </h5>
+                </h3>
                 <div className="relative">
                   {/* <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0 "></span> */}
                   <p class="m-0 font-normal text-gray-400 text-justify">
@@ -150,9 +150,9 @@ export const OurServices = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Capital Improvements
-                </h5>
+                </h3>
                 <div className="relative">
                   {/* <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0"></span> */}
                   <p class="m-0 font-normal text-gray-400 text-justify ">
@@ -191,9 +191,9 @@ export const OurServices = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Finance Real Estate
-                </h5>
+                </h3>
                 <div className="relative">
                   {/* <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0"></span> */}
                   <p class="m-0 font-normal text-gray-400 text-justify ">
@@ -229,9 +229,9 @@ export const OurServices = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Financial Reporting
-                </h5>
+                </h3>
                 <div className="relative">
                   {/* <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0"></span> */}
                   <p class="m-0 font-normal text-gray-400 text-justify ">
@@ -270,9 +270,9 @@ export const OurServices = () => {
                 </div>
               </div>
               <div className="p-4 pt-[2.7rem]">
-                <h5 class="mb-2 tracking-tight text-white m-auto w-fit">
+                <h3 class="mb-2 tracking-tight text-white m-auto w-fit">
                   Recover Asset Value
-                </h5>
+                </h3>
                 <div className="relative">
                   {/* <span className="w-full h-14 bg-gradient-to-t from-[#121218] to-transparent absolute left-0 bottom-0"></span> */}
                   <p class="m-0 font-normal text-gray-400 text-justify">

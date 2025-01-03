@@ -20,12 +20,12 @@ export const AboutSection = () => {
         />
         <div>
           <div className="flex items-end justify-start mb-2">
-            <h3 className="load-text">Who we are</h3>
+            <h3 className="load-text m-0">Who we are</h3>
             <span className="loadDot dot1"></span>
             <span className="loadDot dot2"></span>
             <span className="loadDot dot2"></span>
           </div>
-          <h1>Select the Best Buying and Selling Option for Your Goals</h1>
+          <h2>Select the Best Buying and Selling Option for Your Goals</h2>
           <p className="text-justify pr-3">
             Welcome to DNK Real Estate, DNK is the harmony, dream and friendship
             between Dann Leslie and Waseem Khursheed who placed their trust and

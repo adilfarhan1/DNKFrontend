@@ -94,14 +94,16 @@ export const BannerHome = () => {
   return (
     <div
       ref={bannerRef}
+      role="img"
+      aria-label="dubai view"
       className="banner w-full bg-[#040406] flex items-center justify-center"
       style={isInView ? { backgroundImage: `url(${imageUrl})` } : {}}
     >
-      <div className="container max-w-[1240px] px-4  items-center">
+      <div className="container max-w-[1240px] px-4  items-center  overflow-hidden relative">
         <div className="banner-content grid md:grid-cols-3">
           <div className="z-10 w-fit col-span-2">
             <h1 className="banner-h1">
-              Invest in Dubai real estate with DNK Real Estate
+              Build Your Legacy in Dubai with DNK Real Estate
             </h1>
             <p className="pb-4">
               Our experts will help you to find the right property
@@ -114,8 +116,9 @@ export const BannerHome = () => {
             <img src={eventImageUrl} alt="" />
           </div>
         </div>
+        <div className="bg-[#00000066] w-full h-full absolute left-0 top-0 z-0 sm:hidden"></div>
       </div>
-      <div className="bg-[#00000066] w-full h-full absolute left-0 top-0 z-0 sm:hidden"></div>
+
       <div>
         {ShowPopup && <PopupModel onClose={() => setShowPopup(false)} />}
       </div>
