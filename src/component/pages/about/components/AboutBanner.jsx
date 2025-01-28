@@ -4,6 +4,7 @@ import coverUser from "../../../../assets/icons/coveruser.webp";
 import { userTeamServices } from "../../../../services/teamServices";
 import { useNavigate } from "react-router-dom";
 import { URL } from "../../../../url/axios";
+import LazyImage from "../../../layout/LazyImage";
 
 export const AboutBanner = () => {
   const [searchedList, setSearchedList] = useState([]);
@@ -88,14 +89,13 @@ export const AboutBanner = () => {
           searchedList.map((data) => (
             <div className="relative">
               <div className="bg-[#050612] opacity-60 w-full absolute top-0 left-0 h-full hover:bg-transparent ease-in-out duration-1000"></div>
-              <img
+              <LazyImage
                 src={
                   data.sliderimg
                     ? `${URL}${encodeURIComponent(data.sliderimg)}`
                     : coverUser
                 }
-                alt="cover img"
-                loading="lazy"
+                alt="cover img, Real este Market, Dubai, Dubai South, apartment, Villa"
               />
             </div>
           ))

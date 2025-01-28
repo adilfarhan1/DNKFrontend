@@ -190,7 +190,7 @@ export const LFooterForm = ({ onFormSubmit }) => {
           <div className="flex items-center justify-center mt-4">
             <p className="mb-0 text-[#ffffff]">Or contact us right now via</p>
             <a
-              href="https://wa.me/+971555769195?text=Hey, Please share details of La violeta 2 by Dubai properties"
+              href="https://wa.me/+971555769195?text=Hey, Please share details of Bahria Town at Dubai South"
               target="_blank"
               className="flex items-center justify-center group"
             >

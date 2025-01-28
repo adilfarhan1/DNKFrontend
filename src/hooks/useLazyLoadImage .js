@@ -15,7 +15,7 @@ const useLazyLoadImage = (src) => {
                 });
             },
             {
-                threshold: 0.1, // Image will load when 10% of it is visible
+                threshold: 0.5, // Image will load when 10% of it is visible
             }
         );
 

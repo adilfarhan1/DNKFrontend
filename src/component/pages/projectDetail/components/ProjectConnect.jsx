@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { IoMdHelpCircle } from "react-icons/io";
-import { IoChevronForwardCircle } from "react-icons/io5";
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
-import { RiWhatsappFill } from "react-icons/ri";
 import { FaWhatsapp } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import Profile from "../../../../assets/icons/leader_sale.webp";
-import qrcode from "../../../../assets/icons/qr_code.webp";
-import { URL } from "../../../../url/axios";
 import { useParams } from "react-router-dom";
 import { PopupModel } from "../../../model/PopupModel";
 import { useProjectServices } from "../../../../services/projectServices";
 import { userUserServices } from "../../../../services/userServices";
-import ContactForm from "../../contact/component/ContactForm";
 import Swal from "sweetalert2";
 
 export const ProjectConnect = ({ url, title }) => {
@@ -95,16 +85,16 @@ export const ProjectConnect = ({ url, title }) => {
 
     const leadData = {
       fields: {
-        // TITLE: `${projectData.projectname} Website Lead`,
-        // NAME: name,
-        // PHONE: [
-        //   {
-        //     VALUE: phone,
-        //     VALUE_TYPE: "WORK",
-        //   },
-        // ],
-        // UF_CRM_LEAD_1724493296911: city,
-        // EMAIL: [{ VALUE: email, VALUE_TYPE: "WORK" }],
+        TITLE: `${projectData.projectname} Website Lead`,
+        NAME: name,
+        PHONE: [
+          {
+            VALUE: phone,
+            VALUE_TYPE: "WORK",
+          },
+        ],
+        UF_CRM_LEAD_1724493296911: city,
+        EMAIL: [{ VALUE: email, VALUE_TYPE: "WORK" }],
       },
     };
 
@@ -188,7 +178,7 @@ export const ProjectConnect = ({ url, title }) => {
           <img
             className="h-[60px] w-[60px] sm:h-[95px] sm:w-[95px]"
             src={Profile}
-            alt="profile"
+            alt={`Top real estate agent`}
             loading="lazy"
           />
           <div className="pl-2">
@@ -231,7 +221,9 @@ export const ProjectConnect = ({ url, title }) => {
 
       <div className="border border-[#ffffff] border-spacing-1 rounded-md mt-3 overflow-hidden">
         <div className="bg-[#fff]">
-          <h5 className="m-auto w-fit uppercase text-[0.9rem] md:text-[1rem] py-1">Get In Touch</h5>
+          <h5 className="m-auto w-fit uppercase text-[0.9rem] md:text-[1rem] py-1">
+            Get In Touch
+          </h5>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col justify-between mt-3 md:mt-0 p-3 ">
@@ -308,59 +300,6 @@ export const ProjectConnect = ({ url, title }) => {
           </div>
         </form>
       </div>
-      {/* <div className="border border-[#ffffff] border-spacing-1 rounded-md p-3 mt-3">
-        <h6 className="text-[#ffffff] text-left text-[0.9rem] sm:text-[1.1rem] font-medium border-b-[#ffffff] border-b pb-2 mb-3">
-          Quick Facts
-        </h6>
-        <p className="mb-0 text-[0.8rem] lg:text-[1rem] capitalize">
-          <span className="text-[#ffffff] font-medium pr-2">Project:</span>
-          {projectData.projectname}
-        </p>
-        <p className="mb-0 text-[0.8rem] lg:text-[1rem] capitalize">
-          <span className="text-[#ffffff] font-medium pr-2">Developer:</span>
-          {projectData.developer.replace(/-/g, " ")}
-        </p>
-        <p className="mb-0 text-[0.8rem] lg:text-[1rem] capitalize">
-          <span className="text-[#ffffff] font-medium pr-2">Location:</span>
-          {projectData.locationname}
-        </p>
-        <p className="mb-0 text-[0.8rem] lg:text-[1rem] capitalize">
-          <span className="text-[#ffffff] font-medium pr-2">Bedroom:</span>
-          {projectData.bedroom}
-        </p>
-        <p className="mb-0 text-[0.8rem] lg:text-[1rem] capitalize">
-          <span className="text-[#ffffff] font-medium pr-2">Type:</span>
-          {Object.keys(projectData)
-            .filter((key) => key.startsWith("type") && projectData[key]) // Filter keys that start with 'type'
-            .map((key, index, array) => (
-              <React.Fragment key={index}>
-                {projectData[key]}
-                {array.length > 1 &&
-                  (index < array.length - 2
-                    ? ", "
-                    : index === array.length - 2
-                    ? " & "
-                    : "")}
-              </React.Fragment>
-            ))}
-        </p>
-        <p className="mb-0 text-[0.8rem] lg:text-[1rem] capitalize">
-          <span className="text-[#ffffff] font-medium pr-2">
-            Handover date:
-          </span>
-          {projectData.handover}
-        </p>
-        <p className="mb-0 text-[0.8rem] lg:text-[1rem] capitalize">
-          <span className="text-[#ffffff] font-medium pr-2">Total Area:</span>
-          {projectData.totalarea}
-        </p>
-        <p className="mb-0 text-[0.8rem] lg:text-[1rem] capitalize">
-          <span className="text-[#ffffff] font-medium pr-2">
-            Starting Price:
-          </span>
-          {projectData.startingprice}
-        </p>
-      </div> */}
       <div>
         {ShowPopup && <PopupModel onClose={() => setShowPopup(false)} />}
       </div>

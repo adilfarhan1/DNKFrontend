@@ -45,9 +45,10 @@ export const LAmenitiesImg = () => {
     <div id="Amenities" className="container max-w-[1240px] py-6  px-4 m-auto">
       <h1 className="text-[#fff] m-auto w-fit">Community Amenities</h1>
       <p className="w-[100%] md:w-[80%] text-center m-auto mb-[20px] md:mb-[30px]">
-        Immerse yourself in the sounds, aromas, cuisine. Come discover a rich
-        tapestry of vibrant amenities that turn every day in a magical
-        experience. 
+        Experience a lifestyle of convenience and luxury with our world-class
+        amenities, including a state-of-the-art fitness centre, swimming pools,
+        lush green parks, and a vibrant community center for social gatherings
+        and events.
       </p>
       <Slider {...settings}>
         <div className="px-1">

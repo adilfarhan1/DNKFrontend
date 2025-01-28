@@ -65,6 +65,16 @@ export const AddProject = (props) => {
     youtubeid: "",
     developerlogo: "",
     projectlogo: "",
+    paymentplan: "",
+    downpayment: "",
+    projectkeyword: "",
+    projectdescription: "",
+    altprojectlogo: "",
+    altthumbnail: "",
+    altcoverimage: "",
+    altgallary1: "",
+    altgallary2: "",
+    altgallary3: "",
   };
 
   const [createProject, setCreateProject] = useState(initialState);
@@ -252,6 +262,17 @@ export const AddProject = (props) => {
               onChange={handleFileInput}
               id="thumbnail"
             />
+            <div className="mt-2">
+              <label>Thumbnail alt Name</label>
+              <input
+                placeholder="Thumbnail alt Name"
+                onChange={handleChange}
+                name="altthumbnail"
+                value={createProject.altthumbnail || ""}
+                type="text"
+                class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+              />
+            </div>
           </div>
           <div>
             <label>Project Logo *</label>
@@ -275,6 +296,17 @@ export const AddProject = (props) => {
               onChange={handleFileInput}
               id="projectlogo"
             />
+            <div className="mt-2">
+              <label>Logo alt Name</label>
+              <input
+                placeholder="Logo alt Name"
+                onChange={handleChange}
+                name="altprojectlogo"
+                value={createProject.altprojectlogo || ""}
+                type="text"
+                class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+              />
+            </div>
           </div>
         </div>
         <label>Project Runing Status</label>
@@ -573,6 +605,17 @@ export const AddProject = (props) => {
               id="coverImage"
               name="coverimage"
             />
+            <div className="mt-2">
+              <label>Cover image alt Name</label>
+              <input
+                placeholder="Cover image alt Name"
+                onChange={handleChange}
+                name="altcoverimage"
+                value={createProject.altcoverimage || ""}
+                type="text"
+                class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+              />
+            </div>
           </div>
         </div>
 
@@ -618,6 +661,17 @@ export const AddProject = (props) => {
                 id="gallaryImage1"
                 name="gallary1"
               />
+              <div className="mt-2">
+                <label>Gallary Image 1 alt Name</label>
+                <input
+                  placeholder="Gallary Image 1 alt Name"
+                  onChange={handleChange}
+                  name="altgallary1"
+                  value={createProject.altgallary1 || ""}
+                  type="text"
+                  class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+                />
+              </div>
             </div>
           </div>
           <div className="flex gap-3 mb-4">
@@ -642,6 +696,17 @@ export const AddProject = (props) => {
                 id="gallaryImage2"
                 name="gallary2"
               />
+              <div className="mt-2">
+                <label>Gallary Image 2 alt Name</label>
+                <input
+                  placeholder="Gallary Image 2 alt Name"
+                  onChange={handleChange}
+                  name="altgallary2"
+                  value={createProject.altgallary2 || ""}
+                  type="text"
+                  class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+                />
+              </div>
             </div>
           </div>
           <div className="flex gap-3 mb-4">
@@ -666,6 +731,17 @@ export const AddProject = (props) => {
                 id="gallaryImage3"
                 name="gallary3"
               />
+              <div className="mt-2">
+                <label>Gallary Image 3 alt Name</label>
+                <input
+                  placeholder="Gallary Image 3 alt Name"
+                  onChange={handleChange}
+                  name="altgallary3"
+                  value={createProject.altgallary3 || ""}
+                  type="text"
+                  class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -913,6 +989,30 @@ export const AddProject = (props) => {
           name="point8"
           onChange={handleChange}
           value={createProject.point8 || ""}
+          class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+        />
+        <label className="font-bold underline">SEO</label>
+        <div>
+          <label>Keywords</label>
+          <input
+            placeholder="Keywords eg: Damac, riverside, ..."
+            type="text"
+            name="projectkeyword"
+            onChange={handleChange}
+            value={createProject.projectkeyword || ""}
+            class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
+          />
+        </div>
+
+        <label>Description</label>
+        <textarea
+          placeholder="Project Description"
+          type="text"
+          name="projectdescription"
+          onChange={handleChange}
+          value={createProject.projectdescription || ""}
+          cols="30"
+          rows="5"
           class="w-full  border border-[#040406] p-[10px] rounded mb-[25px]"
         />
       </form>

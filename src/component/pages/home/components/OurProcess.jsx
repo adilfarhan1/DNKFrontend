@@ -1,5 +1,4 @@
 import React from "react";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import findAgent from "../../../../assets/icons/findagent.webp";
 import loadingRound from "../../../../assets/icons/loadinground.webp";
 import listProperty from "../../../../assets/icons/listproperty.webp";
@@ -22,10 +21,16 @@ export const OurProcess = () => {
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
-                      alt="loading loop"
+                      alt="3 bedroom villa for sale in dubai, return of investment"
                       className="absolute left-0 top-0 animate-spin"
+                      loading="lazy"
                     />
-                    <img src={findAgent} alt="service icon m-auto" />
+                    <img
+                      src={findAgent}
+                      alt="Real estate management dubai, Sobha realty, Emaar properties"
+                      className=""
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -49,10 +54,16 @@ export const OurProcess = () => {
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
-                      alt="loading loop"
+                      alt="Apartments for sales in dubai marina, Villa, offplan"
                       className="absolute left-0 top-0 animate-spin"
+                      loading="lazy"
                     />
-                    <img src={listProperty} alt="service icon m-auto" />
+                    <img
+                      src={listProperty}
+                      alt="Apartments for sales in downtown dubai, house, home, living"
+                      className=""
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -76,10 +87,16 @@ export const OurProcess = () => {
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
-                      alt="loading loop"
+                      alt="Apartments for sale in downtown dubai, sweet home, Dubai"
                       className="absolute left-0 top-0 animate-spin"
+                      loading="lazy"
                     />
-                    <img src={availableProject} alt="service icon m-auto" />
+                    <img
+                      src={availableProject}
+                      alt="vida residence downtown emaar, Trading, real estate investment"
+                      className=""
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>

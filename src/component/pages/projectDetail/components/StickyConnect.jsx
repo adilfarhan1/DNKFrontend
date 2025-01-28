@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import Profile from "../../../../assets/icons/leader_sale.webp";
-import qrcode from "../../../../assets/icons/qr_code.webp";
-import { URL } from "../../../../url/axios";
 import { useParams } from "react-router-dom";
 import { PopupModel } from "../../../model/PopupModel";
 import { useProjectServices } from "../../../../services/projectServices";
@@ -159,25 +157,6 @@ export const StickyConnect = () => {
           </span>
           {projectData.startingprice}
         </p>
-        {/* <p className="mb-0 text-[0.8rem] lg:text-[1rem]">
-          <span className="text-[#ffffff] font-medium pr-2">
-            DLD Permit Number:
-          </span>
-        </p>
-        <div
-          style={{
-            backgroundImage: `url(${
-              projectData?.dld
-                ? URL + encodeURIComponent(projectData.dld)
-                : qrcode
-            })`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            width: "100px",
-            height: "100px",
-          }}
-        ></div> */}
       </div>
       <div>
         {ShowPopup && <PopupModel onClose={() => setShowPopup(false)} />}

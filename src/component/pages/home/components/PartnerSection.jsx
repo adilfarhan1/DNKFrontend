@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import partnerLogo from "../../../../assets/icons/addlogo.webp";
 import { userPartnerServices } from "../../../../services/partnerServices";
 import { URL } from "../../../../url/axios";
+import LazyImage from "../../../layout/LazyImage";
 
 export const PartnerSection = (props) => {
   const { params } = props;
@@ -13,13 +14,17 @@ export const PartnerSection = (props) => {
   const { getPartner } = userPartnerServices();
 
   useEffect(() => {
-    let tempList = partnerList || [];
-    setSearchedList(tempList);
-  }, [params, partnerList]);
-
-  useEffect(() => {
     getData();
   }, []);
+
+  useEffect(() => {
+    // Shuffle and slice 10 random items when `params` or `partnerList` changes
+    if (partnerList.length > 0) {
+      const shuffled = [...partnerList].sort(() => 0.5 - Math.random());
+      const sliced = shuffled.slice(0, 10);
+      setSearchedList(sliced);
+    }
+  }, [params, partnerList]);
 
   const getData = async () => {
     try {
@@ -51,7 +56,7 @@ export const PartnerSection = (props) => {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 8000,
+    speed: 3000,
     autoplaySpeed: 0,
     cssEase: "linear",
     responsive: [
@@ -88,10 +93,10 @@ export const PartnerSection = (props) => {
                   key={data._id}
                   className="!flex !items-center !justify-center w-[160px]  h-[70px] px-2 xl:px-0"
                 >
-                  <img
+                  <LazyImage
                     src={data.image ? URL + data.image : partnerLogo}
-                    alt={data.partnername}
-                    className="w-fit opacity-80 hover:opacity-100"
+                    alt={data.partnername.replace(/\s+/g, "-")}
+                    className="w-fit h-fit opacity-80 hover:opacity-100"
                   />
                 </div>
               ))

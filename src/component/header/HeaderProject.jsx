@@ -8,6 +8,7 @@ import { RiWhatsappFill } from "react-icons/ri";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { URL } from "../../url/axios";
+import LazyImage from "../layout/LazyImage";
 
 export const HeaderProject = () => {
   const { slug } = useParams();
@@ -131,6 +132,11 @@ export const HeaderProject = () => {
     setNav(!nav);
   };
 
+   const goToNews = () => {
+     navigate("/news");
+     setNav(!nav);
+   };
+
   const goToHomeHead = () => {
     navigate("/");
   };
@@ -153,7 +159,7 @@ export const HeaderProject = () => {
             </div>
             <a href="/">
               <div className="w-[full] h-[45px] flex items-center justify-start">
-                <img
+                <LazyImage
                   src={logoSwitch}
                   alt={`${
                     projectData?.developer?.replace(/-/g, " ") ||
@@ -199,23 +205,6 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/buy-project" && "activeHead"
-                  }`}
-                  // onClick={goToBuyHead}
-                >
-                  <Link to="/buy-project">
-                    <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                      Buy
-                    </p>
-                    <span
-                      class={
-                        "absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
-                      }
-                    ></span>
-                  </Link>
-                </li>
-                <li
-                  className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/sell-project" && "activeHead"
                   }`}
                   // onClick={goToOffSellHead}
@@ -227,12 +216,6 @@ export const HeaderProject = () => {
                     <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </Link>
                 </li>
-                {/* <li className="relative inline-flex items-center justify-center group m-2">
-                    <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                      Rent
-                    </p>
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                  </li> */}
                 <li
                   // onClick={goToAboutHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
@@ -258,6 +241,18 @@ export const HeaderProject = () => {
                     </p>
                     <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </Link>
+                </li>
+                <li
+                  className={`relative inline-flex items-center justify-center group m-2 ${
+                    location.pathname == "/news" && "activeHead"
+                                  }`}
+                  >
+                <Link to="/news">
+                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                      News
+                  </p>
+                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                </Link>
                 </li>
                 <li
                   // onClick={goToCareersHead}
@@ -400,6 +395,16 @@ export const HeaderProject = () => {
             <Link to="/team">
               <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
                 Team
+              </p>
+            </Link>
+          </li>
+          <li
+            onClick={goToNews}
+              className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+          >
+            <Link to="/news">
+              <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
+              News
               </p>
             </Link>
           </li>

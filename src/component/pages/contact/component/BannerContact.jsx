@@ -6,6 +6,7 @@ import { MdCall } from "react-icons/md";
 export const BannerContact = () => {
   return (
     <div
+      aria-label="dubai view, Real estate, off plan, ROI, investment"
       className="banner w-full bg-[#040406] flex items-center justify-center"
       style={{ backgroundImage: `url(${contactBanner})` }}
     >

@@ -3,10 +3,10 @@ import ProjectBanner from "./components/ProjectBanner";
 import DetailProject from "./components/DetailProject";
 import PartnerSection from "../home/components/PartnerSection";
 import TalkSection from "../home/components/TalkSection";
-import { Helmet } from "react-helmet";
 import { useProjectServices } from "../../../services/projectServices";
 import { useParams } from "react-router-dom";
 import { URL } from "../../../url/axios";
+import { Helmet } from "react-helmet-async";
 
 export const ProjectDetail = () => {
   const { slug } = useParams();
@@ -19,30 +19,16 @@ export const ProjectDetail = () => {
   // Scroll to the top
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-
-    const fetchProjectData = async () => {
-      try {
-        const response = await getProjectById(slug);
-        if (response.success) {
-          const projectData = response.data;
-          if (projectData) {
-            setProjectData(projectData);
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching project data:", error);
-      }
-    };
-
     fetchProjectData();
   }, [slug]);
 
   useEffect(() => {
     if (projectData) {
-      const { projectname, developer, locationname, about, about1, about2 } =
+      const { projectname, developer, locationname, projectkeyword } =
         projectData;
       setKeywords([
         `${projectname}`,
+        `${projectkeyword}`,
         `${developer.replace(/-/g, " ")} ${projectname}`,
         `${developer.replace(/-/g, " ")}`,
         `${projectname} by ${developer.replace(/-/g, " ")}`,
@@ -78,12 +64,23 @@ export const ProjectDetail = () => {
         `Property market report Dubai ${currentYear}`,
         `Dubai real estate news ${currentYear}`,
         `${developer.replace(/-/g, " ")} Best Project?`,
-        `${about}`,
-        `${about1}`,
-        `${about2}`,
       ]);
     }
   }, [projectData]);
+
+  const fetchProjectData = async () => {
+    try {
+      const response = await getProjectById(slug);
+      if (response.success) {
+        const projectData = response.data;
+        if (projectData) {
+          setProjectData(projectData);
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching project data:", error);
+    }
+  };
 
   if (!projectData) {
     return (
@@ -100,8 +97,10 @@ export const ProjectDetail = () => {
     about2,
     startingprice,
     thumbnail,
+    coverimage,
     developer,
     locationname,
+    projectdescription,
   } = projectData;
 
   return (
@@ -113,27 +112,19 @@ export const ProjectDetail = () => {
             " "
           )}`}
         </title>
-        <meta name="description" content={`${about}, ${about1}, ${about2}`} />
         <meta name="keywords" content={keywords.join(", ")} />
+        <meta name="description" content={`${projectdescription}${about}`} />
         <link rel="canonical" href={`https://www.dnkre.com/projects/${slug}`} />
-        <meta
-          property="og:title"
-          content={`${projectname} at ${locationname} - ${developer.replace(
-            /-/g,
-            " "
-          )}`}
-        />
-        <meta
-          property="og:description"
-          content={`${about}, ${about1}, ${about2}`}
-        />
-        <meta property="og:image" content={`${URL}${thumbnail}`} />
-        <meta
-          property="og:url"
-          content={`https://www.dnkre.com/projects/${slug}`}
-        />
+        <meta name="author" content="DNK Real Estate" />
 
-        {/* -- Open Graph Meta Tags for WhatsApp and Social Media Sharing -- */}
+        {/* Ensure the page is indexable */}
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:url"
+          content={`https://www.dnkre.com/projects/${slug}`}
+        />
+        <meta property="og:type" content="https://www.dnkre.com/" />
         <meta
           property="og:title"
           content={`${projectname} at ${locationname} - ${developer.replace(
@@ -143,14 +134,17 @@ export const ProjectDetail = () => {
         />
         <meta
           property="og:description"
-          content={`${about}, ${about1}, ${about2}`}
+          content={`${projectdescription}${about}`}
         />
         <meta property="og:image" content={`${URL}${thumbnail}`} />
-        <meta
-          property="og:url"
-          content={`https://www.dnkre.com/projects/${slug}`}
-        />
-        <meta property="og:type" content="product" />
+        <link
+          rel="preload"
+          as="image"
+          href={`${URL}${coverimage}`}
+          type="image/webp"
+        ></link>
+
+        <link rel="shortcut icon" href="https://www.dnkre.com/logo.ico" />
 
         {/* -- Twitter Card for Sharing -- */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -163,90 +157,126 @@ export const ProjectDetail = () => {
         />
         <meta
           name="twitter:description"
-          content={`${about}, ${about1}, ${about2}`}
+          content={`${projectdescription}${about}`}
         />
         <meta name="twitter:image" content={`${URL}${thumbnail}`} />
-
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "http://schema.org",
-            "@type": "product",
-            mainEntity: {
-              "@type": "product",
-              name: `${projectname} at ${locationname} - ${developer.replace(
-                /-/g,
-                " "
-              )}`,
-              description: `${about} ${about1} ${about2}`,
-              keywords: keywords.join(", "),
-              image: `${URL}${thumbnail}`,
-              url: `https://www.dnkre.com/projects/${slug}`,
-              offers: {
-                "@type": "product",
-                price: `${startingprice}`,
-                priceCurrency: "AED",
-                availability: "http://schema.org/InStock",
-                seller: {
-                  "@type": "Organization",
-                  name: "DNK Real Estate",
-                  logo: "https://www.dnkre.com/logo.webp",
-                },
-                itemOffered: {
-                  "@type": "product",
-                  name: `${projectname} by ${developer.replace(/-/g, " ")}`,
-                  image: `${URL}${thumbnail}`,
-                  url: `https://www.dnkre.com/projects/${slug}`,
-                },
-                offeredBy: {
-                  "@type": "Organization",
-                  name: "dnkre.com",
-                  logo: "https://www.dnkre.com/logo.webp",
-                  sameAs: [
-                    "https://www.instagram.com/dnk_re/",
-                    "https://www.facebook.com/dnkrealestate1/",
-                    "https://www.linkedin.com/company/dnkrealestate/",
-                    "https://www.youtube.com/channel/UCKH7d3Sx2dkfb4pEXXaMpFA",
-                  ],
-                  contactPoint: {
-                    "@type": "ContactPoint",
-                    telephone: "+971555769195",
-                    contactType: "Sales",
-                    email: "info@dnkre.com",
-                    areaServed: "United Arab Emirates",
-                  },
-                  address: {
-                    "@type": "PostalAddress",
-                    addressCountry: "AE",
-                    streetAddress: "Suite No. 2602, Silver Tower, Marasi Drive",
-                    addressLocality: "Business Bay",
-                    addressRegion: "Dubai",
-                    postalCode: "26048",
-                  },
-                },
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.5",
-                reviewCount: "28",
-              },
-              review: [
+          {JSON.stringify([
+            // Organization Schema
+            {
+              "@context": "http://schema.org",
+              "@type": "Organization",
+              name: "DNK Real Estate",
+              logo: "https://www.dnkre.com/logo.webp",
+              url: "https://dnkre.com",
+              sameAs: [
+                "https://www.instagram.com/dnk_re/",
+                "https://www.facebook.com/dnkrealestate1/",
+                "https://www.linkedin.com/company/dnkrealestate/",
+                "https://www.youtube.com/channel/UCKH7d3Sx2dkfb4pEXXaMpFA",
+              ],
+              telephone: "+971555769195",
+              email: "info@dnkre.com",
+              address: "Merasi Drive, Business Bay, Dubai",
+            },
+
+            // BreadcrumbList Schema
+            {
+              "@context": "http://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
                 {
-                  "@type": "Review",
-                  reviewRating: {
-                    "@type": "Rating",
-                    ratingValue: "5",
-                    bestRating: "5",
+                  "@type": "ListItem",
+                  position: 1,
+                  item: {
+                    "@id": "https://dnkre.com",
+                    name: "Home",
                   },
-                  author: {
-                    "@type": "Person",
-                    name: "John Doe",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  item: {
+                    "@type": "Place",
+                    name: `${locationname}`,
+                    "@id": `https://www.dnkre.com/projects/${slug}`,
                   },
-                  reviewBody:
-                    "Amazing property with fantastic amenities and prime location!",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  item: {
+                    "@type": "Brand",
+                    name: `${developer.replace(/-/g, " ")}`,
+                    "@id": `https://www.dnkre.com/projects/${slug}`,
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
+                  item: {
+                    "@type": "House",
+                    name: `${projectname}`,
+                    "@id": `https://www.dnkre.com/projects/${slug}`,
+                  },
                 },
               ],
+              numberOfItems: 4,
             },
-          })}
+
+            // ItemPage Schema
+            {
+              "@context": "http://schema.org",
+              "@type": "ItemPage",
+              mainEntity: {
+                "@type": "WebPage",
+                name: `${projectname} at ${locationname} - ${developer.replace(
+                  /-/g,
+                  " "
+                )}`,
+                description: `${about} ${about1} ${about2}`,
+                keywords: keywords.join(", "),
+                url: `https://www.dnkre.com/projects/${slug}`,
+                image: `${URL}${thumbnail}`,
+
+                offers: [
+                  {
+                    "@type": "Offer",
+                    name: `${projectname} at ${locationname} - ${developer.replace(
+                      /-/g,
+                      " "
+                    )}`,
+                    availability: "https://schema.org/InStock",
+                    price: `${startingprice}`,
+                    priceCurrency: "AED",
+                    itemOffered: {
+                      "@type": "House",
+                      name: `${projectname} at ${locationname} - ${developer.replace(
+                        /-/g,
+                        " "
+                      )}`,
+                      logo: `${URL}${thumbnail}`,
+                      url: `https://www.dnkre.com/projects/${slug}`,
+                      image: `${URL}${coverimage}`,
+                    },
+                    offeredBy: {
+                      "@type": "Organization",
+                      name: "DNK Real Estate",
+                      address: "Suite No. 2602, Silver Tower, Marasi Drive",
+                      telephone: "+971555769195",
+                      email: "info@dnkre.com",
+                      image: "https://www.dnkre.com/logo.webp",
+                      sponsor: {
+                        "@type": "Organization",
+                        url: `https://www.dnkre.com/projects/${slug}`,
+                        name: `${developer.replace(/-/g, " ")}`,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ])}
         </script>
       </Helmet>
       <ProjectBanner />

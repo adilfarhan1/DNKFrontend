@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import LContactForm from "./LContactForm";
-import AdPoster from "../../../../assets/lavioleta/modelImg.webp";
+import AdPoster from "../../../../assets/bahria/adpost.webp";
 import { useProjectServices } from "../../../../services/projectServices";
 import LModelForm from "./LModelForm";
 

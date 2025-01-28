@@ -68,11 +68,11 @@ export const PopupApatment = ({ onClose, onFormSubmit }) => {
         <div className="hidden md:block">
           <div
             className="bg-cover w-[100%] h-[100%]"
+            aria-label="dubai view, Real estate, off plan, ROI, investment"
             style={{
               backgroundImage: `url(${imageUrl})`,
             }}
           ></div>
-          {/* <img src={sohbaPoster} alt="" /> */}
         </div>
         <div>
           <div className="flex items-center justify-end p-4 md:p-5 rounded-t ">

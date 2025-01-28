@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import projectCover from "../../../../assets/lavioleta/lavioleta.webp";
+import projectCover from "../../../../assets/bahria/banner.webp";
 
 export const Lbanner = () => {
   return (
@@ -9,7 +9,7 @@ export const Lbanner = () => {
         role="img"
         style={{
           backgroundImage: `url(${projectCover})`,
-          backgroundPosition: "center",
+          backgroundPosition: "right",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}

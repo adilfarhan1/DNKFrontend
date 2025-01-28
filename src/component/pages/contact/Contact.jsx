@@ -6,7 +6,8 @@ import Consultation from "../../../assets/icons/consultation.webp";
 import Estimation from "../../../assets/icons/estimation.webp";
 import Shedule from "../../../assets/icons/shedule.webp";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
+import LazyImage from "../../layout/LazyImage";
 
 export const Contact = () => {
   const [keywords, setKeywords] = useState([]);
@@ -60,6 +61,7 @@ export const Contact = () => {
           property="og:description"
           content="Our professional team is available 24/7 to assist you. Whether you have questions, concerns, or suggestions, we’d love to hear from you. Feel free to reach out via email by completing the form on the right, or schedule an appointment to meet us in person at one of our listed contact points below. We're here to help just be sure to arrange a meeting in advance. All contact details are provided below."
         />
+        <meta name="robots" content="index, follow" />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
         <meta property="og:url" content="https://www.dnkre.com/contact" />
         <meta property="og:type" content="website" />
@@ -108,9 +110,9 @@ export const Contact = () => {
           <div className="grid  md:grid-cols-2 relative">
             <div className="grid grid-cols-2">
               <div className="p-2">
-                <img
+                <LazyImage
                   src={Assist}
-                  alt="info icon"
+                  alt="Contact number Dubai Real Estate"
                   className="pb-4 m-auto md:m-0 w-[48px]"
                 />
                 <h3 className="text-center md:text-left text-[#ffffff]">
@@ -122,9 +124,9 @@ export const Contact = () => {
                 </p>
               </div>
               <div className="p-2">
-                <img
+                <LazyImage
                   src={Consultation}
-                  alt="info icon"
+                  alt="Call Dubai Real estate"
                   className="pb-4 m-auto md:m-0 w-[48px]"
                 />
                 <h3 className="text-center md:text-left text-[#ffffff]">
@@ -136,9 +138,9 @@ export const Contact = () => {
                 </p>
               </div>
               <div className="p-2">
-                <img
+                <LazyImage
                   src={Estimation}
-                  alt="info icon"
+                  alt="Heliping Real estate Market"
                   className="pb-4  m-auto md:m-0 w-[48px]"
                 />
                 <h3 className="text-center md:text-left text-[#ffffff]">
@@ -150,9 +152,9 @@ export const Contact = () => {
                 </p>
               </div>
               <div className="p-2">
-                <img
+                <LazyImage
                   src={Shedule}
-                  alt="info icon"
+                  alt="Dubai Booming Real Estate"
                   className="pb-4  m-auto md:m-0 w-[48px]"
                 />
                 <h3 className="text-center md:text-left text-[#ffffff]">

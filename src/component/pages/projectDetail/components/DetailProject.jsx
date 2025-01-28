@@ -9,7 +9,6 @@ import { MdAreaChart } from "react-icons/md";
 import { AiOutlinePercentage } from "react-icons/ai";
 import { BsCash } from "react-icons/bs";
 import { PiCalendarCheckFill } from "react-icons/pi";
-import { FaFeatherPointed } from "react-icons/fa6";
 import ProjectConnect from "./ProjectConnect";
 import pool from "../../../../assets/icons/swimming_pool.webp";
 import health from "../../../../assets/icons/rehabilitation.webp";
@@ -21,11 +20,11 @@ import { useParams } from "react-router-dom";
 import { URL } from "../../../../url/axios";
 import { useProjectServices } from "../../../../services/projectServices";
 import StickyConnect from "./StickyConnect";
-import FeatureProject from "../../home/components/FeatureProject";
 import ProjectList from "../../home/components/ProjectList";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import useLazyLoadImage from "../../../../hooks/useLazyLoadImage ";
+import VideoComponent from "./VideoComponent";
+import LocationComponent from "./LocationComponent";
 
 export const DetailProject = () => {
   const { slug } = useParams();
@@ -37,30 +36,31 @@ export const DetailProject = () => {
   const [isVisible1, imgRef1] = useLazyLoadImage(projectData?.gallary1);
   const [isVisible2, imgRef2] = useLazyLoadImage(projectData?.gallary2);
   const [isVisible3, imgRef3] = useLazyLoadImage(projectData?.gallary3);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [iframeLoaded, setIframeLoaded] = useState(false);
+  const [videoVisible, setVideoVisible] = useState(false);
+  const [dataFetched, setDataFetched] = useState(false);
 
   useEffect(() => {
     fetchProject();
   }, [slug]);
 
+  // Simulate fetching data
   useEffect(() => {
-    if (projectData?.youtubeid && !iframeLoaded) {
+    setTimeout(() => {
+      setDataFetched(true);
+    }, 1000); // Assuming data is fetched after 1 second
+  }, []);
+
+  useEffect(() => {
+    if (dataFetched) {
       const timer = setTimeout(() => {
-        const iframe = document.getElementById("video-iframe");
-        if (iframe) {
-          iframe.src = youtubeLink;
-          setIframeLoaded(true);
-        }
-      }, 500);
+        setVideoVisible(true);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
-  }, [projectData, iframeLoaded]);
-
-   
+  }, [dataFetched]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,6 +109,8 @@ export const DetailProject = () => {
     }
   };
 
+  
+
   if (loading) {
     return (
       <div className="bg-[#040406] text-center">
@@ -120,10 +122,6 @@ export const DetailProject = () => {
   if (error) {
     return <div>{error}</div>; // Display error message
   }
-
-  const handlePlay = () => {
-    setIsPlaying(true);
-  };
 
   const thumbnailUrl = `https://img.youtube.com/vi/${projectData.youtubeid}/maxresdefault.jpg`;
   const youtubeLink = `https://www.youtube.com/embed/${projectData?.youtubeid}?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&loop=1&playlist=${projectData?.youtubeid}`;
@@ -348,7 +346,7 @@ export const DetailProject = () => {
                     )
                   }
                   role="img"
-                  aria-label={projectData.projectname}
+                  aria-label={`${projectData.projectname}, ${projectData.altgallary1}`}
                   style={{
                     backgroundImage: `url(${
                       isVisible1 && projectData?.gallary1
@@ -373,7 +371,7 @@ export const DetailProject = () => {
                       )
                     }
                     role="img"
-                    aria-label={projectData.projectname}
+                    aria-label={`${projectData.projectname}, ${projectData.altgallary2}`}
                     style={{
                       backgroundImage: `url(${
                         isVisible2 && projectData?.gallary2
@@ -399,7 +397,7 @@ export const DetailProject = () => {
                       )
                     }
                     role="img"
-                    aria-label={projectData.projectname}
+                    aria-label={`${projectData.projectname}, ${projectData.altgallary3}`}
                     style={{
                       backgroundImage: `url(${
                         isVisible3 && projectData?.gallary3
@@ -420,103 +418,73 @@ export const DetailProject = () => {
                 </div>
               </div>
 
-              {projectData?.youtubeid && (
-                <div className="video-container">
-                  {isPlaying ? (
-                    <iframe
-                      width="100%"
-                      height="315"
-                      src={youtubeLink}
-                      style={{ border: "none" }}
-                      allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  ) : (
-                    <div
-                      style={{ cursor: "pointer", position: "relative" }}
-                      onClick={handlePlay}
-                    >
-                      <img
-                        src={thumbnailUrl}
-                        alt="YouTube Video Thumbnail"
-                        style={{ width: "100%" }}
-                      />
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: "50%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                          backgroundColor: "rgba(0, 0, 0, 0.6)",
-                          borderRadius: "50%",
-                          padding: "20px",
-                        }}
-                      >
-                        <svg
-                          width="60"
-                          height="60"
-                          viewBox="0 0 24 24"
-                          fill="white"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
-                  )}
+              {videoVisible && (
+                <div className="mt-6">
+                  <VideoComponent
+                    youtubeLink={youtubeLink}
+                    thumbnailUrl={thumbnailUrl}
+                    projectData={projectData}
+                  />
                 </div>
               )}
 
               {projectData.about && (
                 <div>
-                  <h2 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
+                  <h2 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4 mt-3">
                     Features & amenities
                   </h2>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
                     <div className="text-[#ffffff] w-full flex items-center justify-center gap-2 rounded-md border border-[#ffffff] p-2">
                       <img
-                        className="w-[1.5rem] md:w-[1.8rem]"
+                        className="w-[1.5rem] md:w-[1.8rem] h-auto"
                         src={park}
+                        alt="Park icon"
                         loading="lazy"
                       ></img>
                       <p className="text-[#ffffff] m-0">Kids Play Area</p>
                     </div>
                     <div className="text-[#ffffff] w-full mr-1 flex items-center justify-center gap-2 rounded-md border border-[#ffffff] p-2">
                       <img
-                        className="w-[1.5rem] md:w-[1.8rem]"
+                        className="w-[1.5rem] md:w-[1.8rem] h-auto"
                         src={pool}
                         loading="lazy"
+                        alt="Swimming pool"
                       ></img>
                       <p className="text-[#ffffff] m-0">Swimming pool</p>
                     </div>
                     <div className="text-[#ffffff] w-full mr-1 flex items-center justify-center gap-2 rounded-md border border-[#ffffff] p-2">
                       <img
-                        className="w-[1.5rem] md:w-[1.8rem]"
+                        className="w-[1.5rem] md:w-[1.8rem] h-auto"
                         src={health}
                         loading="lazy"
+                        alt={`Health Care Centre`}
                       ></img>
                       <p className="text-[#ffffff] m-0">Health Care Centre</p>
                     </div>
                     <div className="text-[#ffffff] w-full mr-1 flex items-center justify-center gap-2 rounded-md border border-[#ffffff] p-2">
                       <img
-                        className="w-[1.5rem] md:w-[1.8rem]"
+                        className="w-[1.5rem] md:w-[1.8rem] h-auto"
                         src={gym}
                         loading="lazy"
+                        alt={`Gymnasium`}
                       ></img>
                       <p className="text-[#ffffff] m-0">Gymnasium</p>
                     </div>
                     <div className="text-[#ffffff] w-full mr-1 flex items-center justify-center gap-2 rounded-md border border-[#ffffff] p-2">
                       <img
-                        className="w-[1.5rem] md:w-[1.8rem]"
+                        className="w-[1.5rem] md:w-[1.8rem] h-auto"
                         src={Retailoutlet}
                         loading="lazy"
+                        alt={`Retail Outlets`}
                       ></img>
                       <p className="text-[#ffffff] m-0">Retail Outlets</p>
                     </div>
                     <div className="text-[#ffffff] w-full mr-1 flex items-center justify-center gap-2 rounded-md border border-[#ffffff] p-2">
                       <img
-                        className="w-[1.5rem] md:w-[1.8rem] backdrop-brightness-200"
+                        className="w-[1.5rem] md:w-[1.8rem] backdrop-brightness-200 h-auto"
                         src={restro}
                         loading="lazy"
+                        alt={`Restaurants`}
                       ></img>
                       <p className="text-[#ffffff] m-0">Restaurants</p>
                     </div>
@@ -586,11 +554,9 @@ export const DetailProject = () => {
               )}
 
               {projectData?.location && (
-                <iframe
-                  class="map mb-3 mt-2"
-                  src={projectData?.location}
-                ></iframe>
+                <LocationComponent projectData={projectData} />
               )}
+
               <div className="grid md:grid-cols-2">
                 <div>
                   <h3 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold">
@@ -681,6 +647,7 @@ export const DetailProject = () => {
               src={selectedImage}
               alt="Gallery"
               className="max-w-screen max-h-screen object-contain"
+              loading="lazy"
             />
             <button
               onClick={handleCloseModal}

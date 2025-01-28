@@ -14,15 +14,13 @@ export const LDownloadSection = () => {
           </div>
           <div className=" flex items-center">
             <div>
-              <h1 className="banner-h1 text-[#ffff]">
-                Receive A Digital Copy Of Our Brochure
-              </h1>
+              <h1 className="banner-h1 text-[#ffff]">Download Brochure</h1>
               <p className="mb-1 md:mb-4 text-[#ffff]">
-                And Learn More About Our Spacious Residences
+                And Learn More About BT Properties – Dubai South
               </p>
               <button
                 onClick={() => setShowPopup(true)}
-                className="site-btn !border-none bg-[#ffffff] !text-[#000000] hover:!bg-[#000000] hover:!text-[#ffffff]"
+                className="site-btn1 bg-[#ffffff] hover:!text-[#000] hover:bg-[#fff]"
               >
                 Request Here
               </button>

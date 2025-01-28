@@ -5,7 +5,7 @@ import TeamList from "./components/TeamList";
 import ReviewSection from "../home/components/ReviewSection";
 import PartnerSection from "../home/components/PartnerSection";
 import TalkSection from "../home/components/TalkSection";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const Team = () => {
   const [keywords, setKeywords] = useState([]);
@@ -45,6 +45,8 @@ export const Team = () => {
           name="description"
           content="Meet our expert real estate team dedicated to helping you buy, sell, or invest in properties. With years of Dubai market knowledge and personalized service, we ensure a smooth real estate experience. Contact us for professional guidance and start your property journey today."
         />
+
+        <meta name="robots" content="index, follow" />
 
         {/* -- Open Graph Meta Tags for WhatsApp and Social Media Sharing -- */}
         <meta

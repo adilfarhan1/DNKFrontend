@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderRoadshow from "./components/HeaderRoadshow";
 import { Outlet } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const RodeshowLayout = () => {
   return (

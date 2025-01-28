@@ -28,10 +28,15 @@ export const ServiceSection = () => {
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
-                      alt="loading loop"
+                      alt="Apartments for sale in dubai marina, Apartment, Villa"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={propertyManagement} alt="service icon m-auto" />
+                    <img
+                      src={propertyManagement}
+                      alt="Apartments for sale in downtown dubai, Dubai Marina"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -66,10 +71,15 @@ export const ServiceSection = () => {
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
-                      alt="loading loop"
+                      alt="Vida residence downtown emaar, Emaar, Burj Khalifa"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={capitalImprovements} alt="service icon m-auto" />
+                    <img
+                      src={capitalImprovements}
+                      alt="Real estate management dubai, How to Buy Dubai Villa?"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -104,10 +114,15 @@ export const ServiceSection = () => {
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
-                      alt="loading loop"
+                      alt="Real estate management dubai, High ROI Properties"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={financeRealEstate} alt="service icon m-auto" />
+                    <img
+                      src={financeRealEstate}
+                      alt="Top real estate companies in dubai, High Quality Properties"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -143,10 +158,15 @@ export const ServiceSection = () => {
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
-                      alt="loading loop"
+                      alt="Dubai hills for sale, Dubai South"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={financialReporting} alt="service icon m-auto" />
+                    <img
+                      src={financialReporting}
+                      alt="3 bedroom villa for sale in dubai, al maktoum airport"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -181,10 +201,15 @@ export const ServiceSection = () => {
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
-                      alt="loading loop"
+                      alt="Apartments for sale in dubai marina, Return of investment"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={recoverAssetValue} alt="service icon m-auto" />
+                    <img
+                      src={recoverAssetValue}
+                      alt="Apartments for sale in downtown dubai, Emaar, Damac, sobha"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>

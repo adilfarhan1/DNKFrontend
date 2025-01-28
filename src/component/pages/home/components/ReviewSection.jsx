@@ -77,23 +77,26 @@ export const ReviewSection = (props) => {
                   <div className="py-5">
                     <img
                       src={data.image ? URL + data.image : avatar}
-                      alt="profile"
+                      alt="Top real estate companies in dubai, River side living"
                       className="rounded-full m-auto w-[80px] h-[80px]"
+                      loading="lazy"
                     />
                   </div>
                   <div className="relative">
                     <img
                       src={quotes}
-                      alt=""
+                      alt="Dubai hills villas for sale, Real estate inverstment"
                       className="absolute left-0 top-0 animate-wiggle animate-once z-0 opacity-25 md:opacity-100"
+                      loading="lazy"
                     />
                     <p className="text-center m-auto w-[100%] md:w-[80%] mb-4 relative z-40">
                       {data.message}
                     </p>
                     <img
                       src={quotes01}
-                      alt=""
+                      alt="3 bedroom villa for sale in dubai, Dubai Downtown, Dubai South"
                       className="absolute right-0 bottom-0 animate-wiggle z-0 opacity-25 md:opacity-100"
+                      loading="lazy"
                     />
                   </div>
 

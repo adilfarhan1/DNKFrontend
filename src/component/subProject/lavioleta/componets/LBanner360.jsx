@@ -40,7 +40,7 @@ export const LBanner360 = () => {
           <h1 className="banner-h1">Take a tour of the project</h1>
           <button
             onClick={() => setShowPopup(true)}
-            className="site-btn !border-none bg-[#ffffff] !text-[#000000] hover:!bg-[#000000] hover:!text-[#ffffff]"
+            className="site-btn1 bg-[#ffffff] hover:!text-[#000] hover:bg-[#fff]"
           >
             Schedule A Virtual Tour
           </button>

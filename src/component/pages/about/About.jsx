@@ -7,7 +7,7 @@ import ReviewSection from "../home/components/ReviewSection";
 import PartnerSection from "../home/components/PartnerSection";
 import TalkSection from "../home/components/TalkSection";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const About = () => {
   const [keywords, setKeywords] = useState([]);
@@ -52,6 +52,7 @@ export const About = () => {
           property="og:description"
           content="DNK is the harmony, dream and friendship between Dann Leslie and Waseem Khursheed who placed their trust and confidence in each other and believed in each other to make a tangible difference in people's lives, in their communities, and this ambitious commitment and burning passion endured them through life's challenges and helped them emerge as successful. Hence, they understand the importance of trust, confidence, and commitment extremely well. These are the tenets of DNK morals and each member of the DNK family swears to extend the same values to every client, investor, and shareholder they cross paths with. DNK Real Estate, we are dedicated to understanding the unique needs of our clients, listening to their stories, and empathetically guiding them toward the perfect home. Through unwavering commitment and world-class service, we transform dreams into reality, nurturing investments and safeguarding the vision of families, entrepreneurs, and dreamers."
         />
+        <meta name="robots" content="index, follow" />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
         <meta property="og:url" content="https://www.dnkre.com/about" />
         <meta property="og:type" content="website" />

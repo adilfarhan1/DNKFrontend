@@ -7,6 +7,7 @@ import { useProjectServices } from "../../../../services/projectServices";
 import { PopupModel } from "../../../model/PopupModel";
 import { URL } from "../../../../url/axios";
 import useLazyLoadImage from "../../../../hooks/useLazyLoadImage ";
+import LazyImage from "../../../layout/LazyImage";
 
 export const ProjectBanner = () => {
   const { slug } = useParams();
@@ -15,7 +16,12 @@ export const ProjectBanner = () => {
   const [error, setError] = useState(null);
   const [ShowPopup, setShowPopup] = useState(false);
   const { getProjectById } = useProjectServices();
-  const [isVisible1, imgRef1] = useLazyLoadImage(projectData?.coverimage);
+
+  // Lazy-load hook for both cover image and logo
+  const [isCoverImageVisible, coverImageRef] = useLazyLoadImage(
+    projectData?.coverimage
+  );
+  const [isLogoVisible, logoRef] = useLazyLoadImage(projectData?.projectlogo);
 
   useEffect(() => {
     fetchProject();
@@ -55,18 +61,20 @@ export const ProjectBanner = () => {
   }
 
   if (error) {
-    return <div>{error}</div>; // Display error message
+    return <div>{error}</div>;
   }
 
   return (
     <div
       className="banner w-full bg-[#040406] flex items-center justify-center"
-      ref={imgRef1}
+      ref={coverImageRef}
       role="img"
-      aria-label={projectData.projectname}
+      aria-label={`${projectData.projectname || "Project"}, ${
+        projectData.altcoverimage || "Banner image"
+      }`}
       style={{
         backgroundImage: `url(${
-          isVisible1 && projectData?.coverimage
+          isCoverImageVisible && projectData?.coverimage
             ? URL + projectData.coverimage
             : projectCover
         })`,
@@ -77,11 +85,23 @@ export const ProjectBanner = () => {
           <div className="grid  md:grid-cols-2">
             <div>
               {projectData?.projectlogo && (
-                <div className="w-full h-[40px] md:h-[90px] relative py-1 flex justify-start items-center ">
+                <div
+                  className="w-full h-[40px] md:h-[90px] relative py-1 flex justify-start items-center "
+                  ref={logoRef}
+                >
                   <img
-                    className="h-full relative"
-                    src={URL + projectData.projectlogo}
-                    alt={projectData.developer}
+                    className={`h-full ${
+                      isLogoVisible ? "opacity-100" : "opacity-0"
+                    } transition-opacity`}
+                    src={
+                      isLogoVisible
+                        ? URL + projectData.projectlogo
+                        : projectCover
+                    }
+                    alt={`${projectData.altprojectlogo || "Project Logo"}, ${
+                      projectData.projectname || "Banner image Logo"
+                    }`}
+                    loading="lazy"
                   />
                 </div>
               )}
@@ -94,13 +114,13 @@ export const ProjectBanner = () => {
                     <TbPointFilled className="text-[1.9rem] text-[#fff] animate-ping absolute top-[-2px] left-[-2.5px]" />
                   </div>
 
-                  <h6>Starting From: {projectData.startingprice}</h6>
+                  <h2>Starting From: {projectData.startingprice}</h2>
                 </div>
               )}
               <div className=" flex gap-3 mt-2">
                 <button
                   onClick={() => setShowPopup(true)}
-                  className="site-btn "
+                  className="site-btn1 "
                 >
                   Request callback
                 </button>

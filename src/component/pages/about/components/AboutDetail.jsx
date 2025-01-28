@@ -2,14 +2,19 @@ import React from "react";
 import logo from "../../../../assets/logo/dnklogo_1.webp";
 import dan from "../../../../assets/team-img/dan01.webp";
 import waseem from "../../../../assets/team-img/waseem01.webp";
+import LazyImage from "../../../layout/LazyImage";
 
 function AboutDetail() {
   return (
     <div>
       <div className="about-section w-full bg-[#040406] flex items-center justify-center">
         <div className="container max-w-[1240px] py-5  px-4  md:py-9 grid  md:grid-cols-2 relative">
-          <div className="border-r-none  md:border-r-[0.5px] border-white mr-0 md:mr-6 hidden md:block">
-            <img src={logo} alt="logo" className="w-[50%] m-auto" />
+          <div className="border-r-none  md:border-r-[0.5px] border-white mr-0 md:mr-6 hidden md:flex items-center justify-center h-full">
+            <LazyImage
+              src={logo}
+              alt="DNK Real Estate logo, Dubai Real Estate Market"
+              className="w-[50%] m-auto"
+            />
             {/* <h2 className='text-[#ffffff] text-[1.9rem] m-auto text-center'>DNK Real Estate</h2> */}
           </div>
           <div>
@@ -40,10 +45,10 @@ function AboutDetail() {
       <div className="about-section w-full bg-[#040406] flex items-center justify-center">
         <div className="container max-w-[1240px] py-5  px-4  md:py-9 grid  grid-cols-2 relative">
           <div class="max-w-max bg-[#040406]">
-            <img
-              class="w-[90%] md:w-[50%] m-auto"
+            <LazyImage
+              className="w-[90%] md:w-[50%] m-auto"
               src={waseem}
-              alt="team image"
+              alt="Waseem, CEO, DNK Real Estate"
             />
             <div class="text-center pt-1">
               <h5 class="mb-0 text-[1rem] md:text-2xl font-bold tracking-tight text-white">
@@ -53,7 +58,11 @@ function AboutDetail() {
             </div>
           </div>
           <div class="max-w-max bg-[#040406]">
-            <img class="w-[90%] md:w-[50%] m-auto" src={dan} alt="team image" />
+            <LazyImage
+              className="w-[90%] md:w-[50%] m-auto"
+              src={dan}
+              alt="Dann, Co-Founder, Managing Director, DNK Real Estate"
+            />
             <div class="text-center pt-1">
               <h5 class="mb-0 text-[1rem] md:text-2xl font-bold tracking-tight text-white">
                 Dann Leslie

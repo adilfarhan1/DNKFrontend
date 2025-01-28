@@ -5,6 +5,7 @@ import { URL } from "../../../../url/axios";
 import userProfile from "../../../../assets/icons/userprofile.webp";
 import { useNavigate } from "react-router-dom";
 import useSliderLazyLoad from "../../../../hooks/useSliderLazyLoad"; // Import the custom hook
+import LazyImage from "../../../layout/LazyImage";
 
 export const TeamListMain = (props) => {
   const { params } = props;
@@ -95,17 +96,16 @@ export const TeamListMain = (props) => {
           searchedList.map((data, index) => {
             const thumbnailUrl = imageUrls[index] || userProfile;
             return (
-              <a
+              <div
                 className="p-4"
                 key={data._id}
                 onClick={() => handleCardClick(data._id)}
               >
                 <div className="max-w-max bg-[#040406] cursor-pointer team-card">
-                  <img
+                  <LazyImage
                     className="rounded-t-lg w-[70%] xl:w-[100%] md:w-[90%] m-auto"
                     src={thumbnailUrl}
-                    alt="team image"
-                    loading="lazy"
+                    alt={`${data.position}, 'Real estate, Dubai Real estate, real estate money, make money, millionaire'`}
                   />
                   <div className="text-center pt-1">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
@@ -119,7 +119,7 @@ export const TeamListMain = (props) => {
                     </p>
                   </div>
                 </div>
-              </a>
+              </div>
             );
           })
         ) : (

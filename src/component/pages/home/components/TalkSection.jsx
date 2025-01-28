@@ -20,8 +20,9 @@ export const TalkSection = () => {
             <div className="p-2">
               <img
                 src={Assist}
-                alt="info icon"
+                alt="Damac residence dubai downtown"
                 className="pb-4 m-auto md:m-0 w-[48px]"
+                loading="lazy"
               />
               <h3 className="text-center md:text-left">
                 Call Enquiry Assistance
@@ -34,8 +35,9 @@ export const TalkSection = () => {
             <div className="p-2">
               <img
                 src={Consultation}
-                alt="info icon"
+                alt="Real estate management dubai"
                 className="pb-4 m-auto md:m-0 w-[48px]"
+                loading="lazy"
               />
               <h3 className="text-center md:text-left">Project Consultation</h3>
               <p className="text-center md:text-left">
@@ -45,8 +47,9 @@ export const TalkSection = () => {
             <div className="p-2">
               <img
                 src={Estimation}
-                alt="info icon"
+                alt="Top real estate companies in dubai"
                 className="pb-4  m-auto md:m-0 w-[48px]"
+                loading="lazy"
               />
               <h3 className="text-center md:text-left">Project Estimation</h3>
               <p className="mb-0 text-center md:text-left">
@@ -57,8 +60,9 @@ export const TalkSection = () => {
             <div className="p-2">
               <img
                 src={Shedule}
-                alt="info icon"
+                alt="3 bedroom villa for sale in dubai"
                 className="pb-4  m-auto md:m-0 w-[48px]"
+                loading="lazy"
               />
               <h3 className="text-center md:text-left">
                 Scheduling Appointments

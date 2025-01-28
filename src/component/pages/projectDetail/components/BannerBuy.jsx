@@ -53,6 +53,7 @@ export const BannerBuy = () => {
     <div
       className="banner w-full bg-[#040406] flex items-center justify-center"
       ref={bannerRef}
+      aria-label={`Real Estate Market Dubai`}
       style={{ backgroundImage: bannerImg ? `url(${bannerImg})` : "" }}
     >
       <div className="container max-w-[1240px] px-4 flex items-center justify-start">

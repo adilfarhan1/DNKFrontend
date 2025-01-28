@@ -3,11 +3,17 @@ import { useLocation } from "react-router-dom";
 import { MdModeEditOutline } from "react-icons/md";
 import { useProjectServices } from "../../../../services/projectServices";
 import { MdDelete } from "react-icons/md";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Swal from "sweetalert2";
+import ReactPaginate from "react-paginate";
 
 export const ViewList = (props) => {
   const { createProject, setCreateProject, submit, params } = props;
   const [projectList, setProjectList] = useState([]);
   const [searchedList, setSearchedList] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [currentPage, setCurrentPage] = useState(0);
+    const [itemsPerPage] = useState(30);
   const { getProjectList, putProjectList, deleteProjectList } =
     useProjectServices();
 
@@ -96,22 +102,65 @@ export const ViewList = (props) => {
       projectlogo: data.projectlogo,
       downpayment: data.downpayment,
       paymentplan: data.paymentplan,
+      projectkeyword: data.projectkeyword,
+      projectdescription: data.projectdescription,
+      altprojectlogo: data.altprojectlogo,
+      altthumbnail: data.altthumbnail,
+      altcoverimage: data.altcoverimage,
+      altgallary1: data.altgallary1,
+      altgallary2: data.altgallary2,
+      altgallary3: data.altgallary3,
     });
   };
 
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+   const offset = currentPage * itemsPerPage;
+   const currentItems = searchedList
+     .filter(
+       (data) =>
+         data.projectname.toLowerCase().includes(searchTerm.toLowerCase()) // Filtering based on search term
+     )
+     .slice(offset, offset + itemsPerPage);
+   const pageCount = Math.ceil(searchedList.length / itemsPerPage);
+
   const handleDelete = async (id) => {
-    try {
-      const response = await deleteProjectList(id);
-      if (response.success) {
-        setProjectList((prevList) =>
-          prevList.filter((item) => item._id !== id)
-        );
-      } else {
-        console.error("Failed to delete project");
-      }
-    } catch (err) {
-      console.error("Error deleting project:", err);
+     const result = await Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+     });
+    if (result.isConfirmed) {
+     try {
+       const response = await deleteProjectList(id);
+       if (response.sucess) {
+         setProjectList((prevList) =>
+           prevList.filter((item) => item._id !== id)
+         );
+         Swal.fire(
+           "Deleted!",
+           response.message || "Your item has been deleted.",
+           "success"
+         );
+       } else {
+         Swal.fire(
+           "Failed!",
+           response.message || "Failed to delete the item.",
+           "error"
+         );
+       }
+     } catch (err) {
+       Swal.fire("Error!", "An error occurred while deleting.", "error");
+       console.error("Error deleting project:", err);
+     }
     }
+   
   };
 
   return (
@@ -129,8 +178,8 @@ export const ViewList = (props) => {
           </tr>
         </thead>
         <tbody>
-          {searchedList.length > 0 ? (
-            searchedList.map((data, i) => (
+          {currentItems.length > 0 ? (
+            currentItems.map((data, i) => (
               <tr>
                 <td>{data.projectname}</td>
                 <td>{data.developer}</td>
@@ -162,6 +211,25 @@ export const ViewList = (props) => {
           )}
         </tbody>
       </table>
+      {/* Pagination */}
+      <div className="flex justify-center mt-5 pagination-block">
+        <ReactPaginate
+          className="flex text-[#000]"
+          previousLabel={<IoIosArrowBack className="text-[1.5rem]" />}
+          nextLabel={<IoIosArrowForward className="text-[1.5rem]" />}
+          breakLabel={"..."}
+          breakClassName={"break-me"}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination"}
+          activeClassName={"active"}
+          previousClassName={"previous-button"}
+          nextClassName={"next-button"}
+          disabledClassName={"disabled"}
+        />
+      </div>
     </div>
   );
 };

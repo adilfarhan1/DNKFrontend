@@ -3,6 +3,7 @@ import bannerImg from "../../../../assets/banner-img/banner_home.webp";
 import { PopupModel } from "../../../model/PopupModel";
 import { useProjectServices } from "../../../../services/projectServices";
 import { URL } from "../../../../url/axios";
+import LazyImage from "../../../layout/LazyImage";
 
 export const BannerHome = () => {
   const [ShowPopup, setShowPopup] = useState(false);
@@ -95,7 +96,7 @@ export const BannerHome = () => {
     <div
       ref={bannerRef}
       role="img"
-      aria-label="dubai view"
+      aria-label="dubai view, Real estate, off plan, ROI, investment"
       className="banner w-full bg-[#040406] flex items-center justify-center"
       style={isInView ? { backgroundImage: `url(${imageUrl})` } : {}}
     >
@@ -103,17 +104,21 @@ export const BannerHome = () => {
         <div className="banner-content grid md:grid-cols-3">
           <div className="z-10 w-fit col-span-2">
             <h1 className="banner-h1">
-              Build Your Legacy in Dubai with DNK Real Estate
+              Build Your Future in Dubai with DNK Real Estate
             </h1>
-            <p className="pb-4">
-              Our experts will help you to find the right property
+            <p className="pb-4 banner-h1">
+              Discover your ideal <strong>property in Dubai</strong> with the
+              help of our seasoned <strong>real estate experts</strong>. Whether
+              you're looking for a dream home or a profitable{" "}
+              <strong>investment opportunity</strong>, we provide personalized
+              guidance to help you make the right choice.
             </p>
-            <button onClick={() => setShowPopup(true)} className="site-btn ">
+            <button onClick={() => setShowPopup(true)} className="site-btn1 ">
               Request callback
             </button>
           </div>
           <div className="w-[50%] md:w-[70%] order-first md:order-last z-10">
-            <img src={eventImageUrl} alt="" />
+            <LazyImage src={eventImageUrl} alt="" className="" />
           </div>
         </div>
         <div className="bg-[#00000066] w-full h-full absolute left-0 top-0 z-0 sm:hidden"></div>

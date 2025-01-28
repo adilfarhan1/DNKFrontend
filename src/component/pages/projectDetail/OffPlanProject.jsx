@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import BannerBuy from "./components/BannerBuy";
 import TalkSection from "../home/components/TalkSection";
 import { OffPlanProjectGridList } from "./components/OffPlanProjectGridList";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const OffPlanProject = () => {
   const [keywords, setKeywords] = useState([]);

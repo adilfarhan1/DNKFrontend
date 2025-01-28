@@ -4,8 +4,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import PartnerSection from "../home/components/PartnerSection";
 import { userUserServices } from "../../../services/userServices";
-import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 export const CareerPage = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -187,6 +187,7 @@ export const CareerPage = () => {
           property="og:description"
           content="At DNK Real Estate, we are committed to fostering a dynamic and inclusive workplace where talent thrives. Explore exciting career opportunities in the real estate sector, from sales and marketing to property management and administration. Join us and be part of a passionate team dedicated to excellence and innovation in Dubai's vibrant real estate market."
         />
+        <meta name="robots" content="index, follow" />
         <meta property="og:image" content="https://www.dnkre.com/logo.webp" />
         <meta property="og:url" content="https://dnkre.com/careers" />
         <meta property="og:type" content="website" />
@@ -211,7 +212,6 @@ export const CareerPage = () => {
                 "At DNK Real Estate, we are committed to fostering a dynamic and inclusive workplace where talent thrives. Explore exciting career opportunities in the real estate sector, from sales and marketing to property management and administration. Join us and be part of a passionate team dedicated to excellence and innovation in Dubai's vibrant real estate market.",
               keywords: keywords.join(", "),
               image: "https://www.dnkre.com/logo.webp",
-              
             },
           })}
         </script>

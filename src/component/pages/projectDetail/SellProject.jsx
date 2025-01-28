@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import BannerBuy from "./components/BannerBuy";
 import TalkSection from "../home/components/TalkSection";
 import SellProjectGrid from "../projectDetail/components/SellProjectGrid";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const SellProject = () => {
   const [keywords, setKeywords] = useState([]);

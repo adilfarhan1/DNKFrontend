@@ -11,7 +11,7 @@ import PartnerSection from "../home/components/PartnerSection";
 import ReviewSection from "../home/components/ReviewSection";
 import OurProcess from "../home/components/OurProcess";
 import BannerService from "./component/BannerService";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const OurServices = () => {
   const [keywords, setKeywords] = useState([]);
@@ -49,6 +49,7 @@ export const OurServices = () => {
         />
         <meta name="keywords" content={keywords.join(", ")} />
         <link rel="canonical" href="https://www.dnkre.com/services" />
+        <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Real Estate Services in Dubai" />
         <meta
           property="og:description"
@@ -104,8 +105,13 @@ export const OurServices = () => {
                       src={loadingRound}
                       alt="loading loop"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={propertyManagement} alt="service icon m-auto" />
+                    <img
+                      src={propertyManagement}
+                      alt="service icon m-auto"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -144,8 +150,13 @@ export const OurServices = () => {
                       src={loadingRound}
                       alt="loading loop"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={capitalImprovements} alt="service icon m-auto" />
+                    <img
+                      src={capitalImprovements}
+                      alt="service icon m-auto"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -185,8 +196,13 @@ export const OurServices = () => {
                       src={loadingRound}
                       alt="loading loop"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={financeRealEstate} alt="service icon m-auto" />
+                    <img
+                      src={financeRealEstate}
+                      alt="service icon m-auto"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -223,8 +239,13 @@ export const OurServices = () => {
                       src={loadingRound}
                       alt="loading loop"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={financialReporting} alt="service icon m-auto" />
+                    <img
+                      src={financialReporting}
+                      alt="service icon m-auto"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -264,8 +285,13 @@ export const OurServices = () => {
                       src={loadingRound}
                       alt="loading loop"
                       className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      loading="lazy"
                     />
-                    <img src={recoverAssetValue} alt="service icon m-auto" />
+                    <img
+                      src={recoverAssetValue}
+                      alt="service icon m-auto"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>

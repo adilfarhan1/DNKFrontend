@@ -36,7 +36,7 @@ export const LpaymentPlan = () => {
         )}
         <table className="w-full border-2 overflow-auto border-[#000] bg-[#fff] ">
           <thead>
-            <tr className="bg-[#9D2742] text-[#fff]">
+            <tr className="bg-[#CFA028] text-[#fff]">
               <th>Description</th>
               <th>Milestone Event</th>
               <th>(%) Value</th>

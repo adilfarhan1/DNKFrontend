@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../../../assets/lavioleta/Damac-Logo.png";
+import logo from "../../../../assets/bahria/logoBT.webp";
 import { GrFacebookOption } from "react-icons/gr";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";

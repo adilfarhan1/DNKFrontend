@@ -40,7 +40,7 @@ export const LFloorPlan = () => {
         </button>
       </div>
       <div className="tab-content bg-[#D9D9D9] p-1 md:p-3">
-        {activeTab === "Tab2" && (
+        {activeTab === "Tab1" && (
           <div className="m-2 relative">
             {isOverlayVisible && (
               <div
@@ -64,7 +64,7 @@ export const LFloorPlan = () => {
             </div>
           </div>
         )}
-        {activeTab === "Tab1" && (
+        {activeTab === "Tab2" && (
           <div className="m-2 relative">
             {isOverlayVisible && (
               <div

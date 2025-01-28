@@ -16,9 +16,8 @@ export const LTalkSection = () => {
       <div className="container max-w-[1240px] py-5 px-4 md:py-9 talkSection">
         <h1 className="m-auto w-fit">Let's Talk Together</h1>
         <p className="text-center m-auto w-[100%] md:w-[80%] pb-4 text-[#ffff]">
-          We love talk with new people. Please take a moment to tell us about
-          your Dream. Your messages will be responded to within ONE BUSINESS
-          DAY.
+          Please fill out the form, our experts will get in touch with you
+          shortly.
         </p>
         <div className="grid md:grid-cols-2 relative pt-8">
           <div className="grid grid-cols-2">

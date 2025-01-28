@@ -1,6 +1,6 @@
 import React from "react";
 import FormRoadshow from "./components/FormRoadshow";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const Clintside = () => {
   return (

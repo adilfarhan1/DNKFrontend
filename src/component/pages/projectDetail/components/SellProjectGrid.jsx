@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useProjectServices } from "../../../../services/projectServices";
-import { URL } from "../../../../url/axios";
 import { useNavigate } from "react-router-dom";
-import DemoImage from "../../../../assets/icons/image_demo.webp";
 
 export const ProjectGridList = (props) => {
   const { params } = props;

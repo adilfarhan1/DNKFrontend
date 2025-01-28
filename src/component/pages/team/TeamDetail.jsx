@@ -10,7 +10,8 @@ import TalkSection from "../home/components/TalkSection";
 import { useParams } from "react-router-dom";
 import { userTeamServices } from "../../../services/teamServices";
 import { URL } from "../../../url/axios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
+import LazyImage from "../../layout/LazyImage";
 
 export const TeamDetail = () => {
   const { id } = useParams();
@@ -51,33 +52,30 @@ export const TeamDetail = () => {
     ]);
   }, []);
 
-  const fetchTeam = async () => {
-    try {
-      const response = await getTeamById(id);
-      console.log("API Response:", response); // Log the API response
+const fetchTeam = async () => {
+  try {
+    const response = await getTeamById(id);
+    console.log("API Response:", response); // Log the API response
 
-      if (response.success) {
-        // const teamData = response.data.find(
-        //   (user) => user.id === id
-        // );
-        const teamData = response.data;
-        console.log("Matching Team Data:", teamData); // Log the matched team data
+    if (response.success) {
+      const teamData = response.data;
+      console.log("Matching Team Data:", teamData); // Log the matched team data
 
-        if (teamData) {
-          setTeamData(teamData);
-        } else {
-          setError("No team member found with the provided ID.");
-        }
+      if (teamData) {
+        setTeamData(teamData);
       } else {
-        setError("Failed to fetch team details.");
+        setError("No team member found with the provided ID.");
       }
-    } catch (err) {
-      console.error("Failed to fetch team details", err);
-      setError("An error occurred while fetching team details.");
-    } finally {
-      setLoading(false);
+    } else {
+      setError("Failed to fetch team details.");
     }
-  };
+  } catch (err) {
+    console.error("Failed to fetch team details", err);
+    setError("An error occurred while fetching team details.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   if (loading) {
     return (
@@ -103,6 +101,9 @@ export const TeamDetail = () => {
         />
         <meta name="keywords" content={keywords.join(", ")} />
         <link rel="canonical" href={`https://www.dnkre.com/team/${id}`} />
+
+        <meta name="robots" content="index, follow" />
+
         <meta
           property="og:title"
           content={`Best ${teamData?.position} ${teamData?.name} in DNK Real Estate`}
@@ -166,11 +167,10 @@ export const TeamDetail = () => {
       <div>
         <div className="team-section w-full bg-[#040406] flex items-center justify-center">
           <div className="container max-w-[1240px] py-5  px-4  md:py-9 grid  md:grid-cols-2 relative">
-            <img
+            <LazyImage
               src={teamData.image ? URL + teamData.image : asad}
-              alt=""
+              alt="Real EState billionaire, millionaire, ROI, Trading"
               className="w-[80%] m-auto"
-              loading="lazy"
             />
             <div>
               <h1 className="banner-h1 mb-0">{teamData?.name}</h1>

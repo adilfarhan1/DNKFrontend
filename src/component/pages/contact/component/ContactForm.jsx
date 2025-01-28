@@ -3,7 +3,6 @@ import { FaWhatsapp } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { userUserServices } from "../../../../services/userServices";
-import axiosPrivate from "../../../../url/axios";
 import Swal from "sweetalert2";
 
 export const ContactForm = ({ onFormSubmit }) => {

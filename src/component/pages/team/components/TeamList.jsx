@@ -3,6 +3,7 @@ import userIcon from "../../../../assets/icons/usericon.webp";
 import { URL } from "../../../../url/axios";
 import { useNavigate } from "react-router-dom";
 import { userTeamServices } from "../../../../services/teamServices";
+import LazyImage from "../../../layout/LazyImage";
 
 export const TeamList = (props) => {
   const { params } = props;
@@ -30,10 +31,12 @@ export const TeamList = (props) => {
       }
     } catch (err) {
       console.error("Failed to fetch team list", err);
+      setError(err);
     } finally {
       setLoading(false);
     }
   };
+
 
   if (loading) {
     return (
@@ -64,11 +67,10 @@ export const TeamList = (props) => {
                 onClick={() => handleCardClick(data._id)}
               >
                 <div class="max-w-max bg-[#040406] cursor-pointer team-card">
-                  <img
+                  <LazyImage
                     class="rounded-t-lg w-[70%] xl:w-[100%] md:w-[90%] m-auto"
                     src={data.image ? URL + data.image : userIcon}
-                    alt="team image"
-                    loading="lazy"
+                    alt="Real Estate Dubai, Helping Dubai Real Estate, Teaching Real Estate"
                   />
                   <div class="text-center pt-1">
                     <h5 class="mb-2 text-[1rem] md:text-2xl font-bold tracking-tight text-white">

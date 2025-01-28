@@ -3,6 +3,7 @@ body{
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
+    font-display: swap; 
 }
 //Site Button
 .site-btn{
@@ -112,6 +113,40 @@ body{
     }
     100%{
         left: 100%;
+    }
+}
+
+.site-sub-btn1{
+    border-radius: 5px;
+    padding: 10px 25px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    text-align: center;
+    @media (max-width: 992px) {
+        font-size: 0.7rem;
+    }
+    @media (max-width: 480px) {
+        padding: 5px 20px 5px 20px;
+    }
+    &:hover{
+        background: #fff;
+        color: #000;
+    }
+   
+
+}
+.NewsFilterButton{
+ .active{
+     color: #000;
+        background: #fff;
+    }
+}
+
+.newtext{
+    a{
+    color: #495efd;
     }
 }
 
@@ -290,6 +325,11 @@ p{
     background-size: cover;
     background-position: 80%;
     background-repeat: no-repeat;
+    min-height: 500px; 
+    width: 100%;
+     @media (max-width: 768px) {
+            min-height: 300px; 
+        }
     
     .banner-h1{
         max-width: 70%;
@@ -316,7 +356,7 @@ p{
             padding: 3.2rem 0rem;
         }
     }
-    h6{
+    h2{
         color: #fff;
         font-size: 1.2rem;
          @media (max-width: 768px) {
@@ -357,24 +397,31 @@ p{
     border-bottom: solid 1px #575769;
 }
 .social-links{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    
     li{
         color: #ffff;
         font-size: 1.5rem;
-        margin: 5px;
+         height: 40px;
+        width: 40px;
+       
         &:hover{
             color: #CE8745;
+        }
+        a{
+            svg{
+            height: 40px;
+            width: 40px;
+            padding: 5px;
+            }
         }
     }
 }
 .footer-body{
-    h5{
+    h6{
         color: #ffffff;
         font-size: 1.2rem;
         margin-bottom: 0.8rem;
+        font-weight: 600;
     }
     li{
         margin-bottom: 10px;  
@@ -421,6 +468,22 @@ p{
     right: 30px;
     cursor: pointer;
     z-index: 9999;
+    @media (max-width:768px) {
+        left: 30px;
+        bottom: 20px;
+        right: unset;
+    }
+}
+
+.whatsapp-widget{
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 9999;
+    @media (max-width:768px) {
+        bottom: 20px;
+    }
 }
 
 
@@ -435,7 +498,7 @@ p{
 
 // //dashboard Home
 .dashboardHome{
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
     // .active{
     //     background: #CE8745 ;
     //     border: none;
@@ -477,6 +540,10 @@ table{
 .b24-widget-button-position-bottom-right {
   bottom: 124px !important;
   right: 40px !important;
+  @media (max-width:768px) {
+    bottom: 20px !important;
+    right: 23px !important;
+  }
 }
 
 #content1 {
@@ -568,13 +635,13 @@ table{
         position: relative;
         transition-duration: .2s;
         &:hover{
-         background: #9D2742;
+         background: #CFA028;
         border: 1px solid #fff;
         color: #040612;
         }
     }
     .active{
-        background: #9D2742;
+        background: #CFA028;
         border: 1px solid #fff;
         color: #040612;
     }
@@ -589,4 +656,39 @@ table{
   align-items: center;
   display: flex;
   gap: 10px;
+}
+
+
+@keyframes zoomFadeOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.logo-animation {
+  animation: zoomFadeOut 2s forwards;
+  width: 85px; 
+  height: auto;
+  display: block;
+  margin: auto;
+  @media (max-width:768px) {
+    width: 45px;
+  }
+}
+
+.NewsBlock {
+    ul {
+        direction: ltr; 
+        list-style-type: disc;
+        padding-left: 20px;
+    }
 }

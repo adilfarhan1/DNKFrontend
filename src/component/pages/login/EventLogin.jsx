@@ -4,7 +4,7 @@ import { FaUser } from "react-icons/fa";
 import Logo from "../../../assets/logo/dnklogo_1.webp";
 import { userUserServices } from "../../../services/userServices";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const EventLogin = () => {
   const [username, setUsername] = useState("");
