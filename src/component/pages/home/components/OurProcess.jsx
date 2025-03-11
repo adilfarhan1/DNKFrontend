@@ -22,7 +22,7 @@ export const OurProcess = () => {
                     <img
                       src={loadingRound}
                       alt="3 bedroom villa for sale in dubai, return of investment"
-                      className="absolute left-0 top-0 animate-spin"
+                      className="absolute left-0 top-0 animate-spin w-full"
                       loading="lazy"
                     />
                     <img
@@ -55,7 +55,7 @@ export const OurProcess = () => {
                     <img
                       src={loadingRound}
                       alt="Apartments for sales in dubai marina, Villa, offplan"
-                      className="absolute left-0 top-0 animate-spin"
+                      className="absolute left-0 top-0 animate-spin w-full"
                       loading="lazy"
                     />
                     <img
@@ -88,7 +88,7 @@ export const OurProcess = () => {
                     <img
                       src={loadingRound}
                       alt="Apartments for sale in downtown dubai, sweet home, Dubai"
-                      className="absolute left-0 top-0 animate-spin"
+                      className="absolute left-0 top-0 animate-spin w-full"
                       loading="lazy"
                     />
                     <img

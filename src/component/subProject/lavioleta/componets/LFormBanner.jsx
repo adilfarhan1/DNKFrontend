@@ -7,7 +7,6 @@ export const LFormBanner = ({ onClose, onFormSubmit }) => {
 
   const handleFormSubmit = (formData) => {
     onClose();
-    console.log("Form submitted:", formData);
   };
 
   return (

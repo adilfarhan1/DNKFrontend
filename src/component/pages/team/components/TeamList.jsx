@@ -37,7 +37,6 @@ export const TeamList = (props) => {
     }
   };
 
-
   if (loading) {
     return (
       <div className="bg-[#040406] text-center">

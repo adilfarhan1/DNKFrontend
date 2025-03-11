@@ -44,8 +44,6 @@ export const ViewList = (props) => {
         );
         setProjectList(sortedProjects);
       }
-
-      console.log("project data - ", response.data);
     } catch (err) {}
   };
 
@@ -64,7 +62,6 @@ export const ViewList = (props) => {
       bedroom: data.bedroom,
       handover: data.handover,
       totalarea: data.totalarea,
-      handover: data.handover,
       coverimage: data.coverimage,
       bannertitile: data.bannertitile,
       bannersubtitile: data.bannersubtitile,

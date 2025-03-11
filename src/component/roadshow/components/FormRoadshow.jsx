@@ -17,7 +17,7 @@ export const FormRoadshow = () => {
     fullName: "",
     email: "",
     phone: "91",
-    event: "Delhi Roadshow (11-12) 2025",
+    event: "Chandigarh Event ( 15-16) 2025",
     attendDate: "",
     attendTime: "",
     sourcedRm: "",
@@ -204,11 +204,11 @@ export const FormRoadshow = () => {
             <option className="text-[#000000]" value={""}>
               Select -
             </option>
-            <option className="text-[#000000]" value={"11th-Jan"}>
-              11th January
+            <option className="text-[#000000]" value={"15th-Feb"}>
+              SAT 15th February
             </option>
-            <option className="text-[#000000]" value={"12th-Jan"}>
-              12th January
+            <option className="text-[#000000]" value={"16th-Feb"}>
+              SUN 16th February
             </option>
           </select>
           {errors.attendDate && (

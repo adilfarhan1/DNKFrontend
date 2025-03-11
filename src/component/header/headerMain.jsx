@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { URL } from "../../url/axios";
 import { Link } from "react-router-dom";
-import LazyImage from "../layout/LazyImage";
 
 export const HeaderMain = () => {
   const [nav, setNav] = useState(true);
@@ -56,105 +55,48 @@ export const HeaderMain = () => {
     }
   };
 
-  //nav menu button
   const handleNav = () => {
     setNav(!nav);
-  };
-
-  //navigation
-  const goToAboutHead = () => {
-    navigate("/about");
   };
   const goToAbout = () => {
     navigate("/about");
     setNav(!nav);
   };
-
-  const goToTeamHead = () => {
-    navigate("/team");
-  };
-
   const goToTeam = () => {
     navigate("/team");
     setNav(!nav);
-  };
-  const goToContactHead = () => {
-    navigate("/contact");
   };
   const goToContact = () => {
     navigate("/contact");
     setNav(!nav);
   };
-
-  const goToBuyHead = () => {
-    navigate("/buy-project");
-  };
   const goToBuy = () => {
     navigate("/buy-project");
     setNav(!nav);
   };
-  const goToOffPlanHead = () => {
-    navigate("/off-plan-project");
-  };
-
   const goToOffPlan = () => {
     navigate("/off-plan-project");
     setNav(!nav);
-  };
-
-  const goToOffSellHead = () => {
-    navigate("/sell-project");
   };
   const goToOffSell = () => {
     navigate("/sell-project");
     setNav(!nav);
   };
-
-  const goToCareersHead = () => {
-    navigate("/careers");
-  };
-
   const goToCareers = () => {
     navigate("/careers");
     setNav(!nav);
   };
-
-    const goToNews = () => {
-      navigate("/news");
-      setNav(!nav);
-    };
-
-  const goToHomeHead = () => {
-    navigate("/");
+  const goToNews = () => {
+    navigate("/news");
+    setNav(!nav);
   };
   const goToHome = () => {
     navigate("/");
     setNav(!nav);
   };
-
-  const getActive = () => {
-    switch (location.pathname) {
-      case "/buy-project":
-        return "active";
-      case "/buy-project":
-        return "active";
-      case "/off-plan-project":
-        return "active";
-      case "/sell-project":
-        return "active";
-      case "/about":
-        return "active";
-      case "/team":
-        return "active";
-      case "/contact":
-        return "active";
-    }
-  };
-
   const imageUrl = logo.image
     ? `${URL}${encodeURIComponent(logo.image)}`
     : dnkLogo;
-
   return (
     <div>
       <header>
@@ -162,17 +104,19 @@ export const HeaderMain = () => {
           <div className="left-block flex items-center justify-center gap-4 md:gap-0">
             <div onClick={handleNav}>
               {!nav ? (
-                <IoClose className="menu-btn" />
+                <IoClose className="menu-btn" aria-label="close" />
               ) : (
-                <IoMenu className="menu-btn" />
+                <IoMenu className="menu-btn" aria-label="menu" />
               )}
             </div>
             <a href="/">
               <div className="w-[full] h-[45px] flex items-center justify-start">
-                <LazyImage
+                <img
                   src={imageUrl}
                   alt="DNK Logo, Real Estate"
                   className="h-full max-w-[170px]"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </a>
@@ -184,7 +128,6 @@ export const HeaderMain = () => {
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/" && "activeHead"
                   }`}
-                  // onClick={goToHomeHead}
                 >
                   <Link to="/">
                     <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
@@ -201,7 +144,6 @@ export const HeaderMain = () => {
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/off-plan-project" && "activeHead"
                   }`}
-                  // onClick={goToOffPlanHead}
                 >
                   <Link to="/off-plan-project">
                     <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
@@ -210,28 +152,10 @@ export const HeaderMain = () => {
                     <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </Link>
                 </li>
-                {/* <li
-                                className={`relative inline-flex items-center justify-center group m-2 ${
-                                  location.pathname == "/buy-project" && "activeHead"
-                                }`}
-                                // onClick={goToBuyHead}
-                              >
-                                <Link to="/buy-project">
-                                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
-                                    Buy
-                                  </p>
-                                  <span
-                                    class={
-                                      "absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
-                                    }
-                                  ></span>
-                                </Link>
-                              </li> */}
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/sell-project" && "activeHead"
                   }`}
-                  // onClick={goToOffSellHead}
                 >
                   <Link to="/sell-project">
                     <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
@@ -241,7 +165,6 @@ export const HeaderMain = () => {
                   </Link>
                 </li>
                 <li
-                  // onClick={goToAboutHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/about" && "activeHead"
                   }`}
@@ -254,7 +177,6 @@ export const HeaderMain = () => {
                   </Link>
                 </li>
                 <li
-                  // onClick={goToTeamHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/team" && "activeHead"
                   }`}
@@ -267,7 +189,6 @@ export const HeaderMain = () => {
                   </Link>
                 </li>
                 <li
-                  // onClick={goToTeamHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/news" && "activeHead"
                   }`}
@@ -280,7 +201,6 @@ export const HeaderMain = () => {
                   </Link>
                 </li>
                 <li
-                  // onClick={goToCareersHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/careers" && "activeHead"
                   }`}
@@ -293,7 +213,6 @@ export const HeaderMain = () => {
                   </Link>
                 </li>
                 <li
-                  // onClick={goToContactHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/contact" && "activeHead"
                   }`}
@@ -313,12 +232,17 @@ export const HeaderMain = () => {
                   <a
                     href="https://www.facebook.com/dnkrealestate1/"
                     target="_blank"
+                    aria-label="Facebook"
                   >
                     <FaFacebookF className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
                 </li>
                 <li className="group">
-                  <a href="https://www.instagram.com/dnk_re/" target="_blank">
+                  <a
+                    href="https://www.instagram.com/dnk_re/"
+                    target="_blank"
+                    aria-label="instagram"
+                  >
                     <FaInstagram className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
                 </li>
@@ -326,6 +250,7 @@ export const HeaderMain = () => {
                   <a
                     href="https://www.linkedin.com/company/dnkrealestate/"
                     target="_blank"
+                    aria-label="linkedin"
                   >
                     <FaLinkedin className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
@@ -333,7 +258,7 @@ export const HeaderMain = () => {
               </ul>
               <ul className="pl-2 flex items-center gap-4">
                 <li className="group">
-                  <a href="tel:+971555769195">
+                  <a href="tel:+971555769195" aria-label="Phone Number">
                     <MdCall className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
                 </li>
@@ -341,6 +266,7 @@ export const HeaderMain = () => {
                   <a
                     href="https://wa.me/+971555769195?text=Hello,"
                     target="_blank"
+                    aria-label="Whats app"
                   >
                     <RiWhatsappFill className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>

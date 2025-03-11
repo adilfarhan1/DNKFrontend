@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Newsimgic from "../../../../assets/icons/image.khaleejtimes.jpg"
-import ProjectSide from './ProjectSide';
-import NewsGrid from './NewsGrid';
-import { useParams } from 'react-router-dom';
-import { userNewsServices } from '../../../../services/newsServices';
-import { URL } from '../../../../url/axios';
-import MdNewsGrid from './MdNewsGrid';
-import LazyImage from '../../../layout/LazyImage';
+import React, { useEffect, useState } from "react";
+import Newsimgic from "../../../../assets/icons/image_demo.webp";
+import ProjectSide from "./ProjectSide";
+import NewsGrid from "./NewsGrid";
+import { useParams } from "react-router-dom";
+import { userNewsServices } from "../../../../services/newsServices";
+import { URL } from "../../../../url/axios";
+import MdNewsGrid from "./MdNewsGrid";
+import LazyImage from "../../../layout/LazyImage";
 
 export const NewsMain = () => {
   const { newsurl } = useParams();
@@ -15,19 +15,17 @@ export const NewsMain = () => {
   const [error, setError] = useState(null);
   const { getNewsById } = userNewsServices();
 
-    useEffect(() => {
-      fetchNews();
-    }, [newsurl]);
-  
+  useEffect(() => {
+    fetchNews();
+  }, [newsurl]);
+
   const fetchNews = async () => {
     try {
       const response = await getNewsById(newsurl);
-      console.log("API Response:", response);
 
       if (response?.success) {
         if (response.data) {
           setNewstData(response.data);
-          console.log("Fetched News Data:", response.data);
         } else {
           setError("News data not found for the provided newsurl.");
         }
@@ -50,9 +48,9 @@ export const NewsMain = () => {
     ); // Loading indicator
   }
 
-   if (error) {
-     return <div>{error}</div>; // Display error message
-   }
+  if (error) {
+    return <div>{error}</div>; // Display error message
+  }
   return (
     <div className="w-full bg-[#040406] flex items-center justify-center">
       <div className="container max-w-[1240px] py-5  px-4  md:py-9 relative">
@@ -66,14 +64,16 @@ export const NewsMain = () => {
                 {newsData.published}
               </p>
             </div>
-            <LazyImage
-              className="max-w-full h-auto rounded-md"
+            <img
+              className="max-w-full h-auto rounded-md w-full"
               src={
                 newsData.newsthumbnail
                   ? URL + newsData.newsthumbnail
                   : Newsimgic
               }
-              alt={newsData.alt || 'Dubai Real Estate News'}
+              alt={newsData.alt || "Dubai Real Estate News"}
+              loading="eager"
+              fetchPriority="high"
             />
             <p
               dangerouslySetInnerHTML={{
@@ -109,6 +109,6 @@ export const NewsMain = () => {
       </div>
     </div>
   );
-}
+};
 
-export default NewsMain
+export default NewsMain;

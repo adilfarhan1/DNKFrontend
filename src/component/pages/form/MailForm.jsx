@@ -75,7 +75,6 @@ export const MailForm = ({ onFormSubmit }) => {
       }
 
       const data = await response.json(); // Parse the JSON response
-      console.log("Lead added:", data);
     } catch (error) {
       console.error("Error adding lead:", error);
     }
@@ -105,7 +104,6 @@ export const MailForm = ({ onFormSubmit }) => {
       setCity("");
     } catch (err) {
       console.error("Error submitting form:", err);
-      console.log(err); // Log the error for better debugging
       alert("Failed to send email");
     } finally {
       setLoading(false);

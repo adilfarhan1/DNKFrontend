@@ -80,7 +80,6 @@ export const TalkStn = () => {
          }
 
          const data = await response.json(); // Parse the JSON response
-         console.log("Lead added:", data);
        } catch (error) {
          console.error("Error adding lead:", error);
        }
@@ -113,7 +112,6 @@ export const TalkStn = () => {
           setCity("");
         } catch (err) {
           console.error("Error submitting form:", err);
-          console.log(err); // Log the error for better debugging
           Swal.fire("Failed", "Check your internet connection", "error");
         } finally {
           setLoading(false);

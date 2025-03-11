@@ -1,5 +1,4 @@
-import axios from "axios";
-import axiosPrivate, { URL } from "../url/axios";
+import axiosPrivate from "../url/axios";
 
 export const userTeamServices = () => {
 

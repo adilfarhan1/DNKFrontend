@@ -47,7 +47,6 @@ export const ProjectGridList = (props) => {
       console.error("Failed to fatch project list", err);
     }
   };
-  console.log(getData);
 
   const handleCardClick = (projectname) => {
     const slug = projectname.replace(/\s+/g, "-").toLowerCase();
@@ -88,7 +87,10 @@ export const ProjectGridList = (props) => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)} // Updating the search term
             />
-            <IoSearch className="text-[#fff] text-[1.2rem]" />
+            <IoSearch
+              className="text-[#fff] text-[1.2rem]"
+              aria-label="search all"
+            />
           </div>
         </div>
 
@@ -107,7 +109,11 @@ export const ProjectGridList = (props) => {
                       <div
                         ref={imgRefs}
                         role="img"
-                        aria-label={`${data.projectname || 'River side living'}, ${data.altthumbnail || 'luxury villas and apartments'}`}
+                        aria-label={`${
+                          data.projectname || "River side living"
+                        }, ${
+                          data.altthumbnail || "luxury villas and apartments"
+                        }`}
                         style={{
                           backgroundImage: `url(${
                             data?.thumbnail
@@ -123,7 +129,7 @@ export const ProjectGridList = (props) => {
                         }}
                       >
                         {data.runingstatus === "newlaunch" && (
-                          <div className="card-status-tag text-[0.8rem] bg-[#FF0000] text-[#ffffff] rotate-[-40deg] w-fit px-9 absolute top-8 left-[-35px]">
+                          <div className="card-status-tag text-[0.8rem] bg-[#B30000] text-[#ffffff] rotate-[-40deg] w-fit px-9 absolute top-8 left-[-35px]">
                             <h2 className="text-[0.8rem] font-normal m-0 px-1 py-1">
                               New Launch
                             </h2>
@@ -160,7 +166,10 @@ export const ProjectGridList = (props) => {
                         </h3>
                         {data?.locationname && (
                           <div className="flex items-center">
-                            <MdLocationPin className="text-gray-400 text-[1rem]" />
+                            <MdLocationPin
+                              className="text-gray-400 text-[1rem]"
+                              aria-label="location"
+                            />
                             <h3 class="m-0 font-normal text-gray-400 line-clamp-1">
                               {data.locationname}
                             </h3>
@@ -174,14 +183,6 @@ export const ProjectGridList = (props) => {
             })
           ) : (
             <div className="flex justify-center">
-              {/* <div>
-                <h1 className="text-center m-auto text-[1.4rem]">
-                  No property found
-                </h1>
-                <p className="text-center m-auto text-[#CE8745]">
-                  We have many amazing property for you.
-                </p>
-              </div> */}
               <div className="bg-[#040406] text-center">
                 <p className="m-auto loader !w-[24px] !h-[24px]"></p>
               </div>

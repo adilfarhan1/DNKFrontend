@@ -59,7 +59,6 @@ export const AddNews = (props) => {
   }, [props.mode, props.user_id]);
 
   useEffect(() => {
-    console.log("Updated imageUrls - ", imageUrls);
   }, [imageUrls]);
 
   const fetchProjectDetails = async (id) => {

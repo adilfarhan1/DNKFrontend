@@ -4,7 +4,6 @@ import Slider from "react-slick";
 import { URL } from "../../../../url/axios";
 import userProfile from "../../../../assets/icons/userprofile.webp";
 import { useNavigate } from "react-router-dom";
-import useSliderLazyLoad from "../../../../hooks/useSliderLazyLoad"; // Import the custom hook
 import LazyImage from "../../../layout/LazyImage";
 
 export const TeamListMain = (props) => {
@@ -16,44 +15,40 @@ export const TeamListMain = (props) => {
   const { getTeamPublicList } = userTeamServices();
   const navigate = useNavigate();
 
-  const thumbnailUrls = teamList.map((data) =>
-    data?.image ? `${URL}/${data.image}` : userProfile
-  );
+ const getData = async () => {
+   try {
+     const response = await getTeamPublicList();
+     const fetchedData = Array.isArray(response.data) ? response.data : [];
 
-  const [imageUrls, loadImages] = useSliderLazyLoad(thumbnailUrls, 4);
+     // Shuffle using timestamp seed
+     const shuffled = fetchedData
+       .map((item) => ({ ...item, sortKey: Math.random() })) // Assign random sort key
+       .sort((a, b) => a.sortKey - b.sortKey) // Sort by random key
+       .slice(0, 10); // Pick first 10
+
+     setSearchedList(shuffled);
+   } catch (err) {
+     console.error("Failed to load team data:", err);
+   } finally {
+     setLoading(false);
+   }
+ };
 
   useEffect(() => {
     getData();
   }, []);
 
-  useEffect(() => {
-    let tempList = teamList;
-    setSearchedList(tempList);
-  }, [params, teamList]);
 
-  useEffect(() => {
-    loadImages(0); // Load initial images for visible slides
-  }, [searchedList]);
-
-  const getData = async () => {
-    try {
-      const response = await getTeamPublicList();
-      if (response.success) {
-        setTeamList(response.data);
-      }
-    } catch (err) {
-      setError("Failed to load team data.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  const thumbnailUrls = teamList.map((data) =>
+    data?.image ? `${URL}/${data.image}` : userProfile
+  );
 
   const handleCardClick = (id) => {
     navigate(`/team-detail/${id}`);
   };
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -71,12 +66,6 @@ export const TeamListMain = (props) => {
         settings: { slidesToShow: 1, slidesToScroll: 1 },
       },
     ],
-    beforeChange: (oldIndex, newIndex) => {
-      loadImages(newIndex); // Load images for new visible slides
-    },
-    afterChange: (current) => {
-      loadImages(current); // Ensure images are loaded after slide change
-    },
   };
 
   if (loading) {
@@ -87,14 +76,11 @@ export const TeamListMain = (props) => {
     );
   }
 
-  
-
   return (
     <div>
       <Slider {...settings}>
         {searchedList.length > 0 ? (
           searchedList.map((data, index) => {
-            const thumbnailUrl = imageUrls[index] || userProfile;
             return (
               <div
                 className="p-4"
@@ -104,13 +90,13 @@ export const TeamListMain = (props) => {
                 <div className="max-w-max bg-[#040406] cursor-pointer team-card">
                   <LazyImage
                     className="rounded-t-lg w-[70%] xl:w-[100%] md:w-[90%] m-auto"
-                    src={thumbnailUrl}
+                    src={data?.image ? `${URL}/${data.image}` : userProfile}
                     alt={`${data.position}, 'Real estate, Dubai Real estate, real estate money, make money, millionaire'`}
                   />
                   <div className="text-center pt-1">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                    <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
                       {data.name}
-                    </h5>
+                    </h2>
                     <p className="m-0 font-normal text-gray-400">
                       {data.position}
                     </p>

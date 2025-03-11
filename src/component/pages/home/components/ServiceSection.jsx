@@ -6,15 +6,9 @@ import capitalImprovements from "../../../../assets/icons/capitalimprovement.web
 import financeRealEstate from "../../../../assets/icons/financerealestate.webp";
 import financialReporting from "../../../../assets/icons/financialreporting.webp";
 import recoverAssetValue from "../../../../assets/icons/recoverassetvalue.webp";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ServiceSection = () => {
-  const navigate = useNavigate();
-
-  const goToServices = () => {
-    navigate("/services");
-  };
-
   return (
     <div className="w-full bg-[#121218] flex items-center justify-center">
       <div className="serviceSection container max-w-[1240px] py-5  px-4  md:py-9">
@@ -23,13 +17,13 @@ export const ServiceSection = () => {
           {/* property Management-card */}
           <div class="max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] group m-4 mt-14">
             <div class="relative">
-              <div className="absolute -translate-y-14 w-[100%]">
+              <div className="absolute -translate-y-11 w-[100%]">
                 <div className="w-fit m-auto border border-[#ffff] rounded-[50px] p-[5px] bg-[#121218]">
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
                       alt="Apartments for sale in dubai marina, Apartment, Villa"
-                      className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      className="absolute left-0 top-0 hidden group-hover:block animate-spin w-full"
                       loading="lazy"
                     />
                     <img
@@ -53,26 +47,26 @@ export const ServiceSection = () => {
                   </p>
                 </div>
 
-                <button
-                  onClick={goToServices}
-                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] mt-4 md:text-[1rem] m-auto"
+                <Link
+                  to="/services"
+                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] md:text-[1rem] m-auto p-3 w-fit"
                 >
                   View More
                   <MdOutlineKeyboardDoubleArrowRight className="arrow-r-bounce text-[0.9rem] md:text-[1.3rem]" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
           {/* Capital Improvements-card */}
           <div class="max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] group m-4 mt-14">
             <div class="relative">
-              <div className="absolute -translate-y-14 w-[100%]">
+              <div className="absolute -translate-y-11 w-[100%]">
                 <div className="w-fit m-auto border border-[#ffff] rounded-[50px] p-[5px] bg-[#121218]">
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
                       alt="Vida residence downtown emaar, Emaar, Burj Khalifa"
-                      className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      className="absolute left-0 top-0 hidden group-hover:block animate-spin w-full"
                       loading="lazy"
                     />
                     <img
@@ -96,26 +90,26 @@ export const ServiceSection = () => {
                   </p>
                 </div>
 
-                <button
-                  onClick={goToServices}
-                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] mt-4 md:text-[1rem] m-auto"
+                <Link
+                  to="/services"
+                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] p-3 md:text-[1rem] m-auto w-fit"
                 >
                   View More
                   <MdOutlineKeyboardDoubleArrowRight className="arrow-r-bounce text-[0.9rem] md:text-[1.3rem]" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
           {/* Finance Real Estate-card */}
           <div class="max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] m-4 group mt-14">
             <div class="relative">
-              <div className="absolute -translate-y-14 w-[100%]">
+              <div className="absolute -translate-y-11 w-[100%]">
                 <div className="w-fit m-auto border border-[#ffff] rounded-[50px] p-[5px] bg-[#121218]">
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
                       alt="Real estate management dubai, High ROI Properties"
-                      className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      className="absolute left-0 top-0 hidden group-hover:block animate-spin w-full"
                       loading="lazy"
                     />
                     <img
@@ -140,26 +134,26 @@ export const ServiceSection = () => {
                   </p>
                 </div>
 
-                <button
-                  onClick={goToServices}
-                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] mt-4 md:text-[1rem] m-auto"
+                <Link
+                  to="/services"
+                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] p-3 w-fit md:text-[1rem] m-auto"
                 >
                   View More
                   <MdOutlineKeyboardDoubleArrowRight className="arrow-r-bounce text-[0.9rem] md:text-[1.3rem]" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
           {/* Financial Reporting-card */}
           <div class="max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] m-4 group mt-14">
             <div class="relative">
-              <div className="absolute -translate-y-14 w-[100%]">
+              <div className="absolute -translate-y-11 w-[100%]">
                 <div className="w-fit m-auto border border-[#ffff] rounded-[50px] p-[5px] bg-[#121218]">
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
                       alt="Dubai hills for sale, Dubai South"
-                      className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      className="absolute left-0 top-0 hidden group-hover:block animate-spin w-full"
                       loading="lazy"
                     />
                     <img
@@ -183,26 +177,26 @@ export const ServiceSection = () => {
                   </p>
                 </div>
 
-                <button
-                  onClick={goToServices}
-                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] mt-4 md:text-[1rem] m-auto"
+                <Link
+                  to="/services"
+                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] p-3 w-fit md:text-[1rem] m-auto"
                 >
                   View More
                   <MdOutlineKeyboardDoubleArrowRight className="arrow-r-bounce text-[0.9rem] md:text-[1.3rem]" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
           {/* Recover Asset Value-card */}
           <div class="max-w-max   border border-[#ffff] rounded-[10px] shadow bg-[#121218] m-4 group mt-14">
             <div class="relative">
-              <div className="absolute -translate-y-14 w-[100%]">
+              <div className="absolute -translate-y-11 w-[100%]">
                 <div className="w-fit m-auto border border-[#ffff] rounded-[50px] p-[5px] bg-[#121218]">
                   <div className="relative p-4 ">
                     <img
                       src={loadingRound}
                       alt="Apartments for sale in dubai marina, Return of investment"
-                      className="absolute left-0 top-0 hidden group-hover:block animate-spin"
+                      className="absolute left-0 top-0 hidden group-hover:block animate-spin w-full"
                       loading="lazy"
                     />
                     <img
@@ -226,13 +220,13 @@ export const ServiceSection = () => {
                   </p>
                 </div>
 
-                <button
-                  onClick={goToServices}
-                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] mt-4 md:text-[1rem] m-auto"
+                <Link
+                  to="/services"
+                  className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] p-3 w-fit md:text-[1rem] m-auto"
                 >
                   View More
                   <MdOutlineKeyboardDoubleArrowRight className="arrow-r-bounce text-[0.9rem] md:text-[1.3rem]" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>

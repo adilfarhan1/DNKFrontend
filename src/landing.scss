@@ -5,13 +5,21 @@ body{
     padding: 0;
     font-display: swap; 
 }
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Regular'), local('Poppins-Regular'),
+    url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap') format('woff2');
+  font-display: swap;
+}
+
 //Site Button
 .site-btn{
-    border: solid 1px $text-color-light;
+    border: solid 1px #fff;
     border-radius: 5px;
     padding: 10px 25px;
-    color: $text-color-light;
-    font-weight: $font-semibold;
+    color: #fff;
+    font-weight: 600;
     font-size: 0.9rem;
     transition-duration: 200ms;
      transition: all linear .2s;
@@ -37,8 +45,8 @@ body{
         animation: shade-anim 3s linear infinite;
     }
     &:hover{
-        background: $text-color-light;
-        color: $primary-color;
+        background: #fff;
+        color:#040612;
     }
 
 }
@@ -67,11 +75,11 @@ body{
 }
 
 .site-sub-btn{
-    border: solid 1px $text-color-light;
+    border: solid 1px #fff;
     border-radius: 5px;
     padding: 10px 25px;
-    color: $text-color-light;
-    font-weight: $font-semibold;
+    color: #fff;
+    font-weight: 600;
     font-size: 0.9rem;
     transition: all linear .2s;
     -webkit-transition: all linear 0.2s ;
@@ -95,7 +103,8 @@ body{
     }
     &:hover{
         text-decoration: none;
-        color: $text-color-light;
+        color:#fff;
+;
         &::after{
             left: 100%;
         }
@@ -103,7 +112,7 @@ body{
     &:focus{
         text-decoration: none;
         box-shadow: none;
-        color: $text-color-light;
+        color: #fff;
     }
 
 }
@@ -169,8 +178,8 @@ body{
 
 h1{
         font-size: 2rem;
-        font-weight: $font-semibold;
-        color: $text-color-light;
+        font-weight: 600;
+        color: #fff;
         text-transform: capitalize;
         line-height: 1.1;
         margin-bottom: 10px;
@@ -184,8 +193,8 @@ h1{
 
 h2{
         font-size: 2rem;
-        font-weight: $font-semibold;
-        color: $text-color-light;
+        font-weight: 600;
+        color: #fff;
         text-transform: capitalize;
         line-height: 1.1;
         margin-bottom: 10px;
@@ -198,7 +207,7 @@ h2{
 }
 h5{
     font-size: 1.2rem;
-    font-weight: $font-semibold;
+    font-weight: 600;
     line-height: 2rem;
     margin-bottom: 10px;
     @media (max-width: 992px) {
@@ -211,7 +220,7 @@ h5{
 }
 h3{
     font-size: 1.2rem;
-    font-weight: $font-semibold;
+    font-weight: 600;
     line-height: 2rem;
     margin-bottom: 10px;
     @media (max-width: 992px) {
@@ -223,7 +232,7 @@ h3{
     }
 }
 p{
-    color: $text-color;
+    color: #979797;
     margin-bottom: 20px;
     font-size: 1rem;
     @media (max-width:768px) {
@@ -236,7 +245,7 @@ p{
 .load-text{
         color: #FAC25A;
         text-transform: uppercase;
-        font-weight: $font-semibold;
+        font-weight: 600;
         font-size: 1.2rem;
         line-height: 1;
 }
@@ -342,7 +351,7 @@ p{
     }
     p{
         font-size: 1rem;
-        color: $text-color-light;
+        color: #fff;
         @media (max-width: 768px) {
             font-size: 0.8rem;
         }
@@ -381,7 +390,7 @@ p{
 //Our Partners
 //Let's Talk Together
 .talkSection{
-    color: $text-color-light;
+    color: #fff;
 }
 .phoneInput{
     .form-control{
@@ -447,7 +456,7 @@ p{
     transition: all 0.5s ease 0s;
     display: none;
     background: #ffffff;
-    color: $text-color-dark;
+    color: #000000;
     border-radius: 10px;
     height: 40px;
     width: 40px;
@@ -458,7 +467,7 @@ p{
     &:hover{
         background: #CE8745 ;
         font-size: 1.5rem;
-        color: $primary-color;
+        color:#040612;
     }
 }
 
@@ -690,5 +699,18 @@ table{
         direction: ltr; 
         list-style-type: disc;
         padding-left: 20px;
+    }
+}
+
+.NewsFilterButton{
+ .active{
+     color: #000;
+        background: #fff;
+    }
+}
+
+.newtext{
+    a{
+    color: #495efd;
     }
 }

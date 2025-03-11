@@ -1,20 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ProjectBanner from "./components/ProjectBanner";
 import DetailProject from "./components/DetailProject";
-import PartnerSection from "../home/components/PartnerSection";
 import TalkSection from "../home/components/TalkSection";
+import DnkLogo from "../../../assets/logo/dnklogo_1.webp";
 import { useProjectServices } from "../../../services/projectServices";
 import { useParams } from "react-router-dom";
 import { URL } from "../../../url/axios";
 import { Helmet } from "react-helmet-async";
+import ExploreProjects from "./components/ExploreProjects";
+import MobileSliderInfo from "./components/MobileSliderInfo";
+
+const currentYear = new Date().getFullYear();
 
 export const ProjectDetail = () => {
   const { slug } = useParams();
   const [projectData, setProjectData] = useState(null);
   const [keywords, setKeywords] = useState([]);
-  const currentYear = new Date().getFullYear();
 
   const { getProjectById } = useProjectServices();
+
+  const fetchProjectData = async () => {
+    try {
+      const response = await getProjectById(slug);
+      if (response.success) {
+        const projectData = response.data;
+        if (projectData) {
+          setProjectData(projectData);
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching project data:", error);
+    }
+  };
 
   // Scroll to the top
   useEffect(() => {
@@ -66,21 +83,8 @@ export const ProjectDetail = () => {
         `${developer.replace(/-/g, " ")} Best Project?`,
       ]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectData]);
-
-  const fetchProjectData = async () => {
-    try {
-      const response = await getProjectById(slug);
-      if (response.success) {
-        const projectData = response.data;
-        if (projectData) {
-          setProjectData(projectData);
-        }
-      }
-    } catch (error) {
-      console.error("Error fetching project data:", error);
-    }
-  };
 
   if (!projectData) {
     return (
@@ -101,6 +105,7 @@ export const ProjectDetail = () => {
     developer,
     locationname,
     projectdescription,
+    developerlogo,
   } = projectData;
 
   return (
@@ -115,6 +120,31 @@ export const ProjectDetail = () => {
         <meta name="keywords" content={keywords.join(", ")} />
         <meta name="description" content={`${projectdescription}${about}`} />
         <link rel="canonical" href={`https://www.dnkre.com/projects/${slug}`} />
+        <link
+          rel="preload"
+          as="image"
+          href={`${URL}${coverimage}`}
+          type="image/webp"
+          fetchpriority="high"
+        ></link>
+        {developerlogo ? (
+          <link
+            rel="preload"
+            as="image"
+            href={`${URL}${encodeURIComponent(developerlogo)}`}
+            type="image/webp"
+            fetchpriority="high"
+          />
+        ) : (
+          <link
+            rel="preload"
+            as="image"
+            href={DnkLogo}
+            type="image/webp"
+            fetchpriority="high"
+          />
+        )}
+
         <meta name="author" content="DNK Real Estate" />
 
         {/* Ensure the page is indexable */}
@@ -137,12 +167,6 @@ export const ProjectDetail = () => {
           content={`${projectdescription}${about}`}
         />
         <meta property="og:image" content={`${URL}${thumbnail}`} />
-        <link
-          rel="preload"
-          as="image"
-          href={`${URL}${coverimage}`}
-          type="image/webp"
-        ></link>
 
         <link rel="shortcut icon" href="https://www.dnkre.com/logo.ico" />
 
@@ -281,7 +305,8 @@ export const ProjectDetail = () => {
       </Helmet>
       <ProjectBanner />
       <DetailProject />
-      <PartnerSection />
+      <ExploreProjects />
+      <MobileSliderInfo />
       <TalkSection />
     </div>
   );

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import bannerImgPlaceholder from "../../../../assets/banner-img/news_banner.webp";
-import { Link, useParams } from 'react-router-dom';
-import { userNewsServices } from '../../../../services/newsServices';
-import { useLazyLoadBackground } from '../../../../hooks/useLazyLoadBackground';
+import { Link, useParams } from "react-router-dom";
+import { userNewsServices } from "../../../../services/newsServices";
+import { useLazyLoadBackground } from "../../../../hooks/useLazyLoadBackground";
 
 export const MainBannerNews = () => {
   const { newsurl } = useParams();
@@ -18,12 +18,10 @@ export const MainBannerNews = () => {
   const fetchNews = async () => {
     try {
       const response = await getNewsById(newsurl);
-      console.log("API Response:", response);
 
       if (response?.success) {
         if (response.data) {
           setNewstData(response.data);
-          console.log("Fetched News Data:", response.data);
         } else {
           setError("News data not found for the provided newsurl.");
         }
@@ -86,6 +84,6 @@ export const MainBannerNews = () => {
       </div>
     </div>
   );
-}
+};
 
-export default MainBannerNews
+export default MainBannerNews;

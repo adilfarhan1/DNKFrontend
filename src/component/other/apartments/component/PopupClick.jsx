@@ -77,7 +77,6 @@ export const PopupClick = ({ data, onFormSubmit, onClose, imageUrl }) => {
       }
 
       const crmdata = await response.json(); // Parse the JSON response
-      console.log("Lead added:", crmdata);
     } catch (error) {
       console.error("Error adding lead:", error);
     }
@@ -113,7 +112,6 @@ export const PopupClick = ({ data, onFormSubmit, onClose, imageUrl }) => {
       onClose();
     } catch (err) {
       console.error("Error submitting form:", err);
-      console.log(err); // Log the error for better debugging
       Swal.fire("Failed", "Check your internet connection", "error");
     } finally {
       setLoading(false);

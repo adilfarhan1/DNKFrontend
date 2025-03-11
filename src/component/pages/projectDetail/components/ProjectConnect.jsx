@@ -16,43 +16,41 @@ export const ProjectConnect = ({ url, title }) => {
   const [error, setError] = useState(null);
   const { getProjectById } = useProjectServices();
   const [ShowPopup, setShowPopup] = useState(false);
-   const [phoneNumber, setPhoneNumber] = useState("");
-   const [fullName, setFullName] = useState("");
-   const [city, setCity] = useState("");
-   const [email, setEmail] = useState("");
-   const [valid, setValid] = useState(true);
-   const { contactData } = userUserServices();
-   const [errors, setErrors] = useState({});
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [city, setCity] = useState("");
+  const [email, setEmail] = useState("");
+  const [valid, setValid] = useState(true);
+  const { contactData } = userUserServices();
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     fetchProject();
     // Log the API response
   }, [slug]);
 
-   const fetchProject = async () => {
-     try {
-       const response = await getProjectById(slug);
-       console.log("API Response:", response); // Log the API response
+  const fetchProject = async () => {
+    try {
+      const response = await getProjectById(slug);
 
-       if (response.success) {
-         const projectData = response.data;
-         console.log("Matching Team Data:", projectData);
+      if (response.success) {
+        const projectData = response.data;
 
-         if (projectData) {
-           setProjectData(projectData);
-         } else {
-           setError("No project found with the provided ID.");
-         }
-       } else {
-         setError("Failed to fetch project details.");
-       }
-     } catch (err) {
-       console.error("Failed to fetch team details", err);
-       setError("An error occurred while fetching team details.");
-     } finally {
-       setLoading(false);
-     }
-   };
+        if (projectData) {
+          setProjectData(projectData);
+        } else {
+          setError("No project found with the provided ID.");
+        }
+      } else {
+        setError("Failed to fetch project details.");
+      }
+    } catch (err) {
+      console.error("Failed to fetch team details", err);
+      setError("An error occurred while fetching team details.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const validateForm = () => {
     let formErrors = {};
@@ -115,7 +113,6 @@ export const ProjectConnect = ({ url, title }) => {
       }
 
       const data = await response.json(); // Parse the JSON response
-      console.log("Lead added:", data);
     } catch (error) {
       console.error("Error adding lead:", error);
     }
@@ -148,14 +145,11 @@ export const ProjectConnect = ({ url, title }) => {
       setCity("");
     } catch (err) {
       console.error("Error submitting form:", err);
-      console.log(err); // Log the error for better debugging
       Swal.fire("Failed", "Check your internet connection", "error");
     } finally {
       setLoading2(false);
     }
   };
-
- 
 
   if (loading) {
     return (
@@ -169,8 +163,6 @@ export const ProjectConnect = ({ url, title }) => {
     return <div>{error}</div>; // Display error message
   }
 
- 
-
   return (
     <div>
       <div className="border border-[#ffffff] border-spacing-1 rounded-md p-3">
@@ -182,9 +174,9 @@ export const ProjectConnect = ({ url, title }) => {
             loading="lazy"
           />
           <div className="pl-2">
-            <h6 className="text-[#ffffff] text-left text-[0.9rem] sm:text-[1rem] font-semibold">
+            <h2 className="m-0 text-[#ffffff] text-left text-[0.9rem] sm:text-[1rem] font-semibold">
               Velina Dsouza
-            </h6>
+            </h2>
             <p className="text-[0.89rem]">Property Consultant</p>
           </div>
         </div>

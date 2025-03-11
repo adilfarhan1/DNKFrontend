@@ -21,11 +21,9 @@ export const StickyConnect = () => {
   const fetchProject = async () => {
     try {
       const response = await getProjectById(slug);
-      console.log("API Response:", response); // Log the API response
 
       if (response.success) {
         const projectData = response.data;
-        console.log("Matching Team Data:", projectData);
 
         if (projectData) {
           setProjectData(projectData);
@@ -93,7 +91,10 @@ export const StickyConnect = () => {
             href={`https://wa.me/+971543049309?text=Hello,%20Share%20more%20details%20${projectData.projectname}`}
             className="flex items-center justify-center group"
           >
-            <FaWhatsapp className="text-[#CE8745] ml-2 group-hover:text-[#6B9B2D] text-[1rem] lg:text-[1.3rem]" />
+            <FaWhatsapp
+              className="text-[#CE8745] ml-2 group-hover:text-[#6B9B2D] text-[1rem] lg:text-[1.3rem]"
+              aria-label="whats app"
+            />
             <p className="mb-0 text-[#CE8745] group-hover:text-[#6B9B2D] text-[0.8rem] lg:text-[1rem]">
               WhatsApp
             </p>

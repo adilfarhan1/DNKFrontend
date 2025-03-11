@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import BannerNews from './components/BannerNews'
+import React, { useEffect, useState } from "react";
+import BannerNews from "./components/BannerNews";
 import Newsimgic from "../../../assets/icons/image_demo.webp";
-import { Link, useNavigate } from 'react-router-dom';
-import { userNewsServices } from '../../../services/newsServices';
-import { URL } from '../../../url/axios';
+import { Link, useNavigate } from "react-router-dom";
+import { userNewsServices } from "../../../services/newsServices";
+import { URL } from "../../../url/axios";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import ReactPaginate from 'react-paginate';
-import { Helmet } from 'react-helmet';
+import ReactPaginate from "react-paginate";
+import { Helmet } from "react-helmet";
 
 export const News = (props) => {
   const { params, newsurl } = props;
@@ -14,8 +14,8 @@ export const News = (props) => {
   const [searchedList, setSearchedList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-    const [itemsPerPage] = useState(30);
-    const [filterType, setFilterType] = useState("All");
+  const [itemsPerPage] = useState(30);
+  const [filterType, setFilterType] = useState("All");
   const { getNews } = userNewsServices();
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ export const News = (props) => {
       (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)
     );
     setSearchedList(sortedList);
-  }, [ newsList, filterType]);
+  }, [newsList, filterType]);
 
   useEffect(() => {
     getData();
@@ -38,8 +38,9 @@ export const News = (props) => {
     try {
       const response = await getNews();
       if (response.success) {
-        const sortedNews = response.data
-          .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+        const sortedNews = response.data.sort(
+          (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)
+        );
         setNewsList(response.data);
         setSearchedList(sortedNews);
       }
@@ -55,12 +56,12 @@ export const News = (props) => {
 
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
-    };
-    
-     const handleFilterClick = (type) => {
-       setFilterType(type); 
-       setCurrentPage(0); 
-     };
+  };
+
+  const handleFilterClick = (type) => {
+    setFilterType(type);
+    setCurrentPage(0);
+  };
 
   const offset = currentPage * itemsPerPage;
   const currentItems = searchedList
@@ -68,8 +69,8 @@ export const News = (props) => {
       (data) => data.newsurl.toLowerCase().includes(searchTerm.toLowerCase()) // Filtering based on search term
     )
     .slice(offset, offset + itemsPerPage);
-    const pageCount = Math.ceil(searchedList.length / itemsPerPage);
-    
+  const pageCount = Math.ceil(searchedList.length / itemsPerPage);
+
   return (
     <>
       <Helmet>
@@ -280,4 +281,4 @@ export const News = (props) => {
   );
 };
 
-export default News
+export default News;

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import Newsimgic from "../../../../assets/icons/image_demo.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { MdDateRange } from "react-icons/md";
-import { userNewsServices } from '../../../../services/newsServices';
-import { URL } from '../../../../url/axios';
+import { userNewsServices } from "../../../../services/newsServices";
+import { URL } from "../../../../url/axios";
 
 export const NewsGrid = (props) => {
   const { params, newsurl } = props;
@@ -15,46 +15,44 @@ export const NewsGrid = (props) => {
   const { getNews } = userNewsServices();
   const navigate = useNavigate();
 
-    useEffect(() => {
-      const tempList = newsList
-        .filter(
-          (data) =>
-            data.status === params &&
-            data.newsurl.replace(/\s+/g, "-").toLowerCase() !== newsurl
-        )
-        .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
-      setSearchedList(tempList);
-    }, [params, newsList, newsurl]);
+  useEffect(() => {
+    const tempList = newsList
+      .filter(
+        (data) =>
+          data.status === params &&
+          data.newsurl.replace(/\s+/g, "-").toLowerCase() !== newsurl
+      )
+      .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+    setSearchedList(tempList);
+  }, [params, newsList, newsurl]);
 
-   useEffect(() => {
-        getData();
-      }, []);
-  
-   const getData = async () => {
-     try {
-       const response = await getNews();
-       if (response.success) {
-         const sortedNews = response.data
-           .filter(
-             (data) =>
-               data.status === params &&
-               data.newsurl.replace(/\s+/g, "-").toLowerCase() !== newsurl
-           )
-           .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
-          setNewsList(response.data);
-          setSearchedList(sortedNews);
-       }
-     } catch (err) {
-       console.error("Failed to fatch news list", err);
-     }
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      const response = await getNews();
+      if (response.success) {
+        const sortedNews = response.data
+          .filter(
+            (data) =>
+              data.status === params &&
+              data.newsurl.replace(/\s+/g, "-").toLowerCase() !== newsurl
+          )
+          .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+        setNewsList(response.data);
+        setSearchedList(sortedNews);
+      }
+    } catch (err) {
+      console.error("Failed to fatch news list", err);
+    }
   };
 
-    const handleCardClick = (newsurl) => {
-      const slug = newsurl.replace(/\s+/g, "-").toLowerCase();
-      navigate(`/news/${slug}`);
-    };
-  
-  
+  const handleCardClick = (newsurl) => {
+    const slug = newsurl.replace(/\s+/g, "-").toLowerCase();
+    navigate(`/news/${slug}`);
+  };
 
   return (
     <div>
@@ -70,7 +68,7 @@ export const NewsGrid = (props) => {
                   <div
                     className="w-[100px] col-span-1"
                     role="img"
-                    aria-label={data.alt || 'News'}
+                    aria-label={data.alt || "News"}
                     style={{
                       backgroundImage: `url(${
                         data?.newsthumbnail
@@ -124,4 +122,4 @@ export const NewsGrid = (props) => {
   );
 };
 
-export default NewsGrid
+export default NewsGrid;

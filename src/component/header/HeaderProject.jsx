@@ -68,77 +68,37 @@ export const HeaderProject = () => {
   const handleNav = () => {
     setNav(!nav);
   };
-
-  const navigateTo = (path) => {
-    navigate(path);
-    setNav(true); // closes the menu if open
-  };
-
-  //navigation
-  const goToAboutHead = () => {
-    navigate("/about");
-  };
   const goToAbout = () => {
     navigate("/about");
     setNav(!nav);
   };
-
-  const goToTeamHead = () => {
-    navigate("/team");
-  };
-
   const goToTeam = () => {
     navigate("/team");
     setNav(!nav);
-  };
-  const goToContactHead = () => {
-    navigate("/contact");
   };
   const goToContact = () => {
     navigate("/contact");
     setNav(!nav);
   };
-
-  const goToBuyHead = () => {
-    navigate("/buy-project");
-  };
   const goToBuy = () => {
     navigate("/buy-project");
     setNav(!nav);
   };
-  const goToOffPlanHead = () => {
-    navigate("/off-plan-project");
-  };
-
   const goToOffPlan = () => {
     navigate("/off-plan-project");
     setNav(!nav);
-  };
-
-  const goToOffSellHead = () => {
-    navigate("/sell-project");
   };
   const goToOffSell = () => {
     navigate("/sell-project");
     setNav(!nav);
   };
-
-  const goToCareersHead = () => {
-    navigate("/careers");
-  };
-
   const goToCareers = () => {
     navigate("/careers");
     setNav(!nav);
   };
-
-   const goToNews = () => {
-     navigate("/news");
-     setNav(!nav);
-   };
-
-  const goToHomeHead = () => {
-    navigate("/");
+  const goToNews = () => {
+    navigate("/news");
+    setNav(!nav);
   };
   const goToHome = () => {
     navigate("/");
@@ -159,13 +119,15 @@ export const HeaderProject = () => {
             </div>
             <a href="/">
               <div className="w-[full] h-[45px] flex items-center justify-start">
-                <LazyImage
+                <img
                   src={logoSwitch}
                   alt={`${
                     projectData?.developer?.replace(/-/g, " ") ||
                     "DNK Real Estate"
                   }`}
                   className="h-full max-w-[170px]"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </a>
@@ -177,7 +139,6 @@ export const HeaderProject = () => {
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/" && "activeHead"
                   }`}
-                  // onClick={goToHomeHead}
                 >
                   <Link to="/">
                     <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
@@ -194,7 +155,6 @@ export const HeaderProject = () => {
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/off-plan-project" && "activeHead"
                   }`}
-                  // onClick={goToOffPlanHead}
                 >
                   <Link to="/off-plan-project">
                     <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
@@ -207,7 +167,6 @@ export const HeaderProject = () => {
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/sell-project" && "activeHead"
                   }`}
-                  // onClick={goToOffSellHead}
                 >
                   <Link to="/sell-project">
                     <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
@@ -217,7 +176,6 @@ export const HeaderProject = () => {
                   </Link>
                 </li>
                 <li
-                  // onClick={goToAboutHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/about" && "activeHead"
                   }`}
@@ -230,7 +188,6 @@ export const HeaderProject = () => {
                   </Link>
                 </li>
                 <li
-                  // onClick={goToTeamHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/team" && "activeHead"
                   }`}
@@ -245,17 +202,16 @@ export const HeaderProject = () => {
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/news" && "activeHead"
-                                  }`}
-                  >
-                <Link to="/news">
-                  <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
+                  }`}
+                >
+                  <Link to="/news">
+                    <p className="group-hover:text-[#CE8745] transition duration-200 ease-out">
                       News
-                  </p>
-                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
-                </Link>
+                    </p>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CE8745] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                  </Link>
                 </li>
                 <li
-                  // onClick={goToCareersHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/careers" && "activeHead"
                   }`}
@@ -268,7 +224,6 @@ export const HeaderProject = () => {
                   </Link>
                 </li>
                 <li
-                  // onClick={goToContactHead}
                   className={`relative inline-flex items-center justify-center group m-2 ${
                     location.pathname == "/contact" && "activeHead"
                   }`}
@@ -288,12 +243,17 @@ export const HeaderProject = () => {
                   <a
                     href="https://www.facebook.com/dnkrealestate1/"
                     target="_blank"
+                    aria-label="Facebook"
                   >
                     <FaFacebookF className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
                 </li>
                 <li className="group">
-                  <a href="https://www.instagram.com/dnk_re/" target="_blank">
+                  <a
+                    href="https://www.instagram.com/dnk_re/"
+                    target="_blank"
+                    aria-label="Instagram"
+                  >
                     <FaInstagram className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
                 </li>
@@ -301,6 +261,7 @@ export const HeaderProject = () => {
                   <a
                     href="https://www.linkedin.com/company/dnkrealestate/"
                     target="_blank"
+                    aria-label="Linkedin"
                   >
                     <FaLinkedin className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
@@ -308,7 +269,7 @@ export const HeaderProject = () => {
               </ul>
               <ul className="pl-2 flex items-center gap-4">
                 <li className="group">
-                  <a href="tel:+971555769195">
+                  <a href="tel:+971555769195" aria-label="Phone Number">
                     <MdCall className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
                 </li>
@@ -316,6 +277,7 @@ export const HeaderProject = () => {
                   <a
                     href="https://wa.me/+971555769195?text=Hello,"
                     target="_blank"
+                    aria-label="Whats app"
                   >
                     <RiWhatsappFill className="group-hover:text-[#CE8745] text-xl  transition duration-200 ease-out" />
                   </a>
@@ -373,11 +335,6 @@ export const HeaderProject = () => {
               </p>
             </Link>
           </li>
-          {/* <li className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]">
-              <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-                Rent
-              </p>
-            </li> */}
           <li
             onClick={goToAbout}
             className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
@@ -400,11 +357,11 @@ export const HeaderProject = () => {
           </li>
           <li
             onClick={goToNews}
-              className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
+            className="text-white border-b border-gray-100 p-3 cursor-pointer group hover:bg-[#0F0F1A]"
           >
             <Link to="/news">
               <p className="transform group-hover:translate-x-2 transition-transform ease-in duration-200 text-sm font-semibold">
-              News
+                News
               </p>
             </Link>
           </li>

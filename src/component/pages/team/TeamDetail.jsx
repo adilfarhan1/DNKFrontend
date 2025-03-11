@@ -25,7 +25,6 @@ export const TeamDetail = () => {
   const contactPermission = ["management", "Sales", "hr"];
 
   useEffect(() => {
-    console.log("Fetched ID from useParams:", id);
     window.scrollTo({ top: 0, behavior: "smooth" });
     fetchTeam();
   }, [id]);
@@ -52,30 +51,28 @@ export const TeamDetail = () => {
     ]);
   }, []);
 
-const fetchTeam = async () => {
-  try {
-    const response = await getTeamById(id);
-    console.log("API Response:", response); // Log the API response
+  const fetchTeam = async () => {
+    try {
+      const response = await getTeamById(id);
 
-    if (response.success) {
-      const teamData = response.data;
-      console.log("Matching Team Data:", teamData); // Log the matched team data
+      if (response.success) {
+        const teamData = response.data;
 
-      if (teamData) {
-        setTeamData(teamData);
+        if (teamData) {
+          setTeamData(teamData);
+        } else {
+          setError("No team member found with the provided ID.");
+        }
       } else {
-        setError("No team member found with the provided ID.");
+        setError("Failed to fetch team details.");
       }
-    } else {
-      setError("Failed to fetch team details.");
+    } catch (err) {
+      console.error("Failed to fetch team details", err);
+      setError("An error occurred while fetching team details.");
+    } finally {
+      setLoading(false);
     }
-  } catch (err) {
-    console.error("Failed to fetch team details", err);
-    setError("An error occurred while fetching team details.");
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   if (loading) {
     return (

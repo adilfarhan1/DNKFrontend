@@ -37,7 +37,6 @@ export const ClientRegisterList = () => {
   const getClientRegisterData = async () => {
     try {
       const response = await getClientRegister();
-      console.log("register client :", response.data);
       if (response.success) {
         const sortedData = response.data.sort(
           (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)

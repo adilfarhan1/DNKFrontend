@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import bannerImg from "../../../../assets/banner-img/news_banner.webp";
 
 export const BannerNews = () => {
@@ -18,6 +18,6 @@ export const BannerNews = () => {
       </div>
     </div>
   );
-}
+};
 
-export default BannerNews
+export default BannerNews;

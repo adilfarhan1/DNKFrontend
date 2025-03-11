@@ -55,8 +55,6 @@ function App() {
     const roadshowLogin = localStorage.getItem('login')
     return roadshowLogin ? <Outlet /> : <Navigate to="/login" />
   }
-
-
   
   return (
     <BrowserRouter>

@@ -44,7 +44,6 @@ const FormCallBack = () => {
 
   const addLeadtobitrix = async (name, email, phone, city) => {
     const apiUrl = process.env.REACT_APP_B4API;
-    console.log("API URL:", process.env.REACT_APP_B4API);
     
     const leadData = {
       fields: {
@@ -78,7 +77,6 @@ const FormCallBack = () => {
       }
 
       const data = await response.json(); // Parse the JSON response
-      console.log("Lead added:", data);
     } catch (error) {
       console.error("Error adding lead:", error);
     }
@@ -111,7 +109,6 @@ const FormCallBack = () => {
       setCity("");
     } catch (err) {
       console.error("Error submitting form:", err);
-      console.log(err); // Log the error for better debugging
       Swal.fire("Failed", "Check your internet connection", "error");
     } finally {
       setLoading(false);

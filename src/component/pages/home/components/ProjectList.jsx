@@ -34,7 +34,7 @@ export const ProjectList = (props) => {
       setAutoplay(true);
     }, 3000); // Delay in milliseconds (3 seconds)
 
-     return () => clearTimeout(delay);
+    return () => clearTimeout(delay);
   }, []);
 
   const getData = async () => {
@@ -66,7 +66,7 @@ export const ProjectList = (props) => {
   const [imageUrls, loadImages] = useSliderLazyLoad(thumbnailUrls, 3);
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 290,
     slidesToShow: 3,
@@ -134,7 +134,7 @@ export const ProjectList = (props) => {
                       }}
                     >
                       {data.runingstatus === "newlaunch" && (
-                        <div className="card-status-tag  bg-[#FF0000] text-[#ffffff] rotate-[-40deg] w-fit px-9 absolute top-8 left-[-35px]">
+                        <div className="card-status-tag  bg-[#B30000] text-[#ffffff] rotate-[-40deg] w-fit px-9 absolute top-8 left-[-35px]">
                           <h2 className="text-[0.8rem] font-normal m-0 px-1 py-1">
                             New Launch
                           </h2>
@@ -162,15 +162,18 @@ export const ProjectList = (props) => {
                       )}
                     </div>
                     <div class="p-5">
-                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white line-clamp-1">
+                      <h2 class="mb-2 text-2xl font-bold tracking-tight text-white line-clamp-1">
                         {data.projectname}
-                      </h5>
+                      </h2>
                       <p class="m-0 font-normal text-gray-400 line-clamp-1">
                         {data.developer.replace(/-/g, " ")}
                       </p>
                       {data?.locationname && (
                         <div className="flex items-center">
-                          <MdLocationPin className="text-gray-400 text-[1rem]" />
+                          <MdLocationPin
+                            className="text-gray-400 text-[1rem]"
+                            aria-label="location"
+                          />
                           <p class="m-0 font-normal text-gray-400 line-clamp-1">
                             {data.locationname}
                           </p>

@@ -12,20 +12,17 @@ export const PopupModel = ({ onClose, onFormSubmit }) => {
   const { getAd } = useProjectServices();
 
   useEffect(() => {
-    console.log(adPoster);
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
       const response = await getAd();
-      console.log("API response:", response);
       if (response.success) {
         const adData = response.data;
 
         if (adData.length > 0) {
           const adImage = adData[0].image;
-          console.log("Fetched image:", adImage);
           setAdPoster({ image: adImage });
         } else {
           setError("No Ad found.");
@@ -46,14 +43,8 @@ export const PopupModel = ({ onClose, onFormSubmit }) => {
 
   const handleFormSubmit = (formData) => {
     onClose();
-    console.log("Form submitted:", formData);
     // Perform any action needed with formData
   };
-
-  // const imageUrl = adPoster.image
-  //   ? `${URL}${encodeURIComponent(adPoster.image)}`
-  //   : AdPoster;
-  // console.log("Image URL:", imageUrl);
 
   return (
     <div

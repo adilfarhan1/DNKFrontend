@@ -9,7 +9,7 @@ const VideoComponent = ({ projectData, youtubeLink, thumbnailUrl }) => {
     if (projectData?.youtubeid) {
       const timer = setTimeout(() => {
         setVideoVisible(true);
-      }, 1000); 
+      }, 1000);
 
       return () => clearTimeout(timer); // Cleanup timeout
     }

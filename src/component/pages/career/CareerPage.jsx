@@ -129,7 +129,6 @@ export const CareerPage = () => {
       }
 
       const data = await response.json();
-      console.log("Lead added:", data);
     } catch (error) {
       console.error("Error adding lead:", error);
     }

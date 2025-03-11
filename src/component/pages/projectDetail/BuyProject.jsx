@@ -45,6 +45,13 @@ export const BuyProject = () => {
         />
         <meta name="keywords" content={keywords.join(", ")} />
         <link rel="canonical" href="https://www.dnkre.com/buy-project" />
+        <link
+          rel="preload"
+          as="image"
+          href="https://dnkre.com/assets/sub_banner-C-kP61UU.webp"
+          type="image/webp"
+          fetchpriority="high"
+        />
         <meta
           property="og:title"
           content="Available for Sale - Apartment, Villa, Townhouse"

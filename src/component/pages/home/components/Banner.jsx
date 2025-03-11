@@ -94,12 +94,25 @@ export const BannerHome = () => {
 
   return (
     <div
-      ref={bannerRef}
       role="img"
       aria-label="dubai view, Real estate, off plan, ROI, investment"
       className="banner w-full bg-[#040406] flex items-center justify-center"
-      style={isInView ? { backgroundImage: `url(${imageUrl})` } : {}}
+      style={{ backgroundImage: `url(${imageUrl})` }}
     >
+      <img
+        src={imageUrl}
+        alt="dubai view, Real estate, off plan, ROI, investment"
+        loading="eager"
+        fetchPriority="high"
+        style={{ display: "none" }}
+      />
+      <img
+        src={eventImageUrl}
+        alt="dubai view, Real estate, off plan, ROI, investment"
+        loading="eager"
+        fetchPriority="high"
+        style={{ display: "none" }}
+      />
       <div className="container max-w-[1240px] px-4  items-center  overflow-hidden relative">
         <div className="banner-content grid md:grid-cols-3">
           <div className="z-10 w-fit col-span-2">
@@ -118,7 +131,7 @@ export const BannerHome = () => {
             </button>
           </div>
           <div className="w-[50%] md:w-[70%] order-first md:order-last z-10">
-            <LazyImage src={eventImageUrl} alt="" className="" />
+            <img src={eventImageUrl} alt="" className="" loading="lazy" />
           </div>
         </div>
         <div className="bg-[#00000066] w-full h-full absolute left-0 top-0 z-0 sm:hidden"></div>

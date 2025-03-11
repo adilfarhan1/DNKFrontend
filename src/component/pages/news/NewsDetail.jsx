@@ -1,44 +1,44 @@
-import React, { useEffect, useState } from 'react'
-import BannerBuy from '../projectDetail/components/BannerBuy'
-import BannerNews from './components/BannerNews'
-import NewsMain from './components/NewsMain'
-import { useParams } from 'react-router-dom'
-import { userNewsServices } from '../../../services/newsServices'
-import { Helmet } from 'react-helmet'
-import { URL } from '../../../url/axios'
-import MainBannerNews from './components/MainBannerNews'
+import React, { useEffect, useState } from "react";
+import BannerBuy from "../projectDetail/components/BannerBuy";
+import BannerNews from "./components/BannerNews";
+import NewsMain from "./components/NewsMain";
+import { useParams } from "react-router-dom";
+import { userNewsServices } from "../../../services/newsServices";
+import { Helmet } from "react-helmet";
+import { URL } from "../../../url/axios";
+import MainBannerNews from "./components/MainBannerNews";
 
 export const NewsDetail = () => {
-   const { newsurl } = useParams();
+  const { newsurl } = useParams();
   const [newsData, setNewstData] = useState(null);
-  
+
   const { getNewsById } = userNewsServices();
 
-      useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        fetchNewstData();
-      }, [newsurl]);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    fetchNewstData();
+  }, [newsurl]);
 
-    const fetchNewstData = async () => {
-      try {
-        const response = await getNewsById(newsurl);
-        if (response.success) {
-          const newsData = response.data;
-          if (newsData) {
-            setNewstData(newsData);
-          }
+  const fetchNewstData = async () => {
+    try {
+      const response = await getNewsById(newsurl);
+      if (response.success) {
+        const newsData = response.data;
+        if (newsData) {
+          setNewstData(newsData);
         }
-      } catch (error) {
-        console.error("Error fetching project data:", error);
       }
-    };
-
-    if (!newsData) {
-      return <div>Loading...</div>;
+    } catch (error) {
+      console.error("Error fetching project data:", error);
     }
-  
-    const { newstitle, newskeyword, newsdescription, newsthumbnail } = newsData;
-  
+  };
+
+  if (!newsData) {
+    return <div>Loading...</div>;
+  }
+
+  const { newstitle, newskeyword, newsdescription, newsthumbnail } = newsData;
+
   return (
     <>
       <Helmet>
@@ -139,6 +139,6 @@ export const NewsDetail = () => {
       <NewsMain />
     </>
   );
-}
+};
 
-export default NewsDetail
+export default NewsDetail;

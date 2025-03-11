@@ -14,7 +14,6 @@ export const userNewsServices = () => {
     };
 
     const getNewsById = async (newsurl) => {
-        console.log("newsurl:", newsurl)
         const response = await axiosPrivate.get('/news/newspage/' + newsurl)
         return response.data
     }

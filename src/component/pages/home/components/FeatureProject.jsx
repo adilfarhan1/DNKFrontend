@@ -1,7 +1,7 @@
 import React from "react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import ProjectList from "./ProjectList";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const FeatureProject = () => {
   const navigate = useNavigate();
@@ -25,13 +25,16 @@ export const FeatureProject = () => {
             </div>
           </div>
           <div className="basis-1/5">
-            <button
-              onClick={goToOffPlan}
-              className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] mt-4 md:text-[1rem]"
+            <Link
+              to="/off-plan-project"
+              className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] mt-4 md:text-[1rem] p-2"
             >
               View More
-              <MdOutlineKeyboardDoubleArrowRight className="arrow-r-bounce text-[0.9rem] md:text-[1.3rem]" />
-            </button>
+              <MdOutlineKeyboardDoubleArrowRight
+                className="arrow-r-bounce text-[0.9rem] md:text-[1.3rem]"
+                aria-label="off-plan project"
+              />
+            </Link>
           </div>
         </div>
         <ProjectList />

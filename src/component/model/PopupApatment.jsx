@@ -13,14 +13,11 @@ export const PopupApatment = ({ onClose, onFormSubmit }) => {
   const { getAd } = useProjectServices();
 
   useEffect(() => {
-    console.log(adPoster);
     fetchData();
   }, []);
 
   const handleFormSubmit = (formData) => {
     onClose();
-    console.log("Form submitted:", formData);
-    // Perform any action needed with formData
   };
 
   const fetchData = async () => {

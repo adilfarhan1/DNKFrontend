@@ -311,11 +311,6 @@ export const OurServices = () => {
                     accountability.
                   </p>
                 </div>
-
-                {/* <button className="flex items-center gap-4 text-[#ffff] font-normal text-[0.9rem] mt-4 md:text-[1rem] m-auto">
-                View More
-                <MdOutlineKeyboardDoubleArrowRight className="arrow-r-bounce text-[0.9rem] md:text-[1.3rem]" />
-              </button> */}
               </div>
             </div>
           </div>

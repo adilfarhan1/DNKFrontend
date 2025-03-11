@@ -12,14 +12,11 @@ export const PopupModel = ({ onClose, onFormSubmit }) => {
   const { getAd } = useProjectServices();
 
   useEffect(() => {
-    console.log(adPoster);
     fetchData();
   }, []);
 
   const handleFormSubmit = (formData) => {
     onClose();
-    console.log("Form submitted:", formData);
-    // Perform any action needed with formData
   };
 
   const fetchData = async () => {
@@ -59,7 +56,6 @@ export const PopupModel = ({ onClose, onFormSubmit }) => {
   const imageUrl = adPoster.image
     ? `${URL}${encodeURIComponent(adPoster.image)}`
     : AdPoster;
-  console.log("Image URL:", imageUrl);
 
   return (
     <div

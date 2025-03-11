@@ -76,7 +76,6 @@ export const LModelForm = ({ onFormSubmit }) => {
       }
 
       const data = await response.json(); // Parse the JSON response
-      console.log("Lead added:", data);
     } catch (error) {
       console.error("Error adding lead:", error);
     }

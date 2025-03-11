@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import Newsimgic from "../../../../assets/icons/image_demo.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import ReactPaginate from 'react-paginate';
-import { userNewsServices } from '../../../../services/newsServices';
-import { URL } from '../../../../url/axios';
+import ReactPaginate from "react-paginate";
+import { userNewsServices } from "../../../../services/newsServices";
+import { URL } from "../../../../url/axios";
 
 export const MdNewsGrid = (props) => {
   const { params, newsurl } = props;

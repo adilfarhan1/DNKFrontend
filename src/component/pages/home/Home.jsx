@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import AboutSection from "./components/AboutSection";
 import BannerHome from "./components/Banner";
+import bannerImg from "../../../assets/banner-img/banner_home.webp";
 import FeatureProject from "./components/FeatureProject";
 import ServiceSection from "./components/ServiceSection";
 import TeamSection from "./components/TeamSection";
@@ -8,12 +9,88 @@ import OurProcess from "./components/OurProcess";
 import ReviewSection from "./components/ReviewSection";
 import PartnerSection from "./components/PartnerSection";
 import TalkSection from "./components/TalkSection";
+import DnkLogo from "../../../assets/logo/dnklogo_1.webp";
 import { useEffect } from "react";
 import BestSaleStn from "../../other/apartments/component/BestSaleStn";
 import { Helmet } from "react-helmet-async";
 import NewsList from "../news/components/NewsList";
+import { userPartnerServices } from "../../../services/partnerServices";
+import { URL } from "../../../url/axios";
+import { useProjectServices } from "../../../services/projectServices";
 
 export const Home = () => {
+  const [homeBanner, setHomeBanner] = useState({ image: null });
+  const [event, setEvent] = useState({ image: null });
+  const [logo, setLogo] = useState({ image: null });
+  const [error, setError] = useState(null);
+  const { getHomeBanner, getEvent } = userPartnerServices();
+  const { getLogo } = useProjectServices();
+
+  useEffect(() => {
+    fetchData();
+    fetchEvent();
+    fetchLogoData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await getHomeBanner();
+      if (response.success) {
+        const homeBannerData = response.data;
+
+        if (homeBannerData.length > 0) {
+          const homeBannerImage = homeBannerData[0].image;
+          setHomeBanner({ image: homeBannerImage });
+        } else {
+          setError("No banner found.");
+        }
+      } else {
+        setError("Failed to fetch home banner image.");
+      }
+    } catch (err) {
+      console.error("Failed to fetch home banner image", err);
+    }
+  };
+
+  const fetchEvent = async () => {
+    try {
+      const response = await getEvent();
+      if (response.success) {
+        const EventData = response.data;
+        if (EventData.length > 0) {
+          const EventImage = EventData[0].image;
+          setEvent({ image: EventImage });
+        } else {
+          setError("No event found.");
+        }
+      } else {
+        setError("Failed to fetch event image.");
+      }
+    } catch (err) {
+      console.error("Failed to fetch event image", err);
+    }
+  };
+
+  const fetchLogoData = async () => {
+    try {
+      const response = await getLogo();
+      if (response.success) {
+        const logoData = response.data;
+
+        if (logoData.length > 0) {
+          const logoImage = logoData[0].image;
+          setLogo({ image: logoImage });
+        } else {
+          setError("No logo found.");
+        }
+      } else {
+        setError("Failed to fetch logo image.");
+      }
+    } catch (err) {
+      console.error("Failed to fetch logo Image", err);
+    }
+  };
+
   // Scroll to the top
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -72,6 +149,50 @@ export const Home = () => {
           content="Discover your ideal property in Dubai with the help of our seasoned real estate experts. Whether you're looking for a dream home or a profitable investment opportunity, we provide personalized guidance to help you make the right choice."
         />
         <link rel="canonical" href="https://www.dnkre.com" />
+
+        {homeBanner.image ? (
+          <link
+            rel="preload"
+            as="image"
+            href={`${URL}${encodeURIComponent(homeBanner.image)}`}
+            type="image/webp"
+            fetchpriority="high"
+          />
+        ) : (
+          <link
+            rel="preload"
+            as="image"
+            href={bannerImg}
+            type="image/webp"
+            fetchpriority="high"
+          />
+        )}
+        {event.image && (
+          <link
+            rel="preload"
+            as="image"
+            href={`${URL}${encodeURIComponent(event.image)}`}
+            type="image/webp"
+            fetchpriority="high"
+          />
+        )}
+        {logo.image ? (
+          <link
+            rel="preload"
+            as="image"
+            href={`${URL}${encodeURIComponent(logo.image)}`}
+            type="image/webp"
+            fetchpriority="high"
+          />
+        ) : (
+          <link
+            rel="preload"
+            as="image"
+            href={DnkLogo}
+            type="image/webp"
+            fetchpriority="high"
+          />
+        )}
         <meta name="author" content="DNK Real Estate" />
 
         <meta name="robots" content="index, follow" />

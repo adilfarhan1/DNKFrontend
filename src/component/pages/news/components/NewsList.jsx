@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import Newsimgic from "../../../../assets/icons/image_demo.webp";
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import { TbPointFilled } from "react-icons/tb";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { userNewsServices } from '../../../../services/newsServices';
-import useSliderLazyLoad from '../../../../hooks/useSliderLazyLoad';
-import { URL } from '../../../../url/axios';
+import { userNewsServices } from "../../../../services/newsServices";
+import useSliderLazyLoad from "../../../../hooks/useSliderLazyLoad";
+import { URL } from "../../../../url/axios";
 
 export const NewsList = (props) => {
   const { params } = props;
@@ -23,9 +23,9 @@ export const NewsList = (props) => {
     setSliderNews(tempList);
   }, [params, newsList]);
 
-   useEffect(() => {
-      getData();
-    }, []);
+  useEffect(() => {
+    getData();
+  }, []);
 
   const getData = async () => {
     try {
@@ -34,20 +34,20 @@ export const NewsList = (props) => {
         const sortedNews = response.data
           .filter((data) => data.status == params)
           .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
-      if (sortedNews.length > 0) {
-        setMainNews(sortedNews[0]);
-        setSliderNews(sortedNews.slice(1));
-      }
+        if (sortedNews.length > 0) {
+          setMainNews(sortedNews[0]);
+          setSliderNews(sortedNews.slice(1));
+        }
       }
     } catch (err) {
       console.error("Failed to fatch news list", err);
     }
-  }
+  };
 
-    const handleCardClick = (newsurl) => {
-      const slug = newsurl.trim().toLowerCase().replace(/\s+/g, "-"); 
-      navigate(`/news/${encodeURIComponent(slug)}`);
-    };
+  const handleCardClick = (newsurl) => {
+    const slug = newsurl.trim().toLowerCase().replace(/\s+/g, "-");
+    navigate(`/news/${encodeURIComponent(slug)}`);
+  };
 
   const thumbnailUrls = sliderNews.map((data) => {
     return data?.newsthumbnail
@@ -56,7 +56,7 @@ export const NewsList = (props) => {
   });
 
   const [imageUrls, loadImages] = useSliderLazyLoad(thumbnailUrls, 3);
-  
+
   var settings = {
     dots: false,
     infinite: true,
@@ -89,10 +89,10 @@ export const NewsList = (props) => {
     },
   };
 
-   useEffect(() => {
-      loadImages(0); // Load initial images for visible slides
-   }, [sliderNews]);
-  
+  useEffect(() => {
+    loadImages(0); // Load initial images for visible slides
+  }, [sliderNews]);
+
   return (
     <div className="w-full bg-[#040406] flex items-center justify-center">
       <div className="container max-w-[1240px] py-5  px-4  md:py-9 relative">
@@ -201,4 +201,4 @@ export const NewsList = (props) => {
   );
 };
 
-export default NewsList
+export default NewsList;

@@ -65,7 +65,6 @@ export const AddTeam = (props) => {
         image: teamData.image ? URL + teamData.image : null,
         sliderimg: teamData.sliderimg ? URL + teamData.sliderimg : null,
       });
-      console.log("team img url:", setImageUrl());
     } catch (err) {
       console.error("Faild to fetch team details:", err);
     }
@@ -95,14 +94,10 @@ export const AddTeam = (props) => {
           return;
         }
       }
-      // console.log("teamForm -", formdata)
-      // console.log("project id -", createTeam.id);
 
       let response;
       if (createTeam.id) {
         // For update, ensure that the _id field is included
-        console.log("teamForm -", formdata);
-        console.log("project id -", createTeam.id);
         submitData._id = createTeam.id;
         response = await putTeamList(createTeam.id, formdata);
       } else {
@@ -120,7 +115,6 @@ export const AddTeam = (props) => {
         Swal.fire("Failed", "Failed to added/updated project", "error");
       }
     } catch (err) {
-      console.log(err);
       Swal.fire("Failed", "Failed to added/updated project", "error");
     }
   };

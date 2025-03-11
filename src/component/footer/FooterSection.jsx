@@ -18,25 +18,6 @@ export const FooterSection = () => {
   const [nav, setNav] = useState(true);
   const navigate = useNavigate();
 
-  // const toggleVisible = () => {
-  //   const scrolled = document.documentElement.scrollTop;
-  //   if (scrolled > 300) {
-  //     setVisible(true)
-  //   } else if (scrolled <= 300) {
-  //     setVisible(false)
-  //   }
-  // }
-
-  // const scrollTop = () => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: 'smooth'
-  //   })
-  // }
-
-  // window.addEventListener('scroll', toggleVisible)
-
-  //navigation
   const goToAboutHead = () => {
     navigate("/about");
   };
@@ -99,23 +80,31 @@ export const FooterSection = () => {
       <div className="w-full bg-[#121218] flex items-center justify-center">
         <div className="footerSection container max-w-[1240px] py-5  px-4  md:py-9">
           <div className="flex items-center justify-between footer-head">
-            <LazyImage
-              className="w-[85px] py-2"
-              src={logo}
-              alt="DNK logo, Real Estate"
-            />
+            <Link to="/">
+              <LazyImage
+                className="w-[85px] py-2"
+                src={logo}
+                alt="DNK logo, Real Estate"
+              />
+            </Link>
+
             <div>
               <ul className="social-links grid grid-cols-5 gap-2">
                 <li>
                   <a
                     href="https://www.facebook.com/dnkrealestate1/"
                     target="_blank"
+                    aria-label="Facebook"
                   >
                     <GrFacebookOption />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/dnk_re/" target="_blank">
+                  <a
+                    href="https://www.instagram.com/dnk_re/"
+                    target="_blank"
+                    aria-label="Instagram"
+                  >
                     <FaInstagram />
                   </a>
                 </li>
@@ -123,6 +112,7 @@ export const FooterSection = () => {
                   <a
                     href="https://www.youtube.com/channel/UCKH7d3Sx2dkfb4pEXXaMpFA"
                     target="_blank"
+                    aria-label="Youtube"
                   >
                     <FaYoutube />
                   </a>
@@ -131,14 +121,16 @@ export const FooterSection = () => {
                   <a
                     href="https://www.linkedin.com/company/dnkrealestate/"
                     target="_blank"
+                    aria-label="Linkedin"
                   >
                     <FaLinkedin />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/+971555769195?text=Hello,"
+                    href="https://wa.me/+971555769195?text=Hello%2C%20could%20you%20please%20provide%20more%20insights%20into%20the%20real%20estate%20market%3F"
                     target="_blank"
+                    aria-label="Whats app"
                   >
                     <IoLogoWhatsapp />
                   </a>
@@ -150,7 +142,7 @@ export const FooterSection = () => {
             <div>
               <ul>
                 <li>
-                  <h6>Popular Search</h6>
+                  <h3 className="text-[#fff]">Popular Search</h3>
                 </li>
                 <li>
                   <Link className="cursor-pointer py-1" to="/off-plan-project">
@@ -167,17 +159,12 @@ export const FooterSection = () => {
                     Sell a Property
                   </Link>
                 </li>
-                {/* <li>
-                  <a href="" className="cursor-pointer" onClick={goToAboutHead}>
-                    Property Management
-                  </a>
-                </li> */}
               </ul>
             </div>
             <div>
               <ul>
                 <li>
-                  <h6>Quick Links</h6>
+                  <h3 className="text-[#fff]">Quick Links</h3>
                 </li>
                 <li>
                   <Link className="cursor-pointer py-1" to="/about">
@@ -204,7 +191,7 @@ export const FooterSection = () => {
             <div>
               <ul>
                 <li>
-                  <h5></h5>
+                  <h3></h3>
                 </li>
                 <li>
                   <Link className="cursor-pointer py-1" to="/news">
@@ -226,18 +213,20 @@ export const FooterSection = () => {
             <div className="w-[100%]">
               <ul className="footer-connects">
                 <li>
-                  <h6>Connect with us</h6>
+                  <h3 className="text-[#fff]">Connect with us</h3>
                 </li>
                 <li>
-                  <a href="tel:+97145546904" className="py-1">
-                    <IoIosCall className="text-[1.4rem]" />
-                    <div>
-                      <a href="tel:+97145546904">+971 4 554 6904</a>
-                    </div>
+                  <a
+                    href="tel:+97145546904"
+                    className="py-1 flex items-center"
+                    aria-label="phone number"
+                  >
+                    <IoIosCall className="text-[1.4rem] my-auto" />
+                    +971 4 554 6904
                   </a>
                 </li>
                 <li>
-                  <a href="">
+                  <a href="" aria-label="time">
                     <Ri24HoursLine className="text-[1.4rem]" />
                     <div>
                       <div>
@@ -254,13 +243,17 @@ export const FooterSection = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:info@dnkre.com" className="py-1">
+                  <a
+                    href="mailto:info@dnkre.com"
+                    className="py-1"
+                    aria-label="Mail"
+                  >
                     <MdEmail className="text-[1.2rem] mr-[3px]" />
                     info@dnkre.com
                   </a>
                 </li>
                 <li>
-                  <a href="">
+                  <a href="" aria-label="address">
                     <MdLocationOn className="text-[1.6rem] mr-[3px]" />
                     <div>
                       <div>Suite No: 2602, Silver Tower</div>
@@ -282,7 +275,7 @@ export const FooterSection = () => {
       {showButton && (
         <div class="scrollTop-widget">
           <div class="scrollTop bounce-top" onClick={handleScrollTop}>
-            <IoIosArrowUp className="arrow-top " />
+            <IoIosArrowUp className="arrow-top " aria-label="Go top" />
           </div>
         </div>
       )}
@@ -292,8 +285,10 @@ export const FooterSection = () => {
             href="https://wa.me/+971543049309?text=Hello%2C%20could%20you%20please%20provide%20more%20insights%20into%20the%20real%20estate%20market%3F"
             target="_blank"
             rel="noopener noreferrer"
-          ><IoLogoWhatsapp className="text-[#fff] text-[2.5rem]" /></a>
-          
+            aria-label="Whats app Chat"
+          >
+            <IoLogoWhatsapp className="text-[#fff] text-[2.5rem]" />
+          </a>
         </div>
       </div>
     </footer>

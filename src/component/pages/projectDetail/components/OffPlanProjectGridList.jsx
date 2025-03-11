@@ -15,7 +15,7 @@ export const OffPlanProjectGridList = (props) => {
   const [searchedList, setSearchedList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerPage] = useState(30); // Adjust the number of items per page
+  const [itemsPerPage] = useState(30);
   const { getProjectPublicList } = useProjectServices();
   const navigate = useNavigate();
 
@@ -94,7 +94,9 @@ export const OffPlanProjectGridList = (props) => {
                   <div className="max-w-full overflow-hidden  border border-[#ffff] rounded-[10px] shadow bg-[#040406] cursor-pointer">
                     <div
                       role="img"
-                      aria-label={`${data.projectname || 'off plan, project'}, ${data.altthumbnail || 'Dubai Apartment, villa'}`}
+                      aria-label={`${
+                        data.projectname || "off plan, project"
+                      }, ${data.altthumbnail || "Dubai Apartment, villa"}`}
                       style={{
                         backgroundImage: `url(${
                           data?.thumbnail
@@ -110,7 +112,7 @@ export const OffPlanProjectGridList = (props) => {
                       }}
                     >
                       {data.runingstatus === "newlaunch" && (
-                        <div className="card-status-tag text-[0.8rem] bg-[#FF0000] text-[#ffffff] rotate-[-40deg] w-fit px-9 absolute top-8 left-[-35px]">
+                        <div className="card-status-tag text-[0.8rem] bg-[#B30000] text-[#ffffff] rotate-[-40deg] w-fit px-9 absolute top-8 left-[-35px]">
                           <h2 className="text-[0.8rem] font-normal m-0 px-1 py-1">
                             New Launch
                           </h2>
@@ -139,9 +141,9 @@ export const OffPlanProjectGridList = (props) => {
                       )}
                     </div>
                     <div className="p-5">
-                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-white line-clamp-1">
+                      <h2 className="mb-2 text-2xl font-bold tracking-tight text-white line-clamp-1">
                         {data.projectname}
-                      </h5>
+                      </h2>
                       <p className="m-0 font-normal text-gray-400 line-clamp-1">
                         {data.developer.replace(/-/g, " ")}
                       </p>

@@ -29,7 +29,6 @@ export const AddPartner = (props) => {
   const { postPartner, getPartner, putPartner } = userPartnerServices();
 
   useEffect(() => {
-    console.log("addPartner:", addPartner);
     if (props.mode === "update" && props.user_id) {
       fetchPartner(props.user_id);
     }

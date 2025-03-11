@@ -54,16 +54,6 @@ export const AddAdImage = (props) => {
     e.preventDefault();
     try {
       const formdata = new FormData();
-      // for (const [key, value] of Object.entries(adPoster.image)) {
-      //   console.log("form image data -", value);
-      //   if (value instanceof File || typeof value === "string") {
-      //     formdata.append(key, value);
-      //   } else {
-
-      //      Swal.fire("Failed", "Please upload image!form", "error");
-      //      return;
-      //   }
-      //   console.log("form data -", formdata);
 
       // }
       if (adPoster.image instanceof File) {
@@ -75,8 +65,6 @@ export const AddAdImage = (props) => {
 
       let response;
       if (adId) {
-        // submitData._id = adPoster.id;
-        // console.log('submitID:', submit.adId);
 
         response = await putAd(adId, formdata);
       } else {

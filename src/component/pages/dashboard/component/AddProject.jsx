@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import userProfile from "../../../../assets/icons/userprofile.webp";
 import projectImage from "../../../../assets/icons/image_demo.webp";
 import logoIcon from "../../../../assets/icons/addlogo.webp";
 import ViewList from "./ViewList";
 import { useProjectServices } from "../../../../services/projectServices";
 import { userPartnerServices } from "../../../../services/partnerServices";
-import { FaGlasses } from "react-icons/fa";
-import qrcode from "../../../../assets/icons/qrcode.webp";
 import Swal from "sweetalert2";
 import cvrImage from "../../../../assets/icons/coverimage.webp";
 import { URL } from "../../../../url/axios";
@@ -139,7 +136,6 @@ export const AddProject = (props) => {
   }, [submit]);
 
   useEffect(() => {
-    console.log("Updated imageUrls - ", imageUrls);
   }, [imageUrls]);
 
   const getData = async () => {
@@ -210,7 +206,6 @@ export const AddProject = (props) => {
         Swal.fire("Failed", "Failed to added/updated project", "error");
       }
     } catch (err) {
-      console.log(err);
       Swal.fire("Failed", "Failed to added/updated project", "error");
     }
   };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import coverUser from "../../../../assets/icons/coveruser.webp";
+import coverUser from "../../../../assets/icons/userprofilecover.webp";
 import { userTeamServices } from "../../../../services/teamServices";
 import { useNavigate } from "react-router-dom";
 import { URL } from "../../../../url/axios";

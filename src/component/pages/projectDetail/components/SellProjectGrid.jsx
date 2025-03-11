@@ -33,7 +33,6 @@ export const ProjectGridList = (props) => {
       console.error("Failed to fatch project list", err);
     }
   };
-  console.log(getData);
 
   const handleCardClick = (id) => {
     navigate(`/project-detail/${id}`);
