@@ -8,10 +8,6 @@ export const PopupApatment = ({ onClose }) => {
   const handleFormSubmit = (formData) => {
     onClose();
   };
-
-  if (error) {
-    return <div>{error}</div>; // Display error message
-  }
   
   return (
     <div
