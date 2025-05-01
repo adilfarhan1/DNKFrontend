@@ -74,8 +74,7 @@ export const ADTalkFooterForm = ({ onFormSubmit }) => {
         // Check if the response status is OK
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
-      const data = await response.json(); // Parse the JSON response
+      await response.json();
     } catch (error) {
       console.error("Error adding lead:", error);
     }

@@ -74,8 +74,7 @@ export const ContactForm = ({ onFormSubmit }) => {
         // Check if the response status is OK
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
-      const data = await response.json(); // Parse the JSON response
+      await response.json();
     } catch (error) {
       console.error("Error adding lead:", error);
     }
@@ -159,6 +158,11 @@ export const ContactForm = ({ onFormSubmit }) => {
             {errors.phoneNumber && (
               <p className="error text-[0.9rem] m-0 text-[#FF0202]">
                 {errors.phoneNumber}
+              </p>
+            )}
+            {!valid && (
+              <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+                Invalid phone number.
               </p>
             )}
           </div>
