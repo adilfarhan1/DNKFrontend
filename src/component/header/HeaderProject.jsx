@@ -136,7 +136,7 @@ export const HeaderProject = () => {
               <ul className="items-center justify-center gap-4 ">
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/" && "activeHead"
+                    location.pathname === "/" && "activeHead"
                   }`}
                 >
                   <Link to="/">
@@ -152,7 +152,7 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/off-plan-project" && "activeHead"
+                    location.pathname === "/off-plan-project" && "activeHead"
                   }`}
                 >
                   <Link to="/off-plan-project">
@@ -164,7 +164,7 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/sell-project" && "activeHead"
+                    location.pathname === "/sell-project" && "activeHead"
                   }`}
                 >
                   <Link to="/sell-project">
@@ -176,7 +176,7 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/about" && "activeHead"
+                    location.pathname === "/about" && "activeHead"
                   }`}
                 >
                   <Link to="/about">
@@ -188,7 +188,7 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/team" && "activeHead"
+                    location.pathname === "/team" && "activeHead"
                   }`}
                 >
                   <Link to="/team">
@@ -200,7 +200,7 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/news" && "activeHead"
+                    location.pathname === "/news" && "activeHead"
                   }`}
                 >
                   <Link to="/news">
@@ -212,7 +212,7 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/careers" && "activeHead"
+                    location.pathname === "/careers" && "activeHead"
                   }`}
                 >
                   <Link to="/careers">
@@ -224,7 +224,7 @@ export const HeaderProject = () => {
                 </li>
                 <li
                   className={`relative inline-flex items-center justify-center group m-2 ${
-                    location.pathname == "/contact" && "activeHead"
+                    location.pathname === "/contact" && "activeHead"
                   }`}
                 >
                   <Link to="/contact">

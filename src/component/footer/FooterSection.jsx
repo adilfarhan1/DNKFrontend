@@ -9,50 +9,13 @@ import { IoIosCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Ri24HoursLine } from "react-icons/ri";
 import LazyImage from "../layout/LazyImage";
 
 export const FooterSection = () => {
   const [showButton, setShowButton] = useState();
-  const [nav, setNav] = useState(true);
-  const navigate = useNavigate();
 
-  const goToAboutHead = () => {
-    navigate("/about");
-  };
-
-  const goToTeam = () => {
-    navigate("/team");
-    setNav(!nav);
-  };
-  const goToContactHead = () => {
-    navigate("/contact");
-  };
-
-  const goToCareers = () => {
-    navigate("/careers");
-  };
-
-  const goToServices = () => {
-    navigate("/services");
-  };
-
-  const goToOffPlan = () => {
-    navigate("/off-plan-project");
-  };
-
-  const goToBuy = () => {
-    navigate("/buy-project");
-  };
-
-  const goToSell = () => {
-    navigate("/sell-project");
-  };
-
-  const goToPrivacyPolicy = () => {
-    navigate("/privacy-policy");
-  };
 
   const today = new Date();
   const year = today.getFullYear();
@@ -94,6 +57,7 @@ export const FooterSection = () => {
                   <a
                     href="https://www.facebook.com/dnkrealestate1/"
                     target="_blank"
+                    rel="noreferrer"
                     aria-label="Facebook"
                   >
                     <GrFacebookOption />
@@ -103,6 +67,7 @@ export const FooterSection = () => {
                   <a
                     href="https://www.instagram.com/dnk_re/"
                     target="_blank"
+                    rel="noreferrer"
                     aria-label="Instagram"
                   >
                     <FaInstagram />
@@ -112,6 +77,7 @@ export const FooterSection = () => {
                   <a
                     href="https://www.youtube.com/channel/UCKH7d3Sx2dkfb4pEXXaMpFA"
                     target="_blank"
+                    rel="noreferrer"
                     aria-label="Youtube"
                   >
                     <FaYoutube />
@@ -121,6 +87,7 @@ export const FooterSection = () => {
                   <a
                     href="https://www.linkedin.com/company/dnkrealestate/"
                     target="_blank"
+                    rel="noreferrer"
                     aria-label="Linkedin"
                   >
                     <FaLinkedin />
@@ -130,6 +97,7 @@ export const FooterSection = () => {
                   <a
                     href="https://wa.me/+971555769195?text=Hello%2C%20could%20you%20please%20provide%20more%20insights%20into%20the%20real%20estate%20market%3F"
                     target="_blank"
+                    rel="noreferrer"
                     aria-label="Whats app"
                   >
                     <IoLogoWhatsapp />
@@ -219,7 +187,7 @@ export const FooterSection = () => {
                   <a
                     href="tel:+97145546904"
                     className="py-1 flex items-center"
-                    aria-label="phone number"
+                    aria-label="Call +971 4 554 6904"
                   >
                     <IoIosCall className="text-[1.4rem] my-auto" />
                     +971 4 554 6904
