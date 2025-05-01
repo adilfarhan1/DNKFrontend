@@ -3,8 +3,6 @@ import Assist from "../../../../assets/pojects/addressVilla/icon01.webp";
 import Consultation from "../../../../assets/pojects/addressVilla/icon02.webp";
 import Estimation from "../../../../assets/pojects/addressVilla/icon03.webp";
 import Shedule from "../../../../assets/pojects/addressVilla/icon04.webp";
-import LModelForm from "./ADModelForm";
-import LFooterForm from "./ADFooterForm";
 import LTalkFooterForm from "./ADTalkFooterForm";
 
 export const ADTalkSection = () => {

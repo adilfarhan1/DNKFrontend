@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import projectCover from "../../../../assets/pojects/addressVilla/cover.webp";
 
 export const ADbanner = () => {

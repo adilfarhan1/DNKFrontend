@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import BannerBuy from "../projectDetail/components/BannerBuy";
-import BannerNews from "./components/BannerNews";
 import NewsMain from "./components/NewsMain";
 import { useParams } from "react-router-dom";
 import { userNewsServices } from "../../../services/newsServices";

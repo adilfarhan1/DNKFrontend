@@ -10,7 +10,6 @@ import LDownloadSection from "./componets/GPDownloadSection";
 import LBanner360 from "./componets/GPBanner360";
 import LTalkSection from "./componets/GPTalkSection";
 import { Helmet } from "react-helmet-async";
-import ADMasterPlan from "./componets/GPMasterPlan";
 
 export const HomeGrandPolo = () => {
   return (

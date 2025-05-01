@@ -1,46 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IoClose } from "react-icons/io5";
-import LContactForm from "./LContactForm";
 import AdPoster from "../../../../assets/bahria/adpost.webp";
-import { useProjectServices } from "../../../../services/projectServices";
 import LModelForm from "./LModelForm";
 
-export const PopupModel = ({ onClose, onFormSubmit }) => {
-  const [adPoster, setAdPoster] = useState({ image: null });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const { getAd } = useProjectServices();
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await getAd();
-      if (response.success) {
-        const adData = response.data;
-
-        if (adData.length > 0) {
-          const adImage = adData[0].image;
-          setAdPoster({ image: adImage });
-        } else {
-          setError("No Ad found.");
-        }
-      } else {
-        setError("Failed to fetch Ad image.");
-      }
-    } catch (err) {
-      console.error("Failed to fetch Ad Image", err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (error) {
-    return <div>{error}</div>; // Display error message
-  }
-
+export const PopupModel = ({ onClose }) => {
+  
   const handleFormSubmit = (formData) => {
     onClose();
     // Perform any action needed with formData

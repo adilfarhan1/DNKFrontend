@@ -231,6 +231,11 @@ export const FormRoadshow = () => {
               {errors.phone}
             </p>
           )}
+          {!valid && (
+            <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+              Invalid phone number.
+            </p>
+          )}
         </div>
 
         <div className="mx-2 mb-[25px]">

@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import { userNewsServices } from "../../../../services/newsServices";
 import { URL } from "../../../../url/axios";
 import MdNewsGrid from "./MdNewsGrid";
-import LazyImage from "../../../layout/LazyImage";
 
 export const NewsMain = () => {
   const { newsurl } = useParams();

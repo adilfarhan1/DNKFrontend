@@ -8,7 +8,6 @@ import { RiWhatsappFill } from "react-icons/ri";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { URL } from "../../url/axios";
-import LazyImage from "../layout/LazyImage";
 
 export const HeaderProject = () => {
   const { slug } = useParams();

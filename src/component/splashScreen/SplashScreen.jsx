@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import DNKLogo from "../../assets/logo/dnklogo_1.webp"; // Rename the imported logo
 
 export const SplashScreen = ({ onAnimationEnd }) => {

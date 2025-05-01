@@ -5,7 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { MdModeEditOutline } from "react-icons/md";
 
 export const ViewReview = (props) => {
-  const { addReview, setAddReview, submit, params } = props;
+  const { setAddReview, submit, params } = props;
   const [reviewList, setReviewList] = useState([]);
   const [searchedList, setSearchedList] = useState([]);
   const { getReview, deleteReview } = userReviewServices();

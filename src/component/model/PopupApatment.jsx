@@ -1,54 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IoClose } from "react-icons/io5";
 import ContactForm from "../pages/contact/component/ContactForm";
-import AdPoster from "../../assets/icons/adposter.webp";
-import { useProjectServices } from "../../services/projectServices";
-import { URL } from "../../url/axios";
 import imageUrl from "../../assets/dubaiApaetment/popupImg.webp";
 
-export const PopupApatment = ({ onClose, onFormSubmit }) => {
-  const [adPoster, setAdPoster] = useState({ image: null });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const { getAd } = useProjectServices();
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+export const PopupApatment = ({ onClose }) => {
 
   const handleFormSubmit = (formData) => {
     onClose();
   };
-
-  const fetchData = async () => {
-    try {
-      const response = await getAd();
-      if (response.success) {
-        const adData = response.data;
-
-        if (adData.length > 0) {
-          const adImage = adData[0].image;
-          setAdPoster({ image: adImage });
-        } else {
-          setError("No Ad found.");
-        }
-      } else {
-        setError("Failed to fetch Ad image.");
-      }
-    } catch (err) {
-      console.error("Failed to fetch Ad Image", err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return (
-      <div className="bg-[#040406] text-center">
-        <p className="m-auto loader !w-[24px] !h-[24px]"></p>
-      </div>
-    ); // Loading indicator
-  }
 
   if (error) {
     return <div>{error}</div>; // Display error message

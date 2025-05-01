@@ -3,16 +3,13 @@ import AdPoster from "../../../../assets/icons/adposter.webp";
 import { useProjectServices } from "../../../../services/projectServices";
 import Swal from "sweetalert2";
 import { URL } from "../../../../url/axios";
-import { useParams } from "react-router-dom";
 
-export const AddAdImage = (props) => {
-  const { id } = useParams();
+export const AddAdImage = () => {
   const [adPoster, setAdPoster] = useState({
     image: null,
   });
   const [adId, setAdId] = useState(null);
   const [imageUrl, setImageURl] = useState(AdPoster);
-  const [submit, setSubmit] = useState(false);
 
   const { putAd, getAd, postAdImage } = useProjectServices();
 

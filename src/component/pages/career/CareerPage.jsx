@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import BannerCareer from "./component/BannerCareer";
-import { FaWhatsapp } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import PartnerSection from "../home/components/PartnerSection";
 import { userUserServices } from "../../../services/userServices";
@@ -128,7 +127,7 @@ export const CareerPage = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      const data = await response.json();
+      await response.json();
     } catch (error) {
       console.error("Error adding lead:", error);
     }
@@ -287,6 +286,11 @@ export const CareerPage = () => {
                         {errors.phoneNumber && (
                           <p className="error text-[0.9rem] m-0 text-[#FF0202]">
                             {errors.phoneNumber}
+                          </p>
+                        )}
+                        {!valid && (
+                          <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+                            Invalid phone number.
                           </p>
                         )}
                       </div>

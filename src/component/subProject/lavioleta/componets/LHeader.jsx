@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import dnkLogo from "../../../../assets/bahria/logoBT.webp";
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { MdCall } from "react-icons/md";
-import { RiWhatsappFill } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import PopupModel from "../componets/Lmodel";
 
 export const LHeader = () => {
   const [nav, setNav] = useState(true);
-  const navigate = useNavigate();
   const location = useLocation();
   const [ShowPopup, setShowPopup] = useState(false);
 
@@ -47,16 +40,6 @@ export const LHeader = () => {
 
   //nav menu button
   const handleNav = () => {
-    setNav(!nav);
-  };
-
-  //navigation
-  const goToGalleryHead = () => {
-    scrollToSection("/");
-  };
-
-  const goToGallery = () => {
-    scrollToSection("/");
     setNav(!nav);
   };
 
@@ -103,11 +86,6 @@ export const LHeader = () => {
   const goToContact = () => {
     scrollToSection("contact");
     setNav(!nav);
-  };
-
-  const getActive = () => {
-    switch (location.pathname) {
-    }
   };
 
   return (

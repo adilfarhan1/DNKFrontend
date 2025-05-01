@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ContactForm from '../../../pages/contact/component/ContactForm';
 import Assist from '../../../../assets/dubaiApaetment/icon01.webp'
 import Consultation from "../../../../assets/dubaiApaetment/icon02.webp";
 import Estimation from "../../../../assets/dubaiApaetment/icon03.webp";
@@ -79,7 +78,7 @@ export const TalkStn = () => {
            throw new Error(`HTTP error! Status: ${response.status}`);
          }
 
-         const data = await response.json(); // Parse the JSON response
+         await response.json(); // Parse the JSON response
        } catch (error) {
          console.error("Error adding lead:", error);
        }
@@ -231,6 +230,11 @@ export const TalkStn = () => {
                     {errors.phoneNumber && (
                       <p className="error text-[0.9rem] m-0 text-[#FF0202]">
                         {errors.phoneNumber}
+                      </p>
+                    )}
+                    {!valid && (
+                      <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+                        Invalid phone number.
                       </p>
                     )}
                   </div>

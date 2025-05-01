@@ -1,55 +1,13 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../../../assets/bahria/logoBT.webp";
-import { GrFacebookOption } from "react-icons/gr";
-import { FaInstagram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { IoMdCall } from "react-icons/io";
-import { IoIosCall } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import { MdLocationOn } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { Ri24HoursLine } from "react-icons/ri";
 
 export const LFooter = () => {
   const [showButton, setShowButton] = useState();
   const [nav, setNav] = useState(true);
   const navigate = useNavigate();
 
-  //navigation
-  const goToAboutHead = () => {
-    navigate("/about");
-  };
-
-  const goToTeam = () => {
-    navigate("/team");
-    setNav(!nav);
-  };
-  const goToContactHead = () => {
-    navigate("/contact");
-  };
-
-  const goToCareers = () => {
-    navigate("/careers");
-  };
-
-  const goToServices = () => {
-    navigate("/services");
-  };
-
-  const goToOffPlan = () => {
-    navigate("/off-plan-project");
-  };
-
-  const goToBuy = () => {
-    navigate("/buy-project");
-  };
-
-  const goToSell = () => {
-    navigate("/sell-project");
-  };
 
   const today = new Date();
   const year = today.getFullYear();

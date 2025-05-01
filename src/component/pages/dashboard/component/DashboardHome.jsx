@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ViewList from "./ViewList";
-import { Navigate } from "react-router-dom";
 
 export const DashboardHome = () => {
   const [params, setParams] = useState("allProject");

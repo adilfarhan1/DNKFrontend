@@ -3,7 +3,6 @@ import bannerImg from "../../../../assets/banner-img/banner_home.webp";
 import { PopupModel } from "../../../model/PopupModel";
 import { useProjectServices } from "../../../../services/projectServices";
 import { URL } from "../../../../url/axios";
-import LazyImage from "../../../layout/LazyImage";
 
 export const BannerHome = () => {
   const [ShowPopup, setShowPopup] = useState(false);

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import propertyManagement from "../../../assets/icons/propertymanagement.webp";
 import loadingRound from "../../../assets/icons/loadinground.webp";
 import capitalImprovements from "../../../assets/icons/capitalimprovement.webp";

@@ -9,7 +9,7 @@ import { URL } from "../../../../url/axios";
 import ReactPaginate from "react-paginate";
 
 export const ViewPartner = (props) => {
-  const { addPartner, setAddPartner, submit, params } = props;
+  const { setAddPartner, submit, params } = props;
   const [partnerList, setPartnerList] = useState([]);
   const [searchedList, setSearchedList] = useState([]);
    const [searchTerm, setSearchTerm] = useState("");

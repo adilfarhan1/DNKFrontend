@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { userRoadshowServices } from "../../../services/roadshowService";
-import AddPartner from "../../pages/dashboard/component/AddPartner";
 import Swal from "sweetalert2";
 import RoadshowList from "./RoadshowList";
 

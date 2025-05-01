@@ -8,7 +8,6 @@ export const AddHomeBanner = () => {
   const [homeBanner, setHomeBanner] = useState({ image: null });
   const [homeBannerId, setHomeBannerId] = useState(null);
   const [imageUrl, setImageUrl] = useState(HomeBannerDefult);
-  const [submit, setSubmit] = useState(false);
 
   const { putHomeBanner, postHomeBannerImage, getHomeBanner } =
     useProjectServices();

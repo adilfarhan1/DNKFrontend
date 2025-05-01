@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../../../assets/pojects/addressVilla/logo.webp";
-import { GrFacebookOption } from "react-icons/gr";
-import { FaInstagram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { IoMdCall } from "react-icons/io";
-import { IoIosCall } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import { MdLocationOn } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { Ri24HoursLine } from "react-icons/ri";
 
 export const ADFooter = () => {
   const [showButton, setShowButton] = useState();

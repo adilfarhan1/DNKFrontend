@@ -1,19 +1,7 @@
 import React, { useState } from "react";
 import masterPlanImg from "../../../../assets/pojects/addressVilla/newphase.webp";
-import PopupModel from "./ADmodel";
 
 export const ADMasterPlan = () => {
-  const [showPopup, setShowPopup] = useState(false);
-  const [isOverlayVisible, setIsOverlayVisible] = useState(true);
-
-  const handleViewPlanClick = () => {
-    setShowPopup(true);
-  };
-
-  const handleFormSubmit = () => {
-    setIsOverlayVisible(false);
-    setShowPopup(false); // Optionally close the popup after submission
-  };
 
   return (
     <div

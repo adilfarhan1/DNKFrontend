@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { IoClose } from "react-icons/io5";
-import { FaWhatsapp } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { userUserServices } from '../../../../services/userServices';
@@ -76,7 +75,7 @@ export const PopupClick = ({ data, onFormSubmit, onClose, imageUrl }) => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      const crmdata = await response.json(); // Parse the JSON response
+      await response.json(); // Parse the JSON response
     } catch (error) {
       console.error("Error adding lead:", error);
     }
@@ -195,6 +194,11 @@ export const PopupClick = ({ data, onFormSubmit, onClose, imageUrl }) => {
                     {errors.phoneNumber && (
                       <p className="error text-[0.9rem] m-0 text-[#FF0202]">
                         {errors.phoneNumber}
+                      </p>
+                    )}
+                    {!valid && (
+                      <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+                        Invalid phone number.
                       </p>
                     )}
                   </div>

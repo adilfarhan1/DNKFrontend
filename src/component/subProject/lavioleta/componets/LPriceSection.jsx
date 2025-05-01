@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { MdLocationPin } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Studio from "../../../../assets/bahria/studio01.webp"
 import List02 from "../../../../assets/bahria/1br.webp";

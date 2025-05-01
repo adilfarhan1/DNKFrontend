@@ -8,13 +8,13 @@ import Swal from "sweetalert2";
 import ReactPaginate from "react-paginate";
 
 export const ViewList = (props) => {
-  const { createProject, setCreateProject, submit, params } = props;
+  const { setCreateProject, submit, params } = props;
   const [projectList, setProjectList] = useState([]);
   const [searchedList, setSearchedList] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [currentPage, setCurrentPage] = useState(0);
     const [itemsPerPage] = useState(30);
-  const { getProjectList, putProjectList, deleteProjectList } =
+  const { getProjectList, deleteProjectList } =
     useProjectServices();
 
   useEffect(() => {

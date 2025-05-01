@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import avatar from "../../../../assets/icons/avatar.webp";
 import { userReviewServices } from "../../../../services/reviewServices";
 import Swal from "sweetalert2";
-import { URL } from "../../../../url/axios";
 import ViewReview from "./ViewReview";
 
 export const ReviewAdd = (props) => {

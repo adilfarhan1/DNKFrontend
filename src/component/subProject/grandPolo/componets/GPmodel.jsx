@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IoClose } from "react-icons/io5";
 import AdPoster from "../../../../assets/pojects/grandPolo/adImg.webp";
-import { useProjectServices } from "../../../../services/projectServices";
 import  { ADModelForm } from "./GPModelForm";
 
 export const PopupModel = ({ onClose, onFormSubmit }) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import projectCover from "../../../../assets/bahria/banner.webp";
 
 export const Lbanner = () => {

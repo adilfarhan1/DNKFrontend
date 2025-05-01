@@ -3,8 +3,6 @@ import Assist from "../../../../assets/lavioleta/footericon1.webp";
 import Consultation from "../../../../assets/lavioleta/footericon2.webp";
 import Estimation from "../../../../assets/lavioleta/footericon3.webp";
 import Shedule from "../../../../assets/lavioleta/footericon4.webp";
-import LModelForm from "./GPModelForm";
-import LFooterForm from "./GPFooterForm";
 import LTalkFooterForm from "./GPTalkFooterForm";
 
 export const ADTalkSection = () => {

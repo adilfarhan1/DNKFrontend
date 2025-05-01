@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProjectBanner from "./components/ProjectBanner";
 import DetailProject from "./components/DetailProject";
 import TalkSection from "../home/components/TalkSection";

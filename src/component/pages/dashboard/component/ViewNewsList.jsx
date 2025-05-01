@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import ReactPaginate from 'react-paginate';
 
 export const ViewNewsList = (props) => {
-    const { createNews, setCreateNews, submit, params } = props;
+    const { setCreateNews, submit, params } = props;
     const [newsList, setNewsList] = useState([]);
     const [searchedList, setSearchedList] = useState([]);
        const [searchTerm, setSearchTerm] = useState("");

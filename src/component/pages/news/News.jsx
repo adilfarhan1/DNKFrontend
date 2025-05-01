@@ -8,8 +8,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import ReactPaginate from "react-paginate";
 import { Helmet } from "react-helmet";
 
-export const News = (props) => {
-  const { params, newsurl } = props;
+export const News = () => {
   const [newsList, setNewsList] = useState([]);
   const [searchedList, setSearchedList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");

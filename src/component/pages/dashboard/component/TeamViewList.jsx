@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useProjectServices } from "../../../../services/projectServices";
 import { userTeamServices } from "../../../../services/teamServices";
 import { MdDelete } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -8,13 +7,13 @@ import ReactPaginate from "react-paginate";
 import { MdModeEditOutline } from "react-icons/md";
 
 export const TeamViewList = (props) => {
-  const { createTeam, setCreateTeam, submit, params } = props;
+  const { setCreateTeam, submit, params } = props;
   const [teamList, setTeamList] = useState([]);
   const [searchedList, setSearchedList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage] = useState(20);
-  const { getTeamList, putTeamList, deleteTeamList } = userTeamServices();
+  const { getTeamList, deleteTeamList } = userTeamServices();
 
   useEffect(() => {
     let tempList = teamList;

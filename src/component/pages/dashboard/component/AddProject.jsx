@@ -13,7 +13,7 @@ export const AddProject = (props) => {
   const [partnerList, setPartnerList] = useState([]);
   const [searchedDeveloperList, setSearchedDeveloperList] = useState([]);
   const [selectedDeveloperImage, setSelectedDeveloperImage] = useState("");
-  const { getPartner, deletePartner, getPartnerName } = userPartnerServices();
+  const { getPartner, getPartnerName } = userPartnerServices();
   const initialState = {
     projectname: "",
     thumbnail: null,

@@ -9,9 +9,6 @@ export const NewsGrid = (props) => {
   const { params, newsurl } = props;
   const [newsList, setNewsList] = useState([]);
   const [searchedList, setSearchedList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerPage] = useState(30);
   const { getNews } = userNewsServices();
   const navigate = useNavigate();
 
