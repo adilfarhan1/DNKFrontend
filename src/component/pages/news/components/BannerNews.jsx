@@ -4,7 +4,7 @@ import bannerImg from "../../../../assets/banner-img/news_banner.webp";
 export const BannerNews = () => {
   return (
     <div
-      className="w-full bg-[#040406] flex items-center justify-center bg-cover bg-no-repeat "
+      className="w-full bg-[#040406] flex items-center justify-center bg-cover bg-no-repeat"
       aria-label={`News Report`}
       style={{ backgroundImage: `url(${bannerImg})` }}
     >

@@ -10,6 +10,7 @@ import LDownloadSection from "./componets/LDownloadSection";
 import LBanner360 from "./componets/LBanner360";
 import LTalkSection from "./componets/LTalkSection";
 import { Helmet } from "react-helmet-async";
+import LPriceSection from "./componets/LPriceSection";
 
 export const DamacIsland = () => {
   return (
@@ -92,7 +93,8 @@ export const DamacIsland = () => {
               ],
               telephone: "+971555769195",
               email: "info@dnkre.com",
-              address: "Merasi Drive, Business Bay, Dubai",
+              address:
+                "Suite No: 603, Sama Building, Al Barsha 1 - Al Barsha, Dubai, United Arab Emirates",
             },
 
             // BreadcrumbList Schema
@@ -136,14 +138,15 @@ export const DamacIsland = () => {
                     itemOffered: {
                       "@type": "House",
                       name: "Bahria Town at Dubai South by BT properties",
-                      logo: "http://localhost:3000/static/media/logoBT.a740ed5d37cc44a6159a.webp",
+                      logo: "https://dnkre.com/static/media/logoBT.a740ed5d37cc44a6159a.webp",
                       url: "https://dnkre.com/bahriatown-dubai",
                       image: "https://www.dnkre.com/bahriatown.webp",
                     },
                     offeredBy: {
                       "@type": "Organization",
                       name: "DNK Real Estate",
-                      address: "Suite No. 2602, Silver Tower, Marasi Drive",
+                      address:
+                        "Suite No: 603, Sama Building, Al Barsha 1 - Al Barsha, Dubai, United Arab Emirates",
                       telephone: "+971555769195",
                       email: "info@dnkre.com",
                       image: "https://www.dnkre.com/logo.webp",
@@ -165,6 +168,7 @@ export const DamacIsland = () => {
           <Lbanner />
           <LFormBanner />
           <LaboutSection />
+          <LPriceSection />
           <LimgSlider />
           <LFloorPlanComponent />
           <LpaymentPlan />

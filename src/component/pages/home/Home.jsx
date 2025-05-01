@@ -265,8 +265,9 @@ export const Home = () => {
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "AE",
-                streetAddress: "Suite No. 2602, Silver Tower, Marasi Drive",
-                addressLocality: "Business Bay",
+                streetAddress:
+                  "Suite No: 603, Sama Building, Al Barsha 1 - Al Barsha, Dubai, United Arab Emirates",
+                addressLocality: "Al Barsha",
                 addressRegion: "Dubai",
                 postalCode: "26048",
               },
@@ -299,8 +300,9 @@ export const Home = () => {
             address: {
               "@type": "PostalAddress",
               addressCountry: "AE",
-              streetAddress: "Suite No. 2602, Silver Tower, Marasi Drive",
-              addressLocality: "Business Bay",
+              streetAddress:
+                "Suite No: 603, Sama Building, Al Barsha 1 - Al Barsha, Dubai, United Arab Emirates",
+              addressLocality: "Al Barsha",
               addressRegion: "Dubai",
               postalCode: "26048",
             },

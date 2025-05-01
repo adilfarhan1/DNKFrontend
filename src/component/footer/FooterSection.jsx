@@ -256,8 +256,8 @@ export const FooterSection = () => {
                   <a href="" aria-label="address">
                     <MdLocationOn className="text-[1.6rem] mr-[3px]" />
                     <div>
-                      <div>Suite No: 2602, Silver Tower</div>
-                      <div>Marasi Drive - Business Bay,</div>
+                      <div>Suite No: 603, Sama Building,</div>
+                      <div>Al Barsha 1 - Al Barsha,</div>
                       <div>Dubai, United Arab Emirates.</div>
                     </div>
                   </a>

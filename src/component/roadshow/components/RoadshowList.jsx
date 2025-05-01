@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { MdModeEditOutline } from "react-icons/md";
 import { userRoadshowServices } from "../../../services/roadshowService";
@@ -10,6 +10,7 @@ export const RoadshowList = (props) => {
   const [searchedRoadshowListList, setSearchedRoadshowList] = useState([]);
   const { getRoadshow, deleteRoadshow } = userRoadshowServices();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     let tempList = roadshowList
@@ -43,6 +44,9 @@ export const RoadshowList = (props) => {
       name: data.name,
       address: data.address,
       date: data.date,
+      date2: data.date2,
+      hotelName: data.hotelName,
+      place: data.place
     });
   };
 
@@ -61,6 +65,11 @@ export const RoadshowList = (props) => {
     }
   };
 
+    const handleCardClick = (place) => {
+      const slug = place.replace(/\s+/g, "-").toLowerCase();
+      navigate(`/link/${slug}`);
+    };
+
   return (
     <div className="overflow-hidden relative">
       <div className="overflow-x-auto max-h-full">
@@ -68,8 +77,11 @@ export const RoadshowList = (props) => {
           <thead>
             <tr>
               <th>Event Name</th>
+              <th>Hotel Name</th>
               <th>Event Address</th>
-              <th>Event Date</th>
+              <th>Place Name</th>
+              <th>Event Date Day1</th>
+              <th>Event Date Day2</th>
               {location.pathname == "/roadshow/create" && <th></th>}
               {location.pathname == "/roadshow/create" && <th></th>}
             </tr>
@@ -78,9 +90,18 @@ export const RoadshowList = (props) => {
             {searchedRoadshowListList.length > 0 ? (
               searchedRoadshowListList.map((data, i) => (
                 <tr>
-                  <td>{data.name}</td>
+                  <td
+                    className="cursor-pointer"
+                    key={data.place}
+                    onClick={() => handleCardClick(data.place)}
+                  >
+                    {data.name}
+                  </td>
+                  <td>{data.hotelName}</td>
                   <td>{data.address}</td>
+                  <td>{data.place}</td>
                   <td>{data.date}</td>
+                  <td>{data.date2}</td>
                   {location.pathname == "/roadshow/create" && (
                     <td className="text-center">
                       <MdModeEditOutline

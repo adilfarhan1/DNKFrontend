@@ -32,7 +32,6 @@ import RodeshowLayout from './component/roadshow/RodeshowLayout';
 import RegisterRoadshow from './component/roadshow/components/RegisterRoadshow';
 import CreateRoadshow from './component/roadshow/components/CreateRoadshow';
 import RoadshowList from './component/roadshow/components/RoadshowList';
-import Clintside from './component/roadshow/Clintside';
 import EventLogin from './component/pages/login/EventLogin';
 import ClientRegisterList from './component/roadshow/components/ClientRegisterList';
 import Attendance from './component/roadshow/Attendance';
@@ -44,6 +43,10 @@ import ApartmentsDubai from './component/other/apartments/ApartmentsDubai';
 import NewsDetail from './component/pages/news/NewsDetail';
 import AddNews from './component/pages/dashboard/component/AddNews';
 import News from './component/pages/news/News';
+import AddressHillsLayout from './component/subProject/addressHills/AddressHillsLayout';
+import GrandPoloLayout from './component/subProject/grandPolo/GrandPoloLayout';
+import ClintsideLinkPort1 from './component/roadshow/ClintsideLinkPort1';
+import ClintsideLinkPort2 from './component/roadshow/ClintsideLinkPort2';
 
 function App() {
 
@@ -73,7 +76,8 @@ function App() {
               <Route path='/sell-project' element={<SellProject />} />
               <Route path='/services' element={<OurServices />} />
               <Route path='/careers' element={<CareerPage />} />
-              <Route path='/link' element={<Clintside />} />
+              <Route path='/link/:slug' element={<ClintsideLinkPort1 />} />
+              <Route path='/link2' element={<ClintsideLinkPort2 />} />
               <Route path='/attendance' element={<Attendance />} />
               <Route path='/privacy-policy' element={<PrivacyPolicy />} />
               <Route path='/news/' element={<News />} />
@@ -89,6 +93,11 @@ function App() {
             <Route path='/bahriatown-dubai/paymentplan' element={<LavioletaLayout />} />
             <Route path='/bahriatown-dubai/floorplan' element={<LavioletaLayout />} />
             <Route path='/bahriatown-dubai/amenities' element={<LavioletaLayout />} />
+            <Route path='/address-villas-the-oasis' element={<AddressHillsLayout />} />
+            <Route path='/address-villas-the-oasis/paymentplan' element={<AddressHillsLayout />} />
+            <Route path='/address-villas-the-oasis/floorplan' element={<AddressHillsLayout />} />
+          <Route path='/address-villas-the-oasis/amenities' element={<AddressHillsLayout />} />
+          <Route path='/grand-polo-club-resort' element={<GrandPoloLayout />} />
             <Route element={<Auth />}>
               <Route path='/dashboard' element={<DashboardLayout />}>
                 <Route index element={<DashboardHome />} />

@@ -221,27 +221,24 @@ export const ProjectDetail = () => {
                   "@type": "ListItem",
                   position: 2,
                   item: {
-                    "@type": "Place",
-                    name: `${locationname}`,
-                    "@id": `https://www.dnkre.com/projects/${slug}`,
+                    "@id": `https://dnkre.com/off-plan-project`,
+                    name: `Properties`,
                   },
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   item: {
-                    "@type": "Brand",
-                    name: `${developer.replace(/-/g, " ")}`,
-                    "@id": `https://www.dnkre.com/projects/${slug}`,
+                    "@id": `https://www.dnkre.com/news`,
+                    name: `News`,
                   },
                 },
                 {
                   "@type": "ListItem",
                   position: 4,
                   item: {
-                    "@type": "House",
-                    name: `${projectname}`,
-                    "@id": `https://www.dnkre.com/projects/${slug}`,
+                    "@id": `https://dnkre.com/contact`,
+                    name: `Contact`,
                   },
                 },
               ],
@@ -286,7 +283,8 @@ export const ProjectDetail = () => {
                     offeredBy: {
                       "@type": "Organization",
                       name: "DNK Real Estate",
-                      address: "Suite No. 2602, Silver Tower, Marasi Drive",
+                      address:
+                        "Suite No: 603, Sama Building, Al Barsha 1 - Al Barsha, Dubai, United Arab Emirates",
                       telephone: "+971555769195",
                       email: "info@dnkre.com",
                       image: "https://www.dnkre.com/logo.webp",

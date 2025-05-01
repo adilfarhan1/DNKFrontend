@@ -9,6 +9,11 @@ export const userRoadshowServices = () => {
         return response.data;
     };
 
+    const getRoadshowLinkById = async (place) => {
+        const response = await axiosPrivate.get('/event/link/' + place)
+        return response.data
+    }
+
     const deleteRegister = async (id) => {
         const response = await axiosPrivate.delete('/event/delete-register/' + id)
         return response.data
@@ -51,6 +56,13 @@ export const userRoadshowServices = () => {
         return response.data;
     };
 
+    const postClientResgisterPort2 = async (formdata) => {
+        const response = await axiosPrivate.post('/event/clint-register-port2', formdata, {
+            headers: { "Content-Type": 'application/json' }
+        });
+        return response.data;
+    };
+
     const getClientRegister = async () => {
         const response = await axiosPrivate.get('/event/get-clint-register')
         return response.data
@@ -77,9 +89,11 @@ export const userRoadshowServices = () => {
         deleteRoadshow,
         deleteRegister,
         postClientResgister,
+        postClientResgisterPort2,
         getClientRegister,
         deleteClentRegister,
-        checkDuplicateClient
+        checkDuplicateClient,
+        getRoadshowLinkById
     }
 
 }

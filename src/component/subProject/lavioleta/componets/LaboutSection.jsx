@@ -35,41 +35,63 @@ export const LaboutSection = () => {
                 loading="lazy"
               />
               <div>
-                <h1 className="text-[#fff] w-fit mb-1 mt-3 text-left">
-                  Why Choose Us?
-                </h1>
+                <h2 className="text-[#fff] w-fit mb-1 mt-3 text-left">
+                  Villas for Sale in Bahria Town Dubai
+                </h2>
+                <p>
+                  Looking for a <strong>luxurious villa</strong> in{" "}
+                  <a
+                    className="text-[#00A3FF]"
+                    href="https://dnkre.com/news/bahria-town-dubai-south"
+                  >
+                    Bahria Town Dubai
+                  </a>
+                  ? This community offers a range of{" "}
+                  <strong>modern and spacious villas</strong> designed for
+                  comfort, elegance, and convenience. Whether you're searching
+                  for a <strong>family home</strong> or an{" "}
+                  <strong>investment opportunity</strong>, Bahria Town Dubai has
+                  the perfect property for you.
+                </p>
                 <h2 className="text-left text-[1.4rem]">
-                  Bahria Town Dubai - BT Properties
+                  Available Villas in Bahria Town Dubai:
                 </h2>
                 <ul className="list-disc list-outside pl-4 text-[#979797] ">
                   <li>
                     <div>
-                      <p className="font-semibold m-0">Prime Location</p>
-                      <p className="text-left">
-                        Situated in the heart of Dubai South, Bahria Town offers
-                        seamless connectivity to major landmarks, including Al
-                        Maktoum International Airport, Expo City Dubai, and key
-                        highways such as Sheikh Mohammed Bin Zayed Road.
+                      <p className="text-left mb-0">
+                        <strong>4 Bedroom Villa</strong>: Ideal for small
+                        families, offering modern interiors and high end
+                        amenities.
                       </p>
                     </div>
                   </li>
                   <li>
                     <div>
-                      <p className="font-semibold m-0">
-                        Modern Architecture and Design
+                      <p className="text-left mb-0">
+                        <strong>5 Bedroom Villa</strong>: Spacious and stylish,
+                        perfect for larger families seeking extra comfort.
                       </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
                       <p className="text-left">
-                        The project features contemporary designs that combine
-                        aesthetics with functionality.{" "}
-                        <strong>
-                          Spacious Townhouses, villas, luxurious apartments,
-                        </strong>{" "}
-                        and innovative commercial spaces create a harmonious
-                        blend of residential and business environments.
+                        <strong>6 Bedroom Villa</strong>: A luxurious choice
+                        with premium features.
                       </p>
                     </div>
                   </li>
                 </ul>
+                <p>
+                  With its{" "}
+                  <strong>
+                    prime location, world class facilities, and peaceful
+                    surroundings
+                  </strong>
+                  , Bahria Town Dubai is an excellent place to live or invest.
+                  Find your dream villa today!
+                </p>
                 <button
                   onClick={() => setShowPopup(true)}
                   className="site-btn !text-[#fff] hover:!text-[#000] !border-[#fff] hover:!bg-[#fff]"
@@ -87,53 +109,54 @@ export const LaboutSection = () => {
                 loading="lazy"
               />
               <div>
-                <ul className="list-disc list-outside pl-4 text-[#979797]">
+                <h2 className="text-left">Waada at Bahria Dubai South</h2>
+                <h2 className="text-left text-[1.4rem]">
+                  A New Standard of Luxury Living
+                </h2>
+                <p>
+                  <strong>
+                    <a
+                      className="text-[#00A3FF]"
+                      href="https://dnkre.com/news/waada-by-bahria-town-dubai"
+                    >
+                      Waada by BT Properties
+                    </a>
+                  </strong>{" "}
+                  is a premium residential development in{" "}
+                  <strong>Bahria Dubai South</strong>, offering luxurious and
+                  modern homes with spacious layouts and high-end amenities.
+                  Designed for comfort and convenience, this community is
+                  perfect for <strong>families and investors</strong> looking
+                  for a vibrant and well connected neighborhood. Waada at Bahria
+                  Dubai South promises an <strong>exceptional lifestyle</strong>{" "}
+                  in one of Dubai’s most sought-after developments.
+                </p>
+                <ul className="list-disc list-outside pl-4 text-[#979797] ">
                   <li>
                     <div>
-                      <p className="font-semibold m-0 ">
-                        World-Class Amenities
+                      <p className="text-left mb-0">
+                        <strong>Location</strong>: Bahria Town, Dubai South
                       </p>
-                      <ul className="list-decimal mt-1 pl-4">
-                        <li>
-                          <p className="text-left m-0">
-                            <strong>Green Spaces:</strong> Lush parks and
-                            landscaped gardens.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="text-left m-0">
-                            <strong>Educational Facilities:</strong> Proximity
-                            to top-tier schools and universities.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="text-left m-0">
-                            <strong>Shopping and Dining:</strong> High-end
-                            retail outlets and gourmet restaurants.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="text-left m-0">
-                            <strong>Healthcare:</strong>
-                            State-of-the-art medical centers and clinics.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="text-left m-0">
-                            <strong>Recreational Activities:</strong>
-                            5.Recreational Activities: Golf courses, swimming
-                            pools, and fitness centers.
-                          </p>
-                        </li>
-                      </ul>
                     </div>
                   </li>
                   <li>
                     <div>
-                      <p className="font-semibold m-0">Community Living</p>
+                      <p className="text-left mb-0">
+                        <strong>Unit Type</strong>: Coming Soon
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <p className="text-left mb-0">
+                        <strong>Bedroom Options</strong>: Coming Soon
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
                       <p className="text-left">
-                        With a focus on safety and community engagement, Bahria
-                        Town in Dubai offers a family-friendly environment.
+                        <strong>Starting Price</strong>: Coming Soon
                       </p>
                     </div>
                   </li>

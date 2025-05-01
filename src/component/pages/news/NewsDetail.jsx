@@ -110,13 +110,28 @@ export const NewsDetail = () => {
                   "@type": "ListItem",
                   position: 2,
                   item: {
-                    "@type": "News",
-                    name: `${newstitle}`,
-                    "@id": `https://www.dnkre.com/news/${newsurl}`,
+                    "@id": `https://dnkre.com/off-plan-project`,
+                    name: `Properties`,
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  item: {
+                    "@id": `https://www.dnkre.com/news`,
+                    name: `News`,
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
+                  item: {
+                    "@id": `https://dnkre.com/contact`,
+                    name: `Contact`,
                   },
                 },
               ],
-              numberOfItems: 2,
+              numberOfItems: 4,
             },
 
             // ItemPage Schema

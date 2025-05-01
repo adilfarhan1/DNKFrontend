@@ -11,6 +11,9 @@ export const CreateRoadshow = (props) => {
     name: "",
     address: "",
     date: "",
+    date2: "",
+    hotelName: "",
+    place: "",
   };
 
   const [addRoadshow, setAddRoadshow] = useState(initialState);
@@ -54,6 +57,9 @@ export const CreateRoadshow = (props) => {
       formdata.append("name", addRoadshow.name);
       formdata.append("address", addRoadshow.address);
       formdata.append("date", addRoadshow.date);
+      formdata.append("date2", addRoadshow.date2);
+      formdata.append("hotelName", addRoadshow.hotelName);
+      formdata.append("place", addRoadshow.place);
 
       let response;
       if (addRoadshow.id) {
@@ -109,6 +115,22 @@ export const CreateRoadshow = (props) => {
                   )}
                 </div>
                 <div className="mx-2 mb-4">
+                  <label>Hotel Name</label>
+                  <input
+                    placeholder="Hotel Name*"
+                    type="text"
+                    name="hotelName"
+                    className="w-full bg-transparent border border-[#000000] p-[10px] rounded  text-[#000000] "
+                    value={addRoadshow.hotelName}
+                    onChange={handleChange}
+                  />
+                  {errors.hotelName && (
+                    <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+                      {errors.hotelName}
+                    </p>
+                  )}
+                </div>
+                <div className="mx-2 mb-4">
                   <label>Hotal Address</label>
                   <input
                     placeholder="Hotal Address*"
@@ -126,9 +148,9 @@ export const CreateRoadshow = (props) => {
                 </div>
 
                 <div className="mx-2 mb-4">
-                  <label>Event Date</label>
+                  <label>Event Date Day1</label>
                   <input
-                    placeholder="Event Date*"
+                    placeholder="Event Date Day1*"
                     type="text"
                     name="date"
                     className="w-full bg-transparent border border-[#000000] p-[10px] rounded  text-[#000000] "
@@ -138,6 +160,38 @@ export const CreateRoadshow = (props) => {
                   {errors.date && (
                     <p className="error text-[0.9rem] m-0 text-[#FF0202]">
                       {errors.date}
+                    </p>
+                  )}
+                </div>
+                <div className="mx-2 mb-4">
+                  <label>Event Date Day2</label>
+                  <input
+                    placeholder="Event Date Day2*"
+                    type="text"
+                    name="date2"
+                    className="w-full bg-transparent border border-[#000000] p-[10px] rounded  text-[#000000] "
+                    value={addRoadshow.date2}
+                    onChange={handleChange}
+                  />
+                  {errors.date2 && (
+                    <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+                      {errors.date2}
+                    </p>
+                  )}
+                </div>
+                <div className="mx-2 mb-4">
+                  <label>Place Name</label>
+                  <input
+                    placeholder="Place Name*"
+                    type="text"
+                    name="place"
+                    className="w-full bg-transparent border border-[#000000] p-[10px] rounded  text-[#000000] "
+                    value={addRoadshow.place}
+                    onChange={handleChange}
+                  />
+                  {errors.place && (
+                    <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+                      {errors.place}
                     </p>
                   )}
                 </div>

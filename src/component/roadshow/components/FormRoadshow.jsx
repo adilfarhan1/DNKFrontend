@@ -2,28 +2,67 @@ import React, { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import { userRoadshowServices } from "../../../services/roadshowService";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
 
 export const FormRoadshow = () => {
+  const { slug } = useParams();
+  const [RoadshowLink, setRoadshowLinkData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [valid, setValid] = useState(true);
   const [eventList, setEventList] = useState([]);
   const [searchedEventList, setSearchedEventList] = useState([]);
 
+  const { getRoadshowLinkById } = userRoadshowServices();
+  
   const { postClientResgister, getRoadshow, checkDuplicateClient } =
     userRoadshowServices();
+    
+  const fetchRoadshowLinkData = async () => {
+    try {
+      const response = await getRoadshowLinkById(slug);
+      if (response.success) {
+        const RoadshowLink = response.data;
+        if (RoadshowLink) {
+          setRoadshowLinkData(RoadshowLink);
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching roadshow link data:", error);
+    }
+  };
+
+    useEffect(() => {
+      fetchRoadshowLinkData();
+    }, [slug]);
+
 
   const initialState = {
     fullName: "",
     email: "",
     phone: "91",
-    event: "Chandigarh Event ( 15-16) 2025",
+    event: "",
     attendDate: "",
     attendTime: "",
     sourcedRm: "",
+    hotelName: "",
+    place: "",
+    address: "",
   };
 
   const [addRegister, setAddRegister] = useState(initialState);
+
+  useEffect(() => {
+    if (RoadshowLink) {
+      setAddRegister((prev) => ({
+        ...prev,
+        event: RoadshowLink.name || "",
+        hotelName: RoadshowLink.hotelName || "",
+        place: RoadshowLink.place || "",
+        address: RoadshowLink.address || "",
+      }));
+    }
+  }, [RoadshowLink]);
 
   useEffect(() => {
     getEventData();
@@ -107,6 +146,9 @@ export const FormRoadshow = () => {
           attendDate: addRegister.attendDate,
           attendTime: addRegister.attendTime,
           sourcedRm: addRegister.sourcedRm,
+          hotelName: addRegister.hotelName,
+          place: addRegister.place,
+          address: addRegister.address,
         });
 
         if (response.success) {
@@ -204,11 +246,11 @@ export const FormRoadshow = () => {
             <option className="text-[#000000]" value={""}>
               Select -
             </option>
-            <option className="text-[#000000]" value={"15th-Feb"}>
-              SAT 15th February
+            <option className="text-[#000000]" value={RoadshowLink?.date}>
+              {RoadshowLink?.date}
             </option>
-            <option className="text-[#000000]" value={"16th-Feb"}>
-              SUN 16th February
+            <option className="text-[#000000]" value={RoadshowLink?.date2}>
+              {RoadshowLink?.date2}
             </option>
           </select>
           {errors.attendDate && (

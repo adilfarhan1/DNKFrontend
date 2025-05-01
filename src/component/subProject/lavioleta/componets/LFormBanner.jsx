@@ -16,12 +16,18 @@ export const LFormBanner = ({ onClose, onFormSubmit }) => {
           <div>
             <div className="banner-content z-10">
               <h1 className="banner-h1 text-[#CFA028] text-[1.1rem] sm:text-[1.3rem] md:text-[1.7rem]">
-                Bahria Town Dubai South | Golf District Living Minutes from Al Maktoum
-                International Airport Dubai.
+                Bahria Town Dubai South | Golf District Living Minutes from Al
+                Maktoum International Airport Dubai.
               </h1>
-              {/* <h2 className="text-[0.9rem] md:text-[1.2rem] font-semibold capitalize">
-                Starting From 2.5M AED | $680K USD
-              </h2> */}
+              <h2 className="text-[0.8rem] md:text-[1rem] font-semibold capitalize text-[#000]">
+                Apartments Starting From 460K AED | $125K USD
+              </h2>
+              <h2 className="text-[0.8rem] md:text-[1rem] font-semibold capitalize text-[#000]">
+                Townhouses Starting From 2.7M AED | $735K USD
+              </h2>
+              <h2 className="text-[0.8rem] md:text-[1rem] font-semibold capitalize text-[#000]">
+                Villas Starting From 5.90M AED | $1.61M USD
+              </h2>
               {/* <h2 className="text-[0.9rem] md:text-[1.2rem] font-semibold capitalize pb-1 md:pb-4">
                 1% monthly payment plan
               </h2> */}

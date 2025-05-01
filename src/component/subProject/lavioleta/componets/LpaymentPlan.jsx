@@ -19,7 +19,20 @@ export const LpaymentPlan = () => {
       id="paymentPlan"
       className="container max-w-[1240px] py-6  px-4 m-auto"
     >
-      <h1 className="text-[#fff] m-auto w-fit mb-4 mt-3">Payment Plan</h1>
+      <h2 className="text-[#fff] m-auto w-fit mb-4 mt-3">
+        Flexible Payment Plan
+      </h2>
+      <p className="text-center">
+        Bahria Town Dubai, developed by <strong>BT Properties</strong>, offers a
+        <strong>buyer friendly payment plan</strong> that makes owning a
+        property easier than ever. With a <strong>low booking amount</strong>{" "}
+        and <strong>easy installment options</strong> spread across the
+        construction period, this plan is designed to suit different budgets and
+        investment needs. This{" "}
+        <strong>affordable and flexible payment structure</strong> ensures that
+        both <strong>homebuyers and investors</strong> can secure a property in
+        one of Dubai’s most promising communities without financial strain.
+      </p>
       <div className="relative overflow-hidden">
         {isOverlayVisible && (
           <div
