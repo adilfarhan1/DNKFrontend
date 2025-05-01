@@ -161,6 +161,11 @@ export const ADTalkFooterForm = ({ onFormSubmit }) => {
                 {errors.phoneNumber}
               </p>
             )}
+            {!valid && (
+              <p className="error text-[0.9rem] m-0 text-[#FF0202]">
+                Invalid phone number.
+              </p>
+            )}
           </div>
           <input
             placeholder="City"
