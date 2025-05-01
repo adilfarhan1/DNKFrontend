@@ -19,6 +19,7 @@ jobs:
 
     - run: npm install
     - run: CI=false npm run build
+    - run: ls -la build  # ✅ verify build output
 
     - name: Deploy build to EC2
       uses: appleboy/scp-action@master
