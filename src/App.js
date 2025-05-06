@@ -99,7 +99,7 @@ function App() {
             <Route path='/address-villas-the-oasis/floorplan' element={<AddressHillsLayout />} />
           <Route path='/address-villas-the-oasis/amenities' element={<AddressHillsLayout />} />
           <Route path='/grand-polo-club-resort' element={<GrandPoloLayout />} />
-          <Route path='/sobha-centeral' element={<SobhaCenterLayout />} />
+          <Route path='/sobha-central' element={<SobhaCenterLayout />} />
             <Route element={<Auth />}>
               <Route path='/dashboard' element={<DashboardLayout />}>
                 <Route index element={<DashboardHome />} />
