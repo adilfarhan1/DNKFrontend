@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import slidImg1 from "../../../../assets/lavioleta/aminitimg1.webp";
+import slidImg1 from "../../../../assets/pojects/";
 import slidImg2 from "../../../../assets/lavioleta/aminitimg2.webp";
 import slidImg3 from "../../../../assets/lavioleta/aminitimg3.webp";
 import slidImg4 from "../../../../assets/lavioleta/aminitimg4.webp";

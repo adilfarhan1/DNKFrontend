@@ -16,7 +16,7 @@ export const ADaboutSection = () => {
     <div id="about" className="about-section w-full bg-[#000] ">
       <div className="container max-w-[1240px] py-6  px-4 m-auto">
         <h1 className="text-[#fff] m-auto w-fit mb-4 mt-3 text-center">
-          Why Choose Address Villas at The Oasis?
+          Why you Choose Sobha Central at the Sheikh Zayed Road
         </h1>
         <p className="text-center w-[100%] md:w-[70%] m-auto">
           What sets Sobha Central apart is its <strong>prime location</strong>.
