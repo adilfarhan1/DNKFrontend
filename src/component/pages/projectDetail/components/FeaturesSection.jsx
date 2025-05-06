@@ -119,7 +119,7 @@ export const FeaturesSection = () => {
           </div>
 
           <h2 className="text-[#ffffff] text-left text-[1rem] sm:text-[1.4rem] font-semibold mb-4">
-            Life style at {projectData?.projectname}
+            Lifestyle at {projectData?.projectname}
           </h2>
           <p
             className="text-justify"

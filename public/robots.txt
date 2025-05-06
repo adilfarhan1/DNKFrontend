@@ -1,7 +1,13 @@
 User-agent: *
+Disallow:
 Allow: /upload/crm/site_button/
-Allow: /maps/embed
-Disallow: /admin
-Disallow: /login
+Allow: /maps/embed/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /link/
+Disallow: /attendance/
+Disallow: /contact-form/
+Disallow: /dashboard/
+Disallow: /roadshow/
 
 Sitemap: https://www.dnkre.com/sitemap.xml

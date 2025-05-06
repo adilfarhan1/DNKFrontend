@@ -47,6 +47,7 @@ import AddressHillsLayout from './component/subProject/addressHills/AddressHills
 import GrandPoloLayout from './component/subProject/grandPolo/GrandPoloLayout';
 import ClintsideLinkPort1 from './component/roadshow/ClintsideLinkPort1';
 import ClintsideLinkPort2 from './component/roadshow/ClintsideLinkPort2';
+import SobhaCenterLayout from './component/subProject/sobhaCenter/SobhaCenterLayout';
 
 function App() {
 
@@ -98,6 +99,7 @@ function App() {
             <Route path='/address-villas-the-oasis/floorplan' element={<AddressHillsLayout />} />
           <Route path='/address-villas-the-oasis/amenities' element={<AddressHillsLayout />} />
           <Route path='/grand-polo-club-resort' element={<GrandPoloLayout />} />
+          <Route path='/sobha-centeral' element={<SobhaCenterLayout />} />
             <Route element={<Auth />}>
               <Route path='/dashboard' element={<DashboardLayout />}>
                 <Route index element={<DashboardHome />} />

@@ -248,13 +248,19 @@ export const FormRoadshow = () => {
             type="text"
             className="w-full  border border-[#ffffff] p-[10px] rounded  bg-transparent text-[#ffffff]"
           >
-            <option className="text-[#000000]" value={""}>
-              Select -
+            <option className="!text-[#000000] hover:!text-[#000]" value={""}>
+              <p>Select -</p>
             </option>
-            <option className="text-[#000000]" value={RoadshowLink?.date}>
+            <option
+              className="!text-[#000000] hover:!text-[#000]"
+              value={RoadshowLink?.date}
+            >
               {RoadshowLink?.date}
             </option>
-            <option className="text-[#000000]" value={RoadshowLink?.date2}>
+            <option
+              className="text-[#000000] hover:text-[#aa4242]"
+              value={RoadshowLink?.date2}
+            >
               {RoadshowLink?.date2}
             </option>
           </select>

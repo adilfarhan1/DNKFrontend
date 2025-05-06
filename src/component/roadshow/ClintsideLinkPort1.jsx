@@ -6,7 +6,7 @@ import { userRoadshowServices } from "../../services/roadshowService";
 
 export const ClintsideLinkPort1 = () => {
   const { slug } = useParams();
-   const [RoadshowLink, setRoadshowLinkData] = useState(null);
+  const [RoadshowLink, setRoadshowLinkData] = useState(null);
 
   const { getRoadshowLinkById } = userRoadshowServices();
 
@@ -39,7 +39,7 @@ export const ClintsideLinkPort1 = () => {
         <title>{`Client Registration ${RoadshowLink.place}`}</title>
         <meta name="description" content="Attendance" />
       </Helmet>
-      <div className="about-section w-full bg-[#040406] flex items-center justify-center">
+      <div className="about-section w-full bg-[#121215] flex items-center justify-center">
         <div className="container max-w-[1240px] py-5  sm:px-4  md:py-9 relative">
           <div className="w-[100%] md:w-[70%] sm:w-[90%] m-auto">
             {/* <img src={Logo} alt="logo" className="m-auto w-[20%]" /> */}
