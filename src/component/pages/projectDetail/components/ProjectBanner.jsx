@@ -109,7 +109,7 @@ export const ProjectBanner = () => {
                     <TbPointFilled className="text-[1.9rem] text-[#fff] animate-ping absolute top-[-2px] left-[-2.5px]" />
                   </div>
 
-                  <h2>Starting From: {projectData.startingprice}</h2>
+                  <h2 className="mb-0">Starting From: {projectData.startingprice}</h2>
                 </div>
               )}
               <div className=" flex gap-3 mt-2">
