@@ -177,7 +177,7 @@ export const ADContactForm = ({ onFormSubmit }) => {
         </div>
         <div>
           <button
-            className="bg-[#000000] hover:bg-[#0D84C8] text-[#ffffff] hover:text-[#ffffff] w-full p-[10px] mt-[25px] rounded duration-100 flex justify-center"
+            className="bg-[#000000] hover:bg-[#d59d52] text-[#ffffff] hover:text-[#ffffff] w-full p-[10px] mt-[25px] rounded duration-100 flex justify-center"
             disabled={loading}
           >
             {loading ? (
@@ -193,8 +193,8 @@ export const ADContactForm = ({ onFormSubmit }) => {
               target="_blank"
               className="flex items-center justify-center group"
             >
-              <FaWhatsapp className="text-[#0072B2] text-[1.3rem] ml-2 group-hover:text-[#6B9B2D]" />
-              <p className="mb-0 !text-[#0072B2] group-hover:!text-[#6B9B2D]">
+              <FaWhatsapp className="text-[#d59d52] text-[1.3rem] ml-2 group-hover:text-[#6B9B2D]" />
+              <p className="mb-0 !text-[#d59d52] group-hover:!text-[#6B9B2D]">
                 WhatsApp
               </p>
             </a>

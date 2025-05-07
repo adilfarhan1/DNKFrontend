@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import slidImg1 from "../../../../assets/pojects/addressVilla/sliderImg01.webp";
-import slidImg2 from "../../../../assets/pojects/addressVilla/sliderImg02.webp";
-import slidImg3 from "../../../../assets/pojects/addressVilla/sliderImg03.webp";
-import slidImg4 from "../../../../assets/pojects/addressVilla/sliderImg04.webp";
-import slidImg5 from "../../../../assets/pojects/addressVilla/sliderImg05.webp";
-import slidImg6 from "../../../../assets/pojects/addressVilla/sliderImg06.webp";
+import slidImg1 from "../../../../assets/pojects/sobhaCenter/Slide-1.webp";
+import slidImg2 from "../../../../assets/pojects/sobhaCenter/Slide-2.webp";
+import slidImg3 from "../../../../assets/pojects/sobhaCenter/Slide-3.webp";
+import slidImg4 from "../../../../assets/pojects/sobhaCenter/Slide-4.webp";
+import slidImg5 from "../../../../assets/pojects/sobhaCenter/Slide-5.webp";
+import slidImg6 from "../../../../assets/pojects/sobhaCenter/Slide-4.webp";
 import PopupModel from "./ADmodel";
 
 export const ADimgSlider = () => {

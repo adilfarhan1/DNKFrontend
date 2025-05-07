@@ -26,20 +26,20 @@ export const ADFloorPlan = () => {
     <div className="overflow-hidden">
       <div className="tabs1">
         <button
-          className={`tab-btn hover:!bg-[#0D84C8] !ml-0 z-30 ${
-            activeTab === "Tab1" ? "!bg-[#0D84C8]" : ""
+          className={`tab-btn hover:!bg-[#d59d52] !ml-0 z-30 ${
+            activeTab === "Tab1" ? "!bg-[#d59d52]" : ""
           }`}
           onClick={() => handleTabClick("Tab1")}
         >
           1 BHK
         </button>
         <button
-          className={`tab-btn hover:!bg-[#0D84C8] z-20 ${
-            activeTab === "Tab2" ? "!bg-[#0D84C8]" : ""
+          className={`tab-btn hover:!bg-[#d59d52] z-20 ${
+            activeTab === "Tab2" ? "!bg-[#d59d52]" : ""
           }`}
           onClick={() => handleTabClick("Tab2")}
         >
-         2 BHK
+          2 BHK
         </button>
       </div>
       <div className="tab-content bg-[#D9D9D9] p-1 md:p-3">

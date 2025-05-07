@@ -1,5 +1,5 @@
 import React from "react";
-import FloorCover1 from "../../../../assets/pojects/addressVilla/sideCover.webp";
+import FloorCover1 from "../../../../assets/pojects/grandPolo/sideCover.webp";
 import ImgText from "../../../../assets/lavioleta/personally_visited_approved.webp";
 import FloorPlan from "./ADFloorPlan";
 

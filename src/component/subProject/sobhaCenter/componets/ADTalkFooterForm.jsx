@@ -193,8 +193,8 @@ export const ADTalkFooterForm = ({ onFormSubmit }) => {
               target="_blank"
               className="flex items-center justify-center group"
             >
-              <FaWhatsapp className="text-[#0D84C8] text-[1.3rem] ml-2 group-hover:text-[#6B9B2D]" />
-              <p className="mb-0 !text-[#0D84C8] group-hover:!text-[#6B9B2D]">
+              <FaWhatsapp className="text-[#E5AC62] text-[1.3rem] ml-2 group-hover:text-[#6B9B2D]" />
+              <p className="mb-0 !text-[#E5AC62] group-hover:!text-[#6B9B2D]">
                 WhatsApp
               </p>
             </a>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import slidImg1 from "../../../../assets/pojects/";
-import slidImg2 from "../../../../assets/lavioleta/aminitimg2.webp";
+import slidImg1 from "../../../../assets/pojects/sobhaCenter/Slide-5.webp";
+import slidImg2 from "../../../../assets/pojects/sobhaCenter/Slide-1.webp";
 import slidImg3 from "../../../../assets/lavioleta/aminitimg3.webp";
 import slidImg4 from "../../../../assets/lavioleta/aminitimg4.webp";
 import slidImg5 from "../../../../assets/lavioleta/aminitimg5.webp";

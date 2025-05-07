@@ -15,7 +15,7 @@ export const ADFormBanner = ({ onClose, onFormSubmit }) => {
         <div className="px-[20px] py-[30px] md:px-[50px] md:py-[50px] grid md:grid-cols-2">
           <div>
             <div className="banner-content z-10">
-              <h1 className="banner-h1 text-[#0072B2] text-[1.1rem] sm:text-[1.3rem] md:text-[1.7rem]">
+              <h1 className="banner-h1 text-[#d59d52] text-[1.1rem] sm:text-[1.3rem] md:text-[1.7rem]">
                 Luxury Living on Sheikh Zayed Road
               </h1>
               <h2 className="text-[0.9rem] md:text-[1.2rem] font-semibold capitalize text-[#000]">
@@ -42,7 +42,7 @@ export const ADFormBanner = ({ onClose, onFormSubmit }) => {
               </div>
               <button
                 onClick={() => setShowPopup(true)}
-                className="site-btn !text-[#fff] hover:!text-[#ffffff] !border-none bg-[#0D84C8] hover:!bg-black"
+                className="site-btn !text-[#fff] hover:!text-[#ffffff] !border-none bg-[#d59d52] hover:!bg-black"
               >
                 Request callback
               </button>

@@ -194,7 +194,7 @@ export const HomeSobhaCenter = () => {
           <Lbanner />
           <LFormBanner />
           <LaboutSection />
-          {/* <LimgSlider /> */}
+          <LimgSlider />
           <LFloorPlanComponent />
           {/* <ADMasterPlan /> */}
           <LpaymentPlan />

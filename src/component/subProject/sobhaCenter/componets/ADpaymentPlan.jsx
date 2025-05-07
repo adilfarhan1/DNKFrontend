@@ -36,7 +36,7 @@ export const ADpaymentPlan = () => {
         )}
         <table className="w-full border-2 overflow-auto border-[#000] bg-[#fff] ">
           <thead>
-            <tr className="bg-[#0D84C8] text-[#fff]">
+            <tr className="bg-[#d59d52] text-[#fff]">
               <th>Description</th>
               <th>Milestone Event</th>
               <th>(%) Value</th>

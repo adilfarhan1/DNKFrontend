@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Brochureimg from "../../../../assets/lavioleta/brochureimg.webp";
+import Brochureimg from "../../../../assets/pojects/sobhaCenter/book.webp";
 import PopupModel from "./ADmodel";
 
 export const ADDownloadSection = () => {

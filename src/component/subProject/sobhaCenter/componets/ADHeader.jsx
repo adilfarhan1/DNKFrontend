@@ -137,12 +137,12 @@ export const ADHeader = () => {
                     }`}
                     onClick={goToAboutHead}
                   >
-                    <p className="group-hover:text-[#0D84C8] transition duration-200 ease-out">
+                    <p className="group-hover:text-[#d59d52] transition duration-200 ease-out">
                       About
                     </p>
                     <span
                       className={
-                        "absolute bottom-0 left-0 w-full h-0.5 bg-[#0D84C8] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
+                        "absolute bottom-0 left-0 w-full h-0.5 bg-[#d59d52] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"
                       }
                     ></span>
                   </li>
@@ -152,10 +152,10 @@ export const ADHeader = () => {
                     }`}
                     onClick={goToFloorPlanHead}
                   >
-                    <p className="group-hover:text-[#0D84C8] transition duration-200 ease-out">
+                    <p className="group-hover:text-[#d59d52] transition duration-200 ease-out">
                       Floor Plan
                     </p>
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0D84C8] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#d59d52] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </li>
                   <li
                     className={`relative inline-flex items-center justify-center group m-2 ${
@@ -163,10 +163,10 @@ export const ADHeader = () => {
                     }`}
                     onClick={goToPaymentHead}
                   >
-                    <p className="group-hover:text-[#0D84C8] transition duration-200 ease-out">
+                    <p className="group-hover:text-[#d59d52] transition duration-200 ease-out">
                       Payment Plan
                     </p>
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0D84C8] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#d59d52] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </li>
                   <li
                     onClick={goToAmenitiesHead}
@@ -174,10 +174,10 @@ export const ADHeader = () => {
                       location.pathname == "/about" && "activeHead"
                     }`}
                   >
-                    <p className="group-hover:text-[#0D84C8] transition duration-200 ease-out">
+                    <p className="group-hover:text-[#d59d52] transition duration-200 ease-out">
                       Amenities
                     </p>
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0D84C8] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#d59d52] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </li>
 
                   <li
@@ -186,10 +186,10 @@ export const ADHeader = () => {
                       location.pathname == "/about" && "activeHead"
                     }`}
                   >
-                    <p className="group-hover:text-[#0D84C8] transition duration-200 ease-out">
+                    <p className="group-hover:text-[#d59d52] transition duration-200 ease-out">
                       Contact
                     </p>
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0D84C8] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#d59d52] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </li>
                 </ul>
               </nav>
@@ -198,7 +198,7 @@ export const ADHeader = () => {
                   <li className="group">
                     <button
                       onClick={() => setShowPopup(true)}
-                      className="bg-[#FFFF] hover:bg-[#0D84C8] text-[#000000] hover:text-[#FFFF] w-full px-4 py-1 rounded duration-100 flex justify-center text-[0.6rem] sm:text-[0.9rem]"
+                      className="bg-[#FFFF] hover:bg-[#d59d52] text-[#000000] hover:text-[#FFFF] w-full px-4 py-1 rounded duration-100 flex justify-center text-[0.6rem] sm:text-[0.9rem]"
                     >
                       Download Brochure
                     </button>

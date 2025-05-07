@@ -1,8 +1,8 @@
 import React from "react";
-import Assist from "../../../../assets/pojects/addressVilla/icon01.webp";
-import Consultation from "../../../../assets/pojects/addressVilla/icon02.webp";
-import Estimation from "../../../../assets/pojects/addressVilla/icon03.webp";
-import Shedule from "../../../../assets/pojects/addressVilla/icon04.webp";
+import Assist from "../../../../assets/icons/assist.webp";
+import Consultation from "../../../../assets/icons/consultation.webp";
+import Estimation from "../../../../assets/icons/estimation.webp";
+import Shedule from "../../../../assets/icons/shedule.webp";
 import LTalkFooterForm from "./ADTalkFooterForm";
 
 export const ADTalkSection = () => {
