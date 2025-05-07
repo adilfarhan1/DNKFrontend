@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<script src="chrome-extension://hoklmmgfnpapgjgcpechhaamimifchmp/frame_ant/frame_ant.js"/>
 <url>
 <loc>https://www.dnkre.com/</loc>
 <lastmod>2025-05-06T00:00:00.896Z</lastmod>
@@ -81,6 +82,11 @@
 <url>
 <loc>https://www.dnkre.com/grand-polo-club-resort</loc>
 <lastmod>2025-05-06T00:00:00.896Z</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://www.dnkre.com/sobha-central</loc>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
