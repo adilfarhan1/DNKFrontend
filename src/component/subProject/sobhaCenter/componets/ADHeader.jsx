@@ -118,7 +118,7 @@ export const ADHeader = () => {
                   <IoMenu className="menu-btn" />
                 )}
               </div>
-              <a href="/address-villas-the-oasis">
+              <a href="#">
                 <div className="w-[135px] md:w-[150px] h-[60px] flex items-center">
                   <img
                     src={dnkLogo}
