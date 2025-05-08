@@ -10,12 +10,25 @@ import LDownloadSection from "./componets/ADDownloadSection";
 import LBanner360 from "./componets/ADBanner360";
 import LTalkSection from "./componets/ADTalkSection";
 import { Helmet } from "react-helmet-async";
-import ADMasterPlan from "./componets/ADMasterPlan";
 
 export const HomeSobhaCenter = () => {
   return (
     <>
       <Helmet>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16927541094"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16927541094');
+            `,
+          }}
+        ></script>
         <title>Sobha Central | Sobha Realty</title>
         <meta
           name="keywords"
@@ -122,8 +135,8 @@ export const HomeSobhaCenter = () => {
                   "@type": "ListItem",
                   position: 3,
                   item: {
-                    "@id": `https://www.dnkre.com/news`,
-                    name: `News`,
+                    "@id": `https://dnkre.com/projects/sobha-central-by-sobha-realty`,
+                    name: `Sobha`,
                   },
                 },
                 {
@@ -196,7 +209,6 @@ export const HomeSobhaCenter = () => {
           <LaboutSection />
           <LimgSlider />
           <LFloorPlanComponent />
-          {/* <ADMasterPlan /> */}
           <LpaymentPlan />
           <LAmenitiesImg />
           <LDownloadSection />
