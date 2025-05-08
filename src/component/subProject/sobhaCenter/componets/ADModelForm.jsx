@@ -87,6 +87,14 @@ export const ADModelForm = ({ onFormSubmit }) => {
       return;
     }
     setLoading(true);
+    
+    if (typeof window.gtag_report_conversion === "function") {
+      window.gtag_report_conversion();
+      console.warn("gtag_report_conversion is working");
+    } else {
+      console.warn("gtag_report_conversion is not defined yet.");
+    }
+    
     try {
       await contactData({
         fullName,

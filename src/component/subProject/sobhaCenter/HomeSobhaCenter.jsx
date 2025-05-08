@@ -26,7 +26,21 @@ export const HomeSobhaCenter = () => {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-16927541094');
-            `,
+
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                'send_to': 'AW-16927541094/lNkkCP3B5qwaEOaO14c_',
+                'value': 1.0,
+                'currency': 'AED',
+                'event_callback': callback
+              });
+              return false;
+            }`,
           }}
         ></script>
         <title>Sobha Central | Sobha Realty</title>

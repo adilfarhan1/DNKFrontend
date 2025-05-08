@@ -88,6 +88,15 @@ export const ADFooterForm = ({ onFormSubmit }) => {
       return;
     }
     setLoading(true);
+
+    if (typeof window.gtag_report_conversion === "function") {
+      window.gtag_report_conversion();
+      console.log("gtag_report_conversion is working");
+    } else {
+      console.warn("gtag_report_conversion is not defined yet.");
+      console.log("gtag_report_conversion is not defined yet.");
+    }
+
     try {
       await contactData({
         fullName,

@@ -6,7 +6,7 @@ import FloorPlan from "./ADFloorPlan";
 export const ADFloorPlanComponent = () => {
   return (
     <div id="floorPlan" className="container max-w-[1240px] py-6  px-4 m-auto">
-      <h1 className="text-[#fff] m-auto w-fit mt-0 mb-0">Villa Floor Plan</h1>
+      <h1 className="text-[#fff] m-auto w-fit mt-0 mb-0">Floor Plan</h1>
       <p className="w-[100%] md:w-[70%] m-auto text-center mb-4">
         Discover luxurious 1-2 bedroom apartments, offering spacious layouts,
         premium finishes, and world-class amenities for an unparalleled living
