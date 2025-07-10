@@ -12,6 +12,7 @@ export const ADaboutSection = () => {
   const goToAboutPage = () => {
     navigate("/about");
   };
+  
   return (
     <div id="about" className="about-section w-full bg-[#000] ">
       <div className="container max-w-[1240px] py-6  px-4 m-auto">
