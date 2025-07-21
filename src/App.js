@@ -48,6 +48,7 @@ import GrandPoloLayout from './component/subProject/grandPolo/GrandPoloLayout';
 import ClintsideLinkPort1 from './component/roadshow/ClintsideLinkPort1';
 import ClintsideLinkPort2 from './component/roadshow/ClintsideLinkPort2';
 import SobhaCenterLayout from './component/subProject/sobhaCenter/SobhaCenterLayout';
+import NadAlSheba from './component/subProject/NadAlSheba/NadAlSheba';
 
 function App() {
 
@@ -84,7 +85,8 @@ function App() {
               <Route path='/news/' element={<News />} />
               <Route path='/news/:newsurl' element={<NewsDetail />} />
             </Route>
-            <Route path='/dubai-apartments' element={<ApartmentsDubai />} />
+          <Route path='/dubai-apartments' element={<ApartmentsDubai />} />
+          <Route path='/nad-al-sheba-gardens' element={<NadAlSheba />} />
             <Route path='/palm-jebel-ali' element={<JebelAli />} />
             <Route path='/admin' element={<Admin />} />
             <Route path='/login' element={<EventLogin />} />

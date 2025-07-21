@@ -56,7 +56,7 @@ export const StickyConnect = () => {
     <div>
       <div className="border border-[#ffffff] border-spacing-1 rounded-md p-3">
         <div className="flex text-center">
-          <img
+          {/* <img
             className="h-[60px] w-[60px] sm:h-[95px] sm:w-[95px]"
             src={Profile}
             alt="profile"
@@ -67,7 +67,7 @@ export const StickyConnect = () => {
               Velina Dsouza
             </h6>
             <p className="text-[0.89rem]">Property Consultant</p>
-          </div>
+          </div> */}
         </div>
         <div className="flex items-center pt-3">
           <a
