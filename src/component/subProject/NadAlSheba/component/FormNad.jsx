@@ -208,7 +208,7 @@ export const FormNad = () => {
                 <div className="flex justify-end">
                   <div className="flex gap-1 items-center mb-4">
                     <div className="h-2.5 w-2.5 bg-[#ff0000] rounded-full animate-blink"></div>
-                    <p className="m-0 text-[#fff]">Limited Slots</p>
+                    <p className="m-0 text-[#fff]">Limited Units</p>
                   </div>
                 </div>
                 <h2 className="text-[1rem] md:text-[1.5rem]">
