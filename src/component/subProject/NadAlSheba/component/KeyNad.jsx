@@ -7,7 +7,7 @@ export const KeyNad = () => {
   const [ShowPopup, setShowPopup] = useState(false);
 
   return (
-    <div className="w-full bg-[#040406] flex items-center justify-center px-4 pt-0 xl:px-0">
+    <div className="w-full bg-[#040406] flex items-center justify-center px-4 pt-0 xl:px-0" id="keyFeatures">
       <div className="container max-w-[1240px] py-5 !pt-0  px-4  md:py-9">
         <div className="bg-[#EFEBE2] rounded-xl overflow-hidden">
           <div

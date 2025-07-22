@@ -114,7 +114,7 @@ export const FormNad = () => {
   };
 
   return (
-    <div className="md:mt-[-7rem]">
+    <div className="md:mt-[-7rem]" id="about">
       <div className="w-full flex items-center justify-center">
         <div className="container max-w-[1240px]  px-4 md:flex gap-3 order-last md:order-first">
           <div className="w-full order-none">
@@ -215,7 +215,11 @@ export const FormNad = () => {
                   Why Choose Nad Al Sheba Gardens Phase 10?
                 </h2>
                 <p className="text-[#fff]">
-                  This community is in a great location close to the city but still quiet and peaceful. It’s just minutes from Downtown Dubai and other popular areas. Built by Meraas, one of Dubai’s top developers, the homes here are stylish, well designed, and perfect for both families and investors.
+                  This community is in a great location close to the city but
+                  still quiet and peaceful. It’s just minutes from Downtown
+                  Dubai and other popular areas. Built by Meraas, one of Dubai’s
+                  top developers, the homes here are stylish, well designed, and
+                  perfect for both families and investors.
                 </p>
 
                 <p className="text-[#fff] m-0">

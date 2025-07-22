@@ -5,7 +5,10 @@ export const PaymentPlanNad = () => {
   const [ShowPopup, setShowPopup] = useState(false);
 
   return (
-    <div className="w-full bg-[#040406] flex items-center justify-center px-4 xl:px-0">
+    <div
+      className="w-full bg-[#040406] flex items-center justify-center px-4 xl:px-0"
+      id="paymentPlan"
+    >
       <div className="container max-w-[1240px] py-5 !pt-0 px-4  md:py-9">
         <div className="mb-4 w-full">
           <h2 className="m-0 text-center">Payment Plan</h2>

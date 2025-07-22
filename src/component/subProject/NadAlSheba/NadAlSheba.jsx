@@ -22,24 +22,21 @@ export const NadAlSheba = () => {
         />
         <meta
           name="keywords"
-          content="Dubai apartments for sale, Apartments in Dubai, Luxury apartments Dubai, Dubai apartment rentals, Affordable apartments in Dubai, Buy apartment in Dubai, Dubai property investment, Waterfront apartments Dubai, High-rise apartments in Dubai, Dubai apartments with sea view, Downtown Dubai apartments, Apartments near Dubai Marina, Studio apartments in Dubai, Family apartments in Dubai"
+          content="nad al sheba villas dubai, nad al sheba gardens by meraas, luxury villas for sale in dubai, Luxury Dubai villas, Dubai property investment, nad al sheba villas, nad al sheba gardens villas for sale"
         />
+        <link rel="canonical" href="https://www.dnkre.com/nad-al-sheba-gardens" />
+        
         <script type="application/ld+json">
           {`
         {
           "@context": "https://schema.org",
           "@type": "website",
-          "name": "Best Apartments - Dubai",
+          "name": "Nad Al Sheba Gardens",
           "description": "Discover luxurious apartments in Dubai with stunning views, world-class amenities, and prime locations. Explore premium properties for sale and rent, tailored to your lifestyle in the heart of Dubai.",
-          "keywords": "Dubai apartments for sale, Apartments in Dubai, Luxury apartments Dubai, Dubai apartment rentals, Affordable apartments in Dubai, Buy apartment in Dubai, Dubai property investment, Waterfront apartments Dubai, High-rise apartments in Dubai, Dubai apartments with sea view, Downtown Dubai apartments, Apartments near Dubai Marina, Studio apartments in Dubai, Family apartments in Dubai",
-          "url": "https://www.dnkre.com",
-          "logo": "https://www.dnkre.com/logo192.png",
-          "image": "https://www.dnkre.com/logo192.png",
-          "sameAs": [
-            "https://www.facebook.com/dnkrealestate1/",
-            "https://www.instagram.com/dnk_re/",
-            "https://www.linkedin.com/company/dnkrealestate/mycompany/"
-          ],
+          "keywords": "nad al sheba villas dubai, nad al sheba gardens by meraas, luxury villas for sale in dubai, Luxury Dubai villas, Dubai property investment, nad al sheba villas, nad al sheba gardens villas for sale",
+          "url": "https://dnkre.com/static/media/meraas-logo.f197c8902e7921c7161e.webp",
+          "logo": "https://dnkre.com/static/media/meraas-logo.f197c8902e7921c7161e.webp",
+          "image": "https://dnkre.com/static/media/nad-popup.9e14f9a84bf7e3a55f41.webp",
           "telephone": "+971555769195"
         }
     `}
@@ -54,7 +51,7 @@ export const NadAlSheba = () => {
       <MasterPlanNad />
       <PaymentPlanNad />
       <DownloadNad />
-      <FooterNad  />
+      <FooterNad />
       <TalkFooterNad />
     </>
   );

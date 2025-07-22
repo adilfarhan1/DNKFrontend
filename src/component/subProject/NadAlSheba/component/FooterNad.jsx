@@ -94,7 +94,7 @@ export const FooterNad = () => {
       <div className="whatsapp-widget">
         <div className="bg-[#18A436] rounded-full p-2">
           <a
-            href="https://wa.me/+971543049309?text=Hello%2C%20could%20you%20please%20provide%20more%20insights%20into%20the%20Address%20Villas%20at%20The%20Oasis?"
+            href="https://wa.me/+971543049309?text=Hello%2C%20could%20you%20please%20provide%20more%20insights%20into%20Nad%20Al%20Sheba?"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Whats app Chat"

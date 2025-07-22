@@ -11,13 +11,6 @@ export const NadHeader = () => {
   const [ShowPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 20000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector("header");
       if (header) {
@@ -53,29 +46,29 @@ export const NadHeader = () => {
   };
 
   const goToFloorPlanHead = () => {
-    scrollToSection("floorPlan");
+    scrollToSection("units");
   };
 
   const goToFloorPlan = () => {
-    scrollToSection("floorPlan");
+    scrollToSection("units");
     setNav(!nav);
   };
 
   const goToPaymentHead = () => {
-    scrollToSection("paymentPlan");
+    scrollToSection("keyFeatures");
   };
 
   const goToPayment = () => {
-    scrollToSection("paymentPlan");
+    scrollToSection("keyFeatures");
     setNav(!nav);
   };
 
   const goToAmenitiesHead = () => {
-    scrollToSection("Amenities");
+    scrollToSection("paymentPlan");
   };
 
   const goToAmenities = () => {
-    scrollToSection("Amenities");
+    scrollToSection("paymentPlan");
     setNav(!nav);
   };
 
@@ -136,7 +129,7 @@ export const NadHeader = () => {
                     onClick={goToFloorPlanHead}
                   >
                     <p className="group-hover:text-[#258493] transition duration-200 ease-out">
-                      Floor Plan
+                      Units
                     </p>
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#258493] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </li>
@@ -147,7 +140,7 @@ export const NadHeader = () => {
                     onClick={goToPaymentHead}
                   >
                     <p className="group-hover:text-[#258493] transition duration-200 ease-out">
-                      Payment Plan
+                      Key Features
                     </p>
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#258493] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </li>
@@ -158,7 +151,7 @@ export const NadHeader = () => {
                     }`}
                   >
                     <p className="group-hover:text-[#258493] transition duration-200 ease-out">
-                      Amenities
+                      Payment Plan
                     </p>
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#258493] rounded origin-bottom-right transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
                   </li>

@@ -4,17 +4,18 @@ import ProjectConnect from "./ProjectConnect";
 import StickyConnect from "./StickyConnect";
 import { useProjectServices } from '../../../../services/projectServices';
 
+
 export const SliderInfo = () => {
     const { slug } = useParams();
       const [projectData, setProjectData] = useState(null);
       const [loading, setLoading] = useState(true);
       const [error, setError] = useState(null);
-      const { getProjectById } = useProjectServices();
-    
-        useEffect(() => {
-          fetchProject();
-        }, [slug]);
-      
+  const { getProjectById } = useProjectServices();
+
+  useEffect(() => {
+    fetchProject();
+  }, [slug]);
+
        const fetchProject = async () => {
          try {
            const response = await getProjectById(slug);
@@ -48,7 +49,8 @@ export const SliderInfo = () => {
     
        if (error) {
          return <div>{error}</div>; // Display error message
-    }
+  }
+
     
   return (
    <div className="pl-4 hidden lg:block">

@@ -44,7 +44,10 @@ export const TypesNad = () => {
   };
 
   return (
-    <div className="w-full bg-[#040406] flex items-center justify-center px-4 xl:px-0">
+    <div
+      className="w-full bg-[#040406] flex items-center justify-center px-4 xl:px-0"
+      id="units"
+    >
       <div className="featureProject container max-w-[1240px] py-5  px-4  md:py-9">
         <div className="flex flex-col  md:flex-row ">
           <div className=" w-full">

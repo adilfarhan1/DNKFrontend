@@ -4,6 +4,8 @@ import Profile from "../../../../assets/icons/leader_sale.webp";
 import { useParams } from "react-router-dom";
 import { PopupModel } from "../../../model/PopupModel";
 import { useProjectServices } from "../../../../services/projectServices";
+import { URL } from "../../../../url/axios";
+import { userTeamServices } from "../../../../services/teamServices";
 
 export const StickyConnect = () => {
   const { slug } = useParams();
@@ -12,10 +14,44 @@ export const StickyConnect = () => {
   const [error, setError] = useState(null);
   const { getProjectById } = useProjectServices();
   const [ShowPopup, setShowPopup] = useState(false);
+    const { getTeamPublicList } = userTeamServices();
+    const [agent, setAgent] = useState(null);
+
+   const fetchSalesAgent = async (projectSlug) => {
+     try {
+       const cacheKey = `selectedAgent-${projectSlug}`;
+       const cachedAgent = localStorage.getItem(cacheKey);
+
+       if (cachedAgent) {
+         setAgent(JSON.parse(cachedAgent));
+         console.log("Loaded cached agent for", projectSlug);
+         return;
+       }
+
+       const res = await getTeamPublicList();
+
+       if (res.success && Array.isArray(res.data)) {
+         const salesTeam = res.data
+           .filter((member) => member.department === "Sales")
+           .sort((a, b) => a.sortKey - b.sortKey);
+
+         const randomAgent =
+           salesTeam[Math.floor(Math.random() * salesTeam.length)];
+
+         setAgent(randomAgent);
+         localStorage.setItem(cacheKey, JSON.stringify(randomAgent));
+         console.log("Selected & cached new agent for", projectSlug);
+       }
+     } catch (err) {
+       console.error("Failed to fetch sales agent", err);
+     }
+   };
 
   useEffect(() => {
     fetchProject();
-    // Log the API response
+     if (slug) {
+       fetchSalesAgent(slug);
+     }
   }, [slug]);
 
   const fetchProject = async () => {
@@ -54,53 +90,53 @@ export const StickyConnect = () => {
   }
   return (
     <div>
-      <div className="border border-[#ffffff] border-spacing-1 rounded-md p-3">
-        <div className="flex text-center">
-          {/* <img
-            className="h-[60px] w-[60px] sm:h-[95px] sm:w-[95px]"
-            src={Profile}
-            alt="profile"
-            loading="lazy"
-          />
-          <div className="pl-2">
-            <h6 className="text-[#ffffff] text-left text-[0.9rem] sm:text-[1rem] font-semibold">
-              Velina Dsouza
-            </h6>
-            <p className="text-[0.89rem]">Property Consultant</p>
-          </div> */}
-        </div>
-        <div className="flex items-center pt-3">
-          <a
-            href="tel:+971543049309"
-            className="site-sub-btn w-full mr-1 text-center"
-          >
-            Call
-          </a>
-          <button
-            onClick={() => setShowPopup(true)}
-            className="site-sub-btn w-full ml-1"
-          >
-            Inquiry
-          </button>
-        </div>
-        <div className="flex items-center justify-center mt-2">
-          <p className="mb-0 text-[0.8rem] lg:text-[1rem]">
-            Or get availability via
-          </p>
-          <a
-            href={`https://wa.me/+971543049309?text=Hello,%20Share%20more%20details%20${projectData.projectname}`}
-            className="flex items-center justify-center group"
-          >
-            <FaWhatsapp
-              className="text-[#CE8745] ml-2 group-hover:text-[#6B9B2D] text-[1rem] lg:text-[1.3rem]"
-              aria-label="whats app"
-            />
-            <p className="mb-0 text-[#CE8745] group-hover:text-[#6B9B2D] text-[0.8rem] lg:text-[1rem]">
-              WhatsApp
-            </p>
-          </a>
-        </div>
-      </div>
+       {agent && (
+              <div className="border border-[#ffffff] border-spacing-1 rounded-md p-3">
+                <div className="flex text-center">
+                  <img
+                    className="h-[60px] w-[60px] sm:h-[95px] sm:w-[95px] border rounded bg-white object-cover"
+                    src={agent.image ? `${URL}${agent.image}` : Profile}
+                    alt={agent.name || "Top real estate agent"}
+                    loading="lazy"
+                  />
+                  <div className="pl-2 text-left">
+                    <h2 className="m-0 text-[#ffffff] text-[0.9rem] sm:text-[1rem] font-semibold">
+                      {agent.name}
+                    </h2>
+                    <p className="text-[0.89rem]">{agent.position}</p>
+                  </div>
+                </div>
+      
+                <div className="flex items-center pt-3">
+                  <a
+                    href="tel:+971543049309"
+                    className="site-sub-btn w-full mr-1 text-center"
+                  >
+                    Call
+                  </a>
+                  <button
+                    onClick={() => setShowPopup(true)}
+                    className="site-sub-btn w-full ml-1"
+                  >
+                    Inquiry
+                  </button>
+                </div>
+                <div className="flex items-center justify-center mt-2">
+                  <p className="mb-0 text-[0.8rem] lg:text-[1rem]">
+                    Or get availability via
+                  </p>
+                  <a
+                    href={`https://wa.me/+971543049309?text=Hello,%20Share%20more%20details%20${projectData?.projectname}`}
+                    className="flex items-center justify-center group"
+                  >
+                    <FaWhatsapp className="text-[#CE8745] ml-2 group-hover:text-[#6B9B2D] text-[1rem] lg:text-[1.3rem]" />
+                    <p className="mb-0 text-[#CE8745] group-hover:text-[#6B9B2D] text-[0.8rem] lg:text-[1rem]">
+                      WhatsApp
+                    </p>
+                  </a>
+                </div>
+              </div>
+            )}
       <div className="rounded-full bg-[#fff] mt-3">
         <h4 className="text-[#000] m-auto w-fit font-semibold">
           Direct Sales & 0% Commission
